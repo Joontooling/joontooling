@@ -35,3 +35,4 @@ class User(AbstractUser):
     per_company_number = models.CharField(max_length=30, null=True)
     company_number = models.IntegerField(null=True)
     point = models.IntegerField(null=True)
+

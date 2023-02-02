@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+  <div class='my-5'>
+    <h1 class='mb-5 text-center'>상품 등록</h1>
+    <form action="{% url 'products:product_create' %}" method="POST" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {% bootstrap_form create_form %}
+      {% bootstrap_form product_image_form %}
+      <input class="btn btn-primary" type="submit" id="" value="등록">
+    </form>
+  </div>
+{% endblock content %}
