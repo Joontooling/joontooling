@@ -18,13 +18,12 @@ class ProductsForm(forms.ModelForm):
 
 class ProductsInfoForm(forms.ModelForm):
     image = forms.ImageField(
-        label='상품이미지',
+        label='상품 상세 사진',
         widget=forms.ClearableFileInput(attrs={'multiple':True}),
     )
     class Meta:
         model = ProductsInfo
-        fields = ('image_main', "image_sub",)
-        label = {
+        fields = ['image_main',]
+        labels = {
             'image_main' : "상품 메인 사진",
-            'image_sub' : "상품 상세 사진",
         }
