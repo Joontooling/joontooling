@@ -5,6 +5,7 @@ from .models import Products, ProductsInfo
 
 # Create your views here.
 def index(request):
+
     return render(request, "products/index.html")
 
 def create(request):
@@ -26,3 +27,4 @@ def create(request):
     }
 
     return render(request, "products/products_create.html", context)
+
