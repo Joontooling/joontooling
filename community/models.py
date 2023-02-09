@@ -10,9 +10,9 @@ class QnA(models.Model):
         get_user_model(), on_delete=models.CASCADE
     )
     title = models.CharField(max_length=80)
-    type = models.CharField(choices=TYPE_CHOICES)
+    type = models.CharField(choices=TYPE_CHOICES, max_length=80)
     content = models.TextField()
     b_pwd = models.IntegerField()   # 추후 수정
     date = models.DateTimeField()
     p_image = models.ImageField(upload_to="images/", null=True)
-    lock_flag = models.CharField(choices=LOCK_CHOICES)
+    lock_flag = models.CharField(choices=LOCK_CHOICES, max_length=80)
