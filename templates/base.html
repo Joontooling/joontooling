@@ -30,6 +30,8 @@
 
     <!--Nav -->
     <nav class="nav">
+
+      <!-- Nav-wrapper -->
       <div class="nav-wrapper">
         <ul class="nav__items container">
           <li class="nav__item"><a href="#">회원가입</a></li>
@@ -80,6 +82,7 @@
       </div>
     </nav>
 
+    <!-- Nav--fixed -->
     <nav id="nav--fixed">
       <div class="inner__wrap container">
         <div class="inner__search--wrap">
@@ -107,9 +110,61 @@
 
   </header>
 
-
-  <!-- Content -->
+  <!-- CONTENT -->
   {% block content %}{% endblock content %}
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <!-- Footer-top -->
+    <div class="footer-top">
+      <ul class="footer__items">
+        <li class="footer__item"><a href="#">홈페이지</a></li>
+        <li class="footer__item"><a href="#">이용약관</a></li>
+        <li class="footer__item"><a href="#">개인정보취급방침</a></li>
+        <li class="footer__item"><a href="#">쇼핑몰 이용안내</a></li>
+      </ul>
+    </div>
+    <!-- Footer-body -->
+    <div class="footer-body">
+      <div class="footer__logo">juntooling</div>
+      <div class="footer__info">
+        <p class="footer__info__texts">
+          <span><span class="accent">회사명:</span> 준툴링</span>
+          <span><span class="accent">대표자:</span> 김석기</span>
+          <span><span class="accent">팩스:</span> 070-8285-5398</span>
+          <span><span class="accent">주소:</span> 경기도 양주시 덕정길 47 (덕정동) 목수들의세상</span>
+        </p>
+        <p class="footer__info__texts">
+          <span><span class="accent">사업자등록번호:</span> 124-65-00339</span>
+          <span><span class="accent">통신판매업 신고:</span> 2020-경기양주-0148 [사업자정보확인]</span>
+          <span><span class="accent">개인정보책임 관리자:</span> 김석기 (seokki67@naver.com)</span>
+        </p>
+      </div>
+      <div class="footer__tel">
+        <p>대표전화 <span>010-2208-0909</span></p>
+      </div>
+      <div class="footer__time">
+        <p>mon-fri 09:00 ~ 17:30 / lunch 12:00 ~ 13:00 토,일, 공휴일 휴무</p>
+      </div>
+      <div class="footer__sns">
+        <button class="footer__sns__btn" style="color: #3b5998"><i class="fa-brands fa-facebook"></i></button>
+        <button class="footer__sns__btn" style="background: -webkit-linear-gradient(#feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+        <button class="footer__sns__btn" style="color: #c4302b">
+          <i class="fa-brands fa-youtube"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Footer-bottom -->
+    <div class="footer-bottom">
+      copyright © <span>juntooling.</span> all rights reserved.
+    </div>
+
+  </footer>
 
 </body>
 
