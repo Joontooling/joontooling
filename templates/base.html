@@ -1,20 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  </head>
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Fontawesome -->
+  <script defer src="https://kit.fontawesome.com/3ef4088aa9.js" crossorigin="anonymous"></script>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- reset CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <!-- Main JS -->
+  <script defer src="{% static 'js/main.js' %}"></script>
+</head>
 
-  <body>
+<body>
 
-    <!-- Content -->
-    {% block content %}{% endblock content %}
+  <!--HEADER -->
+  <header class="header">
 
-  </body>
+    <!--Nav -->
+    <nav class="nav">
+      <div class="nav-wrapper">
+        <ul class="nav__items container">
+          <li class="nav__item"><a href="#">회원가입</a></li>
+          <li class="nav__item"><a href="#">로그인</a></li>
+          <li class="nav__item"><a href="#">마이쇼핑</a></li>
+          <li class="nav__item"><a href="#">커뮤니티</a></li>
+        </ul>
+      </div>
+
+      <!-- Inner -->
+      <div class="inner container">
+        <!-- inner-search -->
+        <div class="inner__wrap">
+          <div class="inner__search--wrap">
+            <div class="inner__logo">준툴링</div>
+            <div class="inner__search">
+              <input type="text" placeholder="검색어를 입력하세요.">
+              <button class="inner__search__icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div class="inner__btns">
+            <button class="inner__btn">
+              <i class="fa-solid fa-basket-shopping"></i>
+            </button>
+            <button class="inner__btn accent">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+        </div>
+        <!-- inner-menu -->
+        <div class="inner__menu">
+          <button class="inner__menu__icon">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="inner__menu__items">
+            <li class="inner__menu__item"><a href="#">베스트</a></li>
+            <li class="inner__menu__item"><a href="#">신상품</a></li>
+            <li class="inner__menu__item"><a href="#">준엔지니어링</a></li>
+            <li class="inner__menu__item"><a href="#">목공기계</a></li>
+            <li class="inner__menu__item"><a href="#">목공구/수공구</a></li>
+            <li class="inner__menu__item"><a href="#">부품</a></li>
+            <li class="inner__menu__item"><a href="#">기타</a></li>
+            <li class="inner__menu__item"><a href="#">마끼다</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav id="nav--fixed">
+      <div class="inner__wrap container">
+        <div class="inner__search--wrap">
+          <button class="inner__menu__icon">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="inner__logo">준툴링</div>
+          <div class="inner__search">
+            <input type="text" placeholder="검색어를 입력하세요.">
+            <button class="inner__search__icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+        <div class="inner__btns">
+          <button class="inner__btn">
+            <i class="fa-solid fa-basket-shopping"></i>
+          </button>
+          <button class="inner__btn accent">
+            <i class="fa-regular fa-user"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+
+  <!-- Content -->
+  {% block content %}{% endblock content %}
+
+</body>
 
 </html>

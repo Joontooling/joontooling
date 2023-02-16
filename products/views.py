@@ -3,7 +3,10 @@ from .form import ProductsForm, ProductsInfoForm
 from .models import Products, ProductsInfo
 
 
-# Create your views here.
+# 템플릿 확인용
+def main(request):
+    return render(request, 'products/main.html')
+
 def index(request):
 
     return render(request, "products/index.html")
