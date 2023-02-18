@@ -225,6 +225,10 @@ button {
   border-radius: 16px;
 }
 
+.category__wrap.active {
+  display: block;
+}
+
 .category__wrap__title {
   font-size: 1.1rem;
   font-weight: bold;
