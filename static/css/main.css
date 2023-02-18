@@ -1,9 +1,11 @@
 /* VARIAVLE */
 :root {
+  --color-main: #243763;
+  --color-pink: #ffc6d3;
+  --color-sky: #82c3ec;
   --color-white: #ffffff;
   --color-black: #000;
   --color-font: #1d1d1d;
-  --color-main: #243763;
   --color-gray: #b7b7b7;
   --color-dark-gray: #6e6e6e;
   --color-light-gray: #f5f5f5;
@@ -173,6 +175,7 @@ button {
   display: flex;
   align-items: center;
   padding: 20px 0;
+  position: relative;
 }
 
 .inner__menu__icon {
@@ -207,6 +210,124 @@ button {
 
 .inner__menu__item:first-child:before {
   content: none;
+}
+
+/* header-inner-category */
+.category__wrap {
+  display: none;
+  position: absolute;
+  top: 85.5px;
+  left: 0;
+  background-color: var(--color-white);
+  width: 100%;
+  padding: 32px 0;
+  border: 1px solid var(--color-black);
+  border-radius: 16px;
+}
+
+.category__wrap__title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 32px 16px;
+}
+
+.category__content {
+  display: flex;
+  padding: 0 32px 16px;
+  margin-top: 16px;
+}
+
+.category {
+  width: 180px;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.category__title {
+  width: 100%;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.category__title:first-child {
+  padding-left: 0;
+}
+
+.category__item {
+  margin: 18px 0;
+}
+
+.category__item:hover .category__item__title {
+  text-decoration: underline;
+}
+
+.category__item:hover .sub-category {
+  display: block;
+  text-decoration: none;
+}
+
+.sub-category {
+  display: none;
+}
+
+.sub-category__item {
+  margin: 16px 0;
+}
+
+.sub-category__item a {
+  opacity: 0.6;
+  transition: 300ms;
+}
+
+.sub-category__item a:hover {
+  opacity: 1;
+}
+
+.category__bottom {
+  margin: 32px;
+}
+
+.service__list {
+  display: flex;
+}
+
+.service__item {
+  margin-right: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.service__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  color: var(--color-white);
+  font-size: 2.5rem;
+}
+
+.service__item:nth-child(1) .service__icon {
+  background-color: var(--color-main);
+}
+
+.service__item:nth-child(2) .service__icon {
+  background-color: var(--color-pink);
+}
+
+.service__item:nth-child(3) .service__icon {
+  background-color: var(--color-sky);
+}
+
+.service__title {
+  margin-top: 8px;
+  color: var(--color-header);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* header-inner-menu-dropdown */
