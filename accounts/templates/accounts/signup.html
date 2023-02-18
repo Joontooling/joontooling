@@ -1,8 +1,102 @@
-<div class="wrapper" style="text-align: center;">
-  <h1>회원가입</h1>
-  <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" class="btn btn-primary" value="Sign Up">
-  </form>
-</div>
+{% load django_bootstrap5 %}
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="signup">
+    <header class="header_signup">
+      <div class="title_signup">
+        <a href="{% url 'products:index' %}" class="a_signup">JUNTOOLING</a>
+      </div>
+    </header>
+
+    <main class="container_signup">
+      <section class="contents_signup">
+        <div class="title2_wrap_signup">
+          <div class="title2_signup">회원가입</div>
+        </div>
+
+        <div class="title3_wrap_signup">
+          <div class="title3_signup">회원정보 입력</div>
+        </div>
+
+        <!-- 회원정보 입력 -->
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <label for="username">아이디</label>
+                <div class="signup-field">
+                  {% render_field form.username class="input_effect" placeholder="아이디를 입력해 주세요" type="text" id="username" %}
+                </div>
+
+                <label for="password">비밀번호</label>
+                <div class="signup-field">
+                  {% render_field form.password1 class="input_effect" placeholder="비밀번호를 입력해 주세요" type="password" id="password1" %}
+                </div>
+
+                <label for="password">비밀번호</label>
+                <div class="signup-field">
+                  {% render_field form.password2 class="input_effect" placeholder="비밀번호를 한 번 더 입력해 주세요" type="password" id="password2" %}
+                </div>
+
+                <label for="name">이름</label>
+                <div class="signup-field">
+                  {% render_field form.first_name class="input_effect" placeholder="이름을 입력해 주세요" type="text" id="first_name" %}
+                </div>
+
+                <label for="address">주소</label>
+                <div class="signup-field">
+                  {% render_field form.address class="input_effect" placeholder="주소" id="address" %}
+                </div>
+
+                <label for="phone_number">휴대폰번호</label>
+                <div class="signup-field">
+                  {% render_field form.phone_number class="input_effect" placeholder="휴대폰번호를 입력해 주세요" id="phone_number" %}
+                </div>
+
+                <label for="email">이메일</label>
+                <div class="signup-field">
+                  {% render_field form.email class="input_effect" placeholder="이메일을 입력해 주세요" type="email" id="email" %}
+                </div>
+
+                <label for="birth">생년월일</label>
+                <div class="signup-field">
+                  {% render_field form.birth class="input_effect" type="date" id='birth' %}
+                </div>
+
+                <label for="user_type">회원</label>
+                <div class="signup-field">
+                  {% render_field form.user_type class="input_effect" id='user_type' %}
+                </div>
+
+                <!-- 회원가입 버튼 -->
+                <div class="btn_wrap_signup">
+                  <button class="btn_signup">
+                    <span>회원가입</span>
+                  </button>
+                </div>
+            
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>

@@ -35,10 +35,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # apps
     'community',
     'accounts',
     'products',
+    # modules
     "django_bootstrap5",
+    'widget_tweaks',
+    # django default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
