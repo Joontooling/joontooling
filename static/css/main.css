@@ -1,6 +1,6 @@
 /* VARIAVLE */
 :root {
-  --color-white: #f5f5f5;
+  --color-white: #ffffff;
   --color-black: #000;
   --color-font: #1d1d1d;
   --color-main: #243763;
@@ -63,7 +63,7 @@ button {
 
 .nav__item a {
   padding: 0 16px;
-  font-size: 1rem;
+  font-size: 14px;
   color: var(--color-dark-gray);
 }
 
@@ -174,6 +174,7 @@ button {
   align-items: center;
   padding: 20px 0;
 }
+
 .inner__menu__icon {
   padding: 8px 11px;
   border: 1px solid var(--color-font);
@@ -182,18 +183,93 @@ button {
   cursor: pointer;
   margin-right: 2rem;
 }
+
 .inner__menu__items {
   display: flex;
   align-items: center;
 }
+
+.inner__menu__item {
+  position: relative;
+}
+
+.inner__menu__item:hover .dropdown {
+  display: block;
+}
+
 .inner__menu__item a {
   padding: 8px 16px;
 }
+
 .inner__menu__item::before {
   content: '·';
 }
+
 .inner__menu__item:first-child:before {
   content: none;
+}
+
+/* header-inner-menu-dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  background-color: var(--color-white);
+  width: 180px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dropdown__item {
+  position: relative;
+  padding: 12px 8px;
+  transition: 300ms;
+}
+
+.dropdown__item:hover {
+  background-color: var(--color-border);
+}
+
+.dropdown__item:first-child:hover {
+  border-radius: 7px 7px 0 0;
+}
+
+.dropdown__item:last-child:hover {
+  border-radius: 0 0 7px 7px;
+}
+
+.dropdown__item:hover .sub-dropdown {
+  display: block;
+}
+
+.sub-dropdown {
+  display: none;
+  position: absolute;
+  top: -1px;
+  right: -160px;
+  background-color: var(--color-white);
+  width: 160px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.sub-dropdown__item {
+  padding: 12px 8px;
+  transition: 300ms;
+}
+
+.sub-dropdown__item:hover {
+  background-color: var(--color-border);
+}
+
+.sub-dropdown__item:first-child:hover {
+  border-radius: 7px 7px 0 0;
+}
+
+.sub-dropdown__item:last-child:hover {
+  border-radius: 0 0 7px 7px;
 }
 
 /* header-nav-fixed */
