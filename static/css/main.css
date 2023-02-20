@@ -233,11 +233,6 @@ button {
   display: block;
 }
 
-.category__wrap.active .inner__menu__icon {
-  background-color: #000;
-  color: white;
-}
-
 .category__wrap__title {
   font-size: 1.1rem;
   font-weight: bold;
