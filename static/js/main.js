@@ -1,11 +1,18 @@
+// Header
 const header = document.querySelector('.header');
 const headerHeight = header.offsetHeight;
-const navHeight = 70;
+const main = document.querySelector('main');
 
+// Navigation
 const navi = document.querySelector('.nav');
 const naviWrapper = navi.querySelector('.nav-wrapper');
 const innerMenu = navi.querySelector('.inner__menu');
+const navHeight =
+  navi.offsetHeight -
+  innerMenu.offsetHeight -
+  naviWrapper.querySelector('.nav__items').offsetHeight;
 
+// Category
 const categoryMenuIcon = document.querySelector('.inner__menu__icon');
 const category = document.querySelector('.category__wrap');
 
@@ -16,9 +23,11 @@ window.addEventListener('scroll', () => {
   if (scrollLocation > headerHeight - navHeight) {
     showNavigation('none');
     header.classList.add('header--fixed');
+    main.style.paddingTop = `${headerHeight}px`;
   } else {
     showNavigation('block');
     header.classList.remove('header--fixed');
+    main.style.removeProperty('padding');
   }
 });
 function showNavigation(display) {
