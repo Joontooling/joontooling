@@ -10,7 +10,6 @@ const categoryMenuIcon = document.querySelector('.inner__menu__icon');
 const category = document.querySelector('.category__wrap');
 
 const categoryMenuIcons = document.querySelectorAll('.inner__menu__icon');
-const category = document.querySelector('.category__wrap');
 
 window.addEventListener('scroll', () => {
   let scrollLocation = document.documentElement.scrollTop;

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- PRODUCT-TOP -->
+<main class="product-top">
+  <div class="container">
+
+    <!-- Product Images -->
+    <div class="product-imgs">
+      <div class="image-view"></div>
+      <div class="image-container"></div>
+    </div>
+
+    <!-- Product Infomation -->
+    <div class="product-info">
+      <!-- product info title -->
+      <div class="product__title">
+        <h1 class="title">준 에폭시 슈나이더테이블쇼 원형톱 목공작업대 테이블소테이블쇼 톱다이 J-S02</h1>
+        <h1 class="price">1,430,000원</h1>
+      </div>
+      <!-- product info table -->
+      <table class="product-table">
+        <tr>
+          <td>적립금</td>
+          <td>1%(14,300원)</td>
+        </tr>
+        <tr>
+          <td>상품코드</td>
+          <td>J-SO</td>
+        </tr>
+        <tr>
+          <td>배송비</td>
+          <td>3,000원(80,000원 이상 구매 시 무료)</td>
+        </tr>
+      </table>
+      <!-- product info options -->
+      <div class="product-options">
+        <p>추가상품</p>
+        <form>
+          <select name="addProduct" id="addProduct">
+            <option>[선택] 옵션을 선택해 주세요</option>
+            <option value="name">선택옵션이름</option>
+            <option value="name">선택옵션이름</option>
+            <option value="name">선택옵션이름</option>
+          </select>
+        </form>
+        <span>선택하신 상품은 메인 상품과 함께 결제가 가능합니다.</span>
+      </div>
+      <p class="total-price"><span>총 상품금액:</span> 1,430,000원</p>
+      <!-- product info buttons -->
+      <div class="product-btns">
+        <button class="product-btn">장바구니</button>
+        <button class="product-btn">바로구매</button>
+      </div>
+      <p class="npay-btn"><button>pay 구매</button></p>
+    </div>
+
+  </div>
+</main>
+
+<!-- BANNER -->
+<section class="banner container">
+  <img src="https://pumstershop.com/img/event/event01-detail-thum.jpg" alt="event banner">
+</section>
+
+{% endblock content %}
