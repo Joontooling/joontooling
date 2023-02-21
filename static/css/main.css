@@ -51,10 +51,10 @@ button {
 /* HEADER */
 .header {
   border: 1px solid var(--color-border);
+  z-index: 9;
 }
 
 .header--fixed {
-  z-index: 9;
   position: fixed;
   top: 0;
   left: 0;
@@ -348,6 +348,7 @@ button {
 
 /* header-inner-menu-dropdown */
 .dropdown {
+  z-index: 3;
   display: none;
   position: absolute;
   top: 25px;
