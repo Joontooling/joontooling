@@ -1,7 +1,11 @@
+@import 'accounts/accounts.css';
+@import 'products/detail.css';
+
 /* VARIAVLE */
 :root {
   --color-main: #243763;
   --color-pink: #ffc6d3;
+  --color-accent: #ff6e31;
   --color-sky: #82c3ec;
   --color-white: #ffffff;
   --color-black: #000;
@@ -47,9 +51,13 @@ button {
 /* HEADER */
 .header {
   border: 1px solid var(--color-border);
+  z-index: 9;
 }
+
 .header--fixed {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: white;
 }
@@ -340,6 +348,7 @@ button {
 
 /* header-inner-menu-dropdown */
 .dropdown {
+  z-index: 3;
   display: none;
   position: absolute;
   top: 25px;

@@ -4,8 +4,8 @@ from .models import Products, ProductsInfo
 
 
 # 템플릿 확인용
-def main(request):
-    return render(request, 'products/main.html')
+def detail(request):
+    return render(request, 'products/detail.html')
 
 def index(request):
 
