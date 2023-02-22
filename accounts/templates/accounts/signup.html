@@ -60,8 +60,11 @@
 
                 <label for="address">주소</label>
                 <div class="signup-field">
-                  {% render_field form.address class="input_effect" placeholder="주소" id="address" %}
+                    {% render_field form.address class="input_effect" placeholder="주소" id="address" %}
+                    <button onclick="searchAddress()">도로명 주소 찾기</button>
                 </div>
+                
+                <p>상세 주소를 추가해 주세요</p>
 
                 <label for="phone_number">휴대폰번호</label>
                 <div class="signup-field">
@@ -99,4 +102,20 @@
 
   </div>
 </body>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+
+  function searchAddress() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+          
+          // 도로주소
+          roadAddress = data.roadAddress;
+
+          document.getElementById("address").value = roadAddress;
+        }
+    }).open();
+  }
+</script>
 </html>
