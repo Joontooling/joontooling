@@ -1,1 +1,58 @@
-<h1>준틀링 상품</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="container product-index-default">
+  <!-- Swiper -->
+  <div class="swiper product-index-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://pumstershop.com/img/main/event01.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://pumstershop.com/img/main/event01.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://pumstershop.com/img/main/event01.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="https://pumstershop.com/img/main/event01.jpg" alt=""></div>
+    </div>
+    <div class="swiper-button-next">
+      <i class="fa-solid fa-arrow-right-long"></i>
+    </div>
+    <div class="swiper-button-prev">
+      <i class="fa-solid fa-arrow-left-long"></i>
+    </div>
+  </div>
+
+  <!-- BEST 상품 -->
+  <div class="product-index-title">
+    <div class="best__title">
+      <p>BEST 상품</p>
+    </div>
+  </div>
+
+  <!-- NEW 상품 -->
+  <div class="product-index-title">
+    <div class="new__title">
+      <p>NEW 상품</p>
+    </div>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".product-index-swiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+  });
+</script>
+{% endblock content %}
