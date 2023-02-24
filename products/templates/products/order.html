@@ -110,5 +110,122 @@
     </div>
   </section>
 
+  <!-- COUPON -->
+  <section class="coupon">
+    <div class="title">쿠폰/마일리지</div>
+    <div class="contents">
+      <table>
+        <tr>
+          <th>MY 포인트</th>
+          <td>
+            <input type="text">
+            <p>P <span>(총 사용가능 MY 포인트: 10,000P)</span></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- PAY -->
+  <section class="pay">
+    <div class="title">결제수단</div>
+    <div class="contents">
+
+      <!-- pay-tab-area -->
+      <div class="pay-tab-area">
+        <input type="radio" name="pay-tabs" id="무통장입금" checked>
+        <label for="무통장입금">무통장입금</label>
+        <input type="radio" name="pay-tabs" id="신용카드">
+        <label for="신용카드">신용카드</label>
+        <input type="radio" name="pay-tabs" id="가상계좌">
+        <label for="가상계좌">가상계좌</label>
+        <input type="radio" name="pay-tabs" id="계좌이체">
+        <label for="계좌이체">계좌이체</label>
+        <!-- 무통장입금 -->
+        <div class="pay-tab-content" id="무통장입금">
+          <table>
+            <!-- 입금자명 -->
+            <tr>
+              <th>입금자명</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+            <!-- 입금은행 -->
+            <tr>
+              <th>입금은행</th>
+              <td>
+                <select name="">
+                  <option value="">선택해주세요.</option>
+                  <option value="">국민은행: 297401-04-117693 김석기(고암상사)</option>
+                </select>
+              </td>
+            </tr>
+            <!-- 현금영수증 -->
+            <tr class="receipt">
+              <th>현금영수증 발행</th>
+              <td>
+                <input type="radio" name="receipt-tabs" id="개인" checked>
+                <label for="개인">개인</label>
+                <input type="radio" name="receipt-tabs" id="사업자">
+                <label for="사업자">사업자</label>
+
+                <div class="receipt-tab-content" id="개인">
+                  <input type="text" placeholder="010"> -
+                  <input type="text"> -
+                  <input type="text">
+                </div>
+                <div class="receipt-tab-content" id="사업자">
+                  <input type="text" placeholder="사업자번호">
+                </div>
+              </td>
+            </tr>
+            <!-- 휴대전화 -->
+            <tr>
+              <th></th>
+              <td>
+
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- 신용카드 -->
+        <div class="pay-tab-content" id="신용카드">신용카드</div>
+        <!-- 가상계좌 -->
+        <div class="pay-tab-content" id="가상계좌">가상계좌</div>
+        <!-- 계좌이체 -->
+        <div class="pay-tab-content" id="계좌이체">계좌이체</div>
+      </div>
+
+      <!-- pay-info -->
+      <div class="pay-info">
+        <div class="items">
+          <div class="item">
+            <p>상품금액</p>
+            <p>3,045,000원</p>
+          </div>
+          <div class="item">
+            <p>배송비</p>
+            <p>+ 0원</p>
+          </div>
+          <div class="item">
+            <p>할인금액</p>
+            <p>- 0원</p>
+          </div>
+          <div class="item">
+            <p>결제 예정 금액</p>
+            <p>3,045,000원</p>
+          </div>
+          <div class="item">
+            <p>적립 예정 포인트</p>
+            <span>30,450P</span>
+          </div>
+        </div>
+        <button class="pay-btn">결제하기</button>
+      </div>
+
+    </div>
+  </section>
+
 </div>
 {% endblock content %}
