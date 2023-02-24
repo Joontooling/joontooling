@@ -4,6 +4,7 @@
 /* PRODUCTS */
 @import 'products/detail.css';
 @import 'products/basket.css';
+@import 'products/order.css';
 
 /* VARIAVLE */
 :root {
@@ -33,6 +34,7 @@ body {
   font-size: 16px;
   line-height: 1;
   color: var(--color-font);
+  min-width: 1180px;
 }
 
 a {
@@ -43,6 +45,7 @@ a {
 .container {
   position: relative;
   max-width: 1180px;
+  min-width: 1180px;
   margin: 0 auto;
 }
 

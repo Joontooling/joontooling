@@ -1,0 +1,82 @@
+/* ORDER-TOP */
+.order-info {
+  border-bottom: 1.5px solid var(--color-border);
+}
+.order-price {
+  border: 1.5px solid var(--color-border);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+.order-price .titles {
+  border-bottom: none;
+}
+.order-price .contents {
+  padding-top: 0;
+}
+
+/* BUYER-INFO */
+.buyer-info .title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.8rem 0;
+  border-bottom: 3px solid var(--color-black);
+}
+.buyer-info .contents {
+  padding: 1rem 0;
+}
+.buyer-info .contents table {
+  width: 100%;
+}
+.buyer-info .contents table tr th {
+  padding: 1.5rem 0;
+  text-align: start;
+  vertical-align: middle;
+}
+.buyer-info .contents table tr th span {
+  color: var(--color-accent);
+}
+.buyer-info .contents table tr td input {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+/* address */
+.buyer-info .contents table tr:nth-child(2) td ul li {
+  margin: 0.8rem 0;
+}
+.buyer-info .contents table tr:nth-child(2) td ul li:first-child input {
+  width: 20%;
+}
+.buyer-info .contents table tr:nth-child(2) td ul li:first-child button {
+  background-color: var(--color-main);
+  border-radius: 8px;
+  height: 3rem;
+  padding: 0 2rem;
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+/* phone */
+.buyer-info .contents table tr:nth-child(3) td input {
+  width: 20%;
+  margin: 0 0.5rem;
+}
+.buyer-info .contents table tr:nth-child(3) td input:first-child {
+  margin-left: 0;
+}
+/* request */
+.buyer-info .contents table tr td textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.buyer-info .contents table tr td textarea:focus {
+  outline: none;
+}
