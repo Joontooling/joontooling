@@ -1,5 +1,9 @@
+/* ACCOUNTS */
 @import 'accounts/accounts.css';
+
+/* PRODUCTS */
 @import 'products/detail.css';
+@import 'products/basket.css';
 
 /* VARIAVLE */
 :root {
@@ -38,7 +42,7 @@ a {
 
 .container {
   position: relative;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -49,8 +53,8 @@ button {
 
 /* HEADER */
 .header {
-  border: 1px solid var(--color-border);
   z-index: 9;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header--fixed {
@@ -433,7 +437,8 @@ button {
 
 /* footer-top */
 .footer-top {
-  border: 1px solid var(--color-main);
+  border-top: 1px solid var(--color-main);
+  border-bottom: 1px solid var(--color-main);
 }
 
 .footer__items {

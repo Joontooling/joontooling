@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+  <!-- BASKET-TITLE -->
+  <div class="basket-title">
+    <h1 class="title">장바구니</h1>
+    <h2 class="step">
+      <span class="active">01 장바구니 ></span>
+      <span> 02 주문서 작성 ></span>
+      <span> 03 주문 완료</span>
+    </h2>
+  </div>
+
+  <!-- BASKET-INFO -->
+  <section class="basket-info">
+    <div class="titles">
+      <div class="check">
+        <input type="checkbox" id="checkboxTop">
+        <label for="checkboxTop"></label>
+      </div>
+      <div class="title biInfo">상품정보</div>
+      <div class="title biCnt">수량</div>
+      <div class="title biPrice">판매가</div>
+      <div class="title biDisc">할인금액</div>
+      <div class="title biPoint">MY포인트</div>
+    </div>
+    <div class="contents">
+      <div class="content check">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+      </div>
+      <div class="content biInfo">
+        <img src="https://juntooling.com/web/product/small/202111/7a5a2d420395bfd413db8b9b6220898b.jpg"
+          alt="product-image">
+        <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용</p>
+      </div>
+      <div class="content biCnt"><button>-</button><span>1</span><button>+</button></div>
+      <div class="content biPrice">3,045,000원</div>
+      <div class="content biDisc">-</div>
+      <div class="content biPoint">6,000P</div>
+    </div>
+  </section>
+
+  <!-- BASKET-PRICE -->
+  <section class="basket-price">
+    <div class="titles">
+      <div class="title bpOrder">총 주문금액</div>
+      <div class="title bpDisc">총 할인금액</div>
+      <div class="title bpDeli">총 배송비</div>
+      <div class="title bpPay">결제예정금액</div>
+    </div>
+    <div class="contents">
+      <div class="content bpOrder">3,045,000원</div>
+      <div class="content bpDisc">- 0원</div>
+      <div class="content bpDeli">+ 0원</div>
+      <div class="content bpPay accent">3,045,000원</div>
+    </div>
+  </section>
+
+  <!-- BASKET-BUTTONS -->
+  <div class="basket-btns">
+    <button class="choice-btn">선택상품주문</button>
+    <button class="total-btn">전체상품주문</button>
+  </div>
+
+</div>
+{% endblock content %}

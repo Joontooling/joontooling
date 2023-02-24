@@ -3,13 +3,17 @@ from .form import ProductsForm, ProductsInfoForm
 from .models import Products, ProductsInfo
 
 
-# 템플릿 확인용
+def index(request):
+    return render(request, "products/index.html")
+
+
 def detail(request):
     return render(request, 'products/detail.html')
 
-def index(request):
 
-    return render(request, "products/index.html")
+def basket(request):
+    return render(request, 'products/basket.html')
+
 
 def product_create(request):
     if request.method == "POST":
