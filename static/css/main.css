@@ -5,6 +5,7 @@
 @import 'products/detail.css';
 @import 'products/basket.css';
 @import 'products/order.css';
+@import 'products/order_done.css';
 
 /* VARIAVLE */
 :root {
@@ -414,6 +415,11 @@ button {
 
 .sub-dropdown__item:last-child:hover {
   border-radius: 0 0 7px 7px;
+}
+
+.dropdown__item.item--single:hover,
+.sub-dropdown__item.item--single:hover {
+  border-radius: 7px;
 }
 
 /* header-nav-fixed */

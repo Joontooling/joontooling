@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <!-- ORDER-DONE -->
+  <main class="order-done">
+
+    <!-- TITLE -->
+    <div class="basket-title order-done-title">
+      <h1 class="title">
+        주문이 완료되었습니다.
+        <span>주문번호 - 0000000 -</span>
+      </h1>
+      <h2 class="step">
+        <span>01 장바구니 ></span>
+        <span> 02 주문서 작성 ></span>
+        <span class="active"> 03 주문 완료</span>
+      </h2>
+    </div>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+      <h4 class="title">주문상품</h4>
+      <div class="content">
+        <div class="top-wrap">
+          <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용 (총 상품 1 개)</p>
+          <span class="products-btn">👇</span>
+        </div>
+        <div class="line"></div>
+        <div class="bottom">
+          <img src="https://juntooling.com/web/product/small/202111/7a5a2d420395bfd413db8b9b6220898b.jpg"
+            alt="product-image">
+          <div class="text">
+            <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용</p>
+            <p><span>3,045,000</span> 원 / 1개</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT -->
+    <section class="payment">
+      <h4 class="title">결제정보</h4>
+      <div class="content">
+        <div class="item">
+          <p>주문금액</p>
+          <p> <span>3,045,000</span> 원</p>
+        </div>
+        <div class="item">
+          <p>할인금액</p>
+          <p> <span>0</span> 원</p>
+        </div>
+        <div class="line"></div>
+        <div class="item">
+          <p>최종결제금액</p>
+          <p> <span class="accent">3,045,000</span> 원</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location">
+      <h4 class="title">배송지 정보</h4>
+      <div class="content">
+        <p><span>받는 사람</span>준툴링 / 010-1234-5678</p>
+        <p><span>받는 주소</span>경기도 양주시 덕정길 47</p>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <div class="btns">
+      <button>쇼핑계속하기</button>
+      <button class="btn-main">주문내역상세</button>
+    </div>
+
+  </main>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script>
+  const productsShowBtn = document.querySelector('.products-btn');
+  const products = document.querySelector('.bottom');
+
+  productsShowBtn.addEventListener('click', () => {
+    products.classList.toggle('show');
+    buttonToggle();
+  })
+
+  function buttonToggle() {
+    if (productsShowBtn.innerText === '👇') {
+      productsShowBtn.innerText = '👆';
+    } else {
+      productsShowBtn.innerText = '👇';
+    }
+  }
+</script>
+{% endblock js %}
