@@ -36,6 +36,7 @@
   font-size: 35px;
   color: var(--color-main);
   transition: all 0.3s ease-out;
+  text-shadow: 3px 2px 3.2px #a8a8a8;
 }
 
 /* swiper slide button hover */
@@ -56,11 +57,45 @@
 .product-index-title .new__title {
   display: flex;
   justify-content: center;
+  margin-bottom: 5rem;
 }
 
 .product-index-title .best__title p,
 .product-index-title .new__title p {
   font-size: 34px;
   font-weight: bold;
-  text-shadow: 3px 2px 3.2px #cccccc;
+  text-shadow: 3px 2px 3.2px #bbbbbb;
+}
+
+.product-index-swiper-2 .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.product-index-swiper-2 .swiper-slide {
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.product-index-swiper-2 .swiper-slide img {
+  display: block;
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(206, 206, 206);
+  box-shadow: 1px 1px 8px 0px #cecece;
+}
+
+.product-index-swiper-2 .swiper-slide .product-index-product-title {
+  font-size: 19px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  line-height: 23px;
+}
+
+.product-index-swiper-2 .swiper-slide .product-index-product-price {
+  font-weight: bold;
 }
