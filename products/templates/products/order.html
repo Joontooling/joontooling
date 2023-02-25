@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+  <!-- ORDER-TITLE -->
+  <div class="basket-title order-title">
+    <h1 class="title">주문서 작성</h1>
+    <h2 class="step">
+      <span>01 장바구니 ></span>
+      <span class="active"> 02 주문서 작성 ></span>
+      <span> 03 주문 완료</span>
+    </h2>
+  </div>
+
+  <!-- ORDER-INFO -->
+  <section class="basket-info order-info">
+    <div class="titles">
+      <div class="check">
+        <input type="checkbox" id="checkboxTop">
+        <label for="checkboxTop"></label>
+      </div>
+      <div class="title biInfo">상품정보</div>
+      <div class="title biCnt">수량</div>
+      <div class="title biPrice">판매가</div>
+      <div class="title biDisc">할인금액</div>
+      <div class="title biPoint">MY포인트</div>
+    </div>
+    <div class="contents">
+      <div class="content check">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+      </div>
+      <div class="content biInfo">
+        <img src="https://juntooling.com/web/product/small/202111/7a5a2d420395bfd413db8b9b6220898b.jpg"
+          alt="product-image">
+        <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용</p>
+      </div>
+      <div class="content biCnt"><span>1</span></div>
+      <div class="content biPrice">3,045,000원</div>
+      <div class="content biDisc">-</div>
+      <div class="content biPoint">6,000P</div>
+    </div>
+  </section>
+
+  <!-- ORDER-PRICE -->
+  <section class="basket-price order-price">
+    <div class="titles">
+      <div class="title bpOrder">총 주문금액</div>
+      <div class="title bpDisc">총 할인금액</div>
+      <div class="title bpDeli">총 배송비</div>
+      <div class="title bpPay">결제예정금액</div>
+    </div>
+    <div class="contents">
+      <div class="content bpOrder">3,045,000</div>
+      <div class="content bpDisc">0</div>
+      <div class="content bpDeli">0</div>
+      <div class="content bpPay accent">3,045,000원</div>
+    </div>
+  </section>
+
+  <!-- BUYER-INFO -->
+  <section class="buyer-info">
+    <div class="title">주문자 정보</div>
+    <div class="contents">
+      <table>
+        <!-- name -->
+        <tr>
+          <th>주문하시는 분<span> *</span></th>
+          <td><input type="text" width="100%"></td>
+        </tr>
+        <!-- address -->
+        <tr>
+          <th>주소<span> *</span></th>
+          <td>
+            <ul>
+              <li>
+                <input type="text">
+                <button>주소검색</button>
+              </li>
+              <li><input type="text"></li>
+              <li><input type="text"></li>
+            </ul>
+          </td>
+        </tr>
+        <!-- phone -->
+        <tr>
+          <th>휴대전화<span> *</span></th>
+          <td>
+            <input type="text"> -
+            <input type="text"> -
+            <input type="text">
+          </td>
+        </tr>
+        <!-- email -->
+        <tr>
+          <th>이메일<span> *</span></th>
+          <td>
+            <input type="text">
+          </td>
+        </tr>
+        <!-- request -->
+        <tr>
+          <th>배송 시 요청사항</th>
+          <td>
+            <textarea cols="30" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- COUPON -->
+  <section class="coupon">
+    <div class="title">쿠폰/마일리지</div>
+    <div class="contents">
+      <table>
+        <tr>
+          <th>MY 포인트</th>
+          <td>
+            <input type="text">
+            <p>P <span>(총 사용가능 MY 포인트: 10,000P)</span></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- PAY -->
+  <section class="pay">
+    <div class="title">결제수단</div>
+    <div class="contents">
+
+      <!-- pay-tab-area -->
+      <div class="pay-tab-area">
+        <input type="radio" name="pay-tabs" id="무통장입금" checked>
+        <label for="무통장입금">무통장입금</label>
+        <input type="radio" name="pay-tabs" id="신용카드">
+        <label for="신용카드">신용카드</label>
+        <input type="radio" name="pay-tabs" id="가상계좌">
+        <label for="가상계좌">가상계좌</label>
+        <input type="radio" name="pay-tabs" id="계좌이체">
+        <label for="계좌이체">계좌이체</label>
+        <!-- 무통장입금 -->
+        <div class="pay-tab-content" id="무통장입금">
+          <table>
+            <!-- 입금자명 -->
+            <tr>
+              <th>입금자명</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+            <!-- 입금은행 -->
+            <tr>
+              <th>입금은행</th>
+              <td>
+                <select name="">
+                  <option value="">선택해주세요.</option>
+                  <option value="">국민은행: 297401-04-117693 김석기(고암상사)</option>
+                </select>
+              </td>
+            </tr>
+            <!-- 현금영수증 -->
+            <tr class="receipt">
+              <th>현금영수증 발행</th>
+              <td>
+                <input type="radio" name="receipt-tabs" id="개인" checked>
+                <label for="개인">개인</label>
+                <input type="radio" name="receipt-tabs" id="사업자">
+                <label for="사업자">사업자</label>
+
+                <div class="receipt-tab-content" id="개인">
+                  <input type="text" placeholder="010"> -
+                  <input type="text"> -
+                  <input type="text">
+                </div>
+                <div class="receipt-tab-content" id="사업자">
+                  <input type="text" placeholder="사업자번호">
+                </div>
+              </td>
+            </tr>
+            <!-- 휴대전화 -->
+            <tr>
+              <th></th>
+              <td>
+
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- 신용카드 -->
+        <div class="pay-tab-content" id="신용카드">신용카드</div>
+        <!-- 가상계좌 -->
+        <div class="pay-tab-content" id="가상계좌">가상계좌</div>
+        <!-- 계좌이체 -->
+        <div class="pay-tab-content" id="계좌이체">계좌이체</div>
+      </div>
+
+      <!-- pay-info -->
+      <div class="pay-info">
+        <div class="items">
+          <div class="item">
+            <p>상품금액</p>
+            <p>3,045,000원</p>
+          </div>
+          <div class="item">
+            <p>배송비</p>
+            <p>+ 0원</p>
+          </div>
+          <div class="item">
+            <p>할인금액</p>
+            <p>- 0원</p>
+          </div>
+          <div class="item">
+            <p>결제 예정 금액</p>
+            <p>3,045,000원</p>
+          </div>
+          <div class="item">
+            <p>적립 예정 포인트</p>
+            <span>30,450P</span>
+          </div>
+        </div>
+        <button class="pay-btn">결제하기</button>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+{% endblock content %}

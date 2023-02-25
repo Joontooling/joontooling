@@ -4,6 +4,8 @@
 /* PRODUCTS */
 @import 'products/detail.css';
 @import 'products/basket.css';
+@import 'products/order.css';
+@import 'products/order_done.css';
 
 /* VARIAVLE */
 :root {
@@ -33,6 +35,7 @@ body {
   font-size: 16px;
   line-height: 1;
   color: var(--color-font);
+  min-width: 1180px;
 }
 
 a {
@@ -43,6 +46,7 @@ a {
 .container {
   position: relative;
   max-width: 1180px;
+  min-width: 1180px;
   margin: 0 auto;
 }
 
@@ -411,6 +415,11 @@ button {
 
 .sub-dropdown__item:last-child:hover {
   border-radius: 0 0 7px 7px;
+}
+
+.dropdown__item.item--single:hover,
+.sub-dropdown__item.item--single:hover {
+  border-radius: 7px;
 }
 
 /* header-nav-fixed */

@@ -14,6 +14,12 @@ def detail(request):
 def basket(request):
     return render(request, 'products/basket.html')
 
+def order(request):
+    return render(request, 'products/order.html')
+
+def order_done(request):
+    return render(request, 'products/order_done.html')
+
 
 def product_create(request):
     if request.method == "POST":

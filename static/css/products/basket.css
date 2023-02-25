@@ -18,6 +18,7 @@
 
 .basket-title .step span.active {
   color: var(--color-black);
+  font-weight: bold;
 }
 
 /* BASKET-INFO */

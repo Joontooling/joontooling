@@ -12,7 +12,8 @@ const innerMenu = navi.querySelector('.inner__menu');
 const navHeight =
   navi.offsetHeight -
   innerMenu.offsetHeight -
-  naviWrapper.querySelector('.nav__items').offsetHeight;
+  naviWrapper.querySelector('.nav__items').offsetHeight +
+  3;
 
 // Category
 const categoryMenuIcon = document.querySelector('.inner__menu__icon');
