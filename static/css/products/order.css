@@ -1,0 +1,258 @@
+/* ORDER-TOP */
+.order-info {
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.order-price {
+  border: 1.5px solid var(--color-border);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.order-price .titles {
+  border-bottom: none;
+}
+
+.order-price .contents {
+  padding-top: 0;
+}
+
+/* BUYER-INFO */
+.buyer-info .title,
+.coupon .title,
+.pay .title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.8rem 0;
+  border-bottom: 3px solid var(--color-black);
+}
+
+.buyer-info .contents,
+.coupon .contents {
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+}
+
+.buyer-info .contents table,
+.coupon .contents table {
+  width: 100%;
+}
+
+.buyer-info .contents table tr th,
+.coupon .contents table tr th {
+  text-align: start;
+  vertical-align: middle;
+}
+
+.buyer-info .contents table tr th span {
+  color: var(--color-accent);
+}
+
+.buyer-info .contents table tr td input,
+.coupon .contents table tr td input {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* BUYER-INFO / address */
+.buyer-info .contents table tr:nth-child(2) td ul li {
+  margin: 0.8rem 0;
+}
+
+.buyer-info .contents table tr:nth-child(2) td ul li:first-child input {
+  width: 20%;
+}
+
+.buyer-info .contents table tr:nth-child(2) td ul li:first-child button {
+  background-color: var(--color-main);
+  border-radius: 8px;
+  height: 3rem;
+  padding: 0 2rem;
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* BUYER-INFO / phone */
+.buyer-info .contents table tr:nth-child(3) td input {
+  width: 20%;
+  margin: 0.5rem;
+}
+
+.buyer-info .contents table tr:nth-child(3) td input:first-child {
+  margin-left: 0;
+}
+
+/* BUYER-INFO / email */
+.buyer-info .contents table tr:nth-child(4) td input {
+  margin: 0.5rem 0;
+}
+
+/* BUYER-INFO / request */
+.buyer-info .contents table tr td textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.buyer-info .contents table tr td textarea:focus {
+  outline: none;
+}
+
+/* COUPON */
+.coupon .contents table tr td input {
+  width: 20%;
+}
+
+.coupon .contents table tr td p {
+  display: inline-block;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.coupon .contents table tr td span {
+  font-weight: 300;
+  color: var(--color-dark-gray);
+}
+
+/* PAY */
+.pay .contents {
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+  border-bottom: 3px solid var(--color-black);
+  display: flex;
+}
+
+/* PAY / pay-tab-area */
+.pay-tab-area {
+  width: 70%;
+}
+
+.pay-tab-content {
+  width: 100%;
+  display: none;
+}
+
+.pay-tab-area #무통장입금:checked ~ #무통장입금,
+.pay-tab-area #신용카드:checked ~ #신용카드,
+.pay-tab-area #가상계좌:checked ~ #가상계좌,
+.pay-tab-area #계좌이체:checked ~ #계좌이체 {
+  display: block;
+  margin-top: 2rem;
+}
+
+/* PAY / pay-tab-area / 무통장입금 */
+#무통장입금 table {
+  width: 100%;
+}
+
+#무통장입금 table tr th {
+  text-align: start;
+  vertical-align: middle;
+  width: 19%;
+}
+
+#무통장입금 table tr td input {
+  width: 28.8%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+/* PAY / pay-tab-area / 무통장입금 / 입금은행 */
+#무통장입금 table tr td select {
+  width: 90%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+#무통장입금 table tr td select:focus {
+  outline: none;
+}
+
+/* PAY / pay-tab-area / 무통장입금 / 현금영수증 */
+#무통장입금 table .receipt th {
+  vertical-align: top;
+  padding: 1rem 0;
+}
+
+#무통장입금 table .receipt td > input {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+#무통장입금 table .receipt .receipt-tab-content {
+  display: none;
+}
+
+#무통장입금 table .receipt #사업자 input {
+  width: 90%;
+}
+
+#무통장입금 table .receipt #개인:checked ~ #개인,
+#무통장입금 table .receipt #사업자:checked ~ #사업자 {
+  display: block;
+}
+
+/* PAY / pay-info */
+.pay-info {
+  width: 30%;
+  border: 3px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.pay-info .items .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.pay-info .items .item:nth-child(2) {
+  padding-bottom: 1rem;
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.pay-info .items .item:nth-child(4) {
+  font-weight: bold;
+}
+
+.pay-info .items .item span {
+  color: var(--color-gray);
+}
+
+.pay-info .pay-btn {
+  margin-top: 1rem;
+  width: 100%;
+  height: 70px;
+  background-color: var(--color-main);
+  border-radius: 1rem;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pay-info .pay-btn:hover {
+  opacity: 0.95;
+  cursor: pointer;
+}

@@ -1,0 +1,156 @@
+/* ORDER-DONE / TITLE */
+.order-done .order-done-title .title {
+  font-size: 2rem;
+  color: var(--color-black);
+}
+
+.order-done .order-done-title .title > span {
+  display: block;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* ORDER-DONE */
+.order-done section {
+  margin: 3rem 0;
+}
+
+.order-done section .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-dark-gray);
+}
+
+.order-done section .content {
+  margin-top: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.order-done section .content p {
+  padding: 1rem 0;
+  font-weight: bold;
+}
+
+.order-done section .content > p span:first-child {
+  display: inline-block;
+  width: 250px;
+}
+
+/* ORDER-DONE / PRODUCTS */
+.order-done .products .content {
+  padding: 2rem 0;
+}
+
+.order-done .products .content .top-wrap {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.order-done .products .content .top-wrap span {
+  font-size: 1.5rem;
+}
+
+.order-done .products .content .bottom {
+  display: none;
+  align-items: center;
+  margin-left: 2rem;
+  padding-top: 1.5rem;
+}
+
+.order-done .products .content .bottom.show {
+  display: flex;
+}
+
+.order-done .products .content .bottom img {
+  width: 100px;
+  margin-right: 1.5rem;
+}
+
+.order-done .products .content .bottom .text p {
+  font-weight: 400;
+  padding: 0.5rem;
+}
+
+.order-done .products .content .bottom .text p span {
+  font-weight: bold;
+}
+
+/* ORDER-DONE / PAYMENT */
+.order-done .payment .content {
+  padding: 1rem 0;
+}
+
+.order-done .payment .content .item {
+  width: 40%;
+  margin-left: 2rem;
+}
+
+.order-done .payment .content .item p {
+  display: inline-block;
+}
+
+.order-done .payment .content .item p:first-child {
+  width: 250px;
+}
+
+.order-done .payment .content .item p:last-child {
+  width: 150px;
+  text-align: end;
+  font-weight: 300;
+}
+
+.order-done .payment .content .item p span {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.order-done .payment .content .item .accent {
+  color: var(--color-main);
+  font-size: 1.5rem;
+}
+
+.order-done .content .line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-border);
+  margin: 1rem 0;
+}
+
+/* ORDER-DONE / LOCATION */
+.order-done .location .content p span {
+  font-weight: bold;
+}
+
+.order-done .location .content p:last-child {
+  font-weight: 400;
+}
+
+/* ORDER-DONE / BUTTON */
+.order-done .btns {
+  text-align: center;
+  margin: 5rem;
+}
+
+.order-done .btns button {
+  cursor: pointer;
+  padding: 1.2rem 5rem;
+  border: 1px solid var(--color-black);
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  opacity: 1;
+}
+
+.order-done .btns button:hover {
+  opacity: 0.95;
+}
+
+.order-done .btns button.btn-main {
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
