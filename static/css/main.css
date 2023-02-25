@@ -4,6 +4,7 @@
 /* PRODUCTS */
 @import 'products/detail.css';
 @import 'products/basket.css';
+@import 'index.css';
 
 /* VARIAVLE */
 :root {
