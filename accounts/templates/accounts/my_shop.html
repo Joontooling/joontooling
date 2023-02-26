@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+
+  <!-- TITLE -->
+  <div class="basket-title order-done-title">
+    <h1 class="title">
+      마이 쇼핑
+    </h1>
+    <h2 class="step">
+      <span>홈 ></span>
+      <span> 마이페이지</span>
+    </h2>
+  </div>
+
+  <!-- MYSHOP-TOP -->
+  <section class="myshop-top">
+    <!-- Pointbox -->
+    <div class="pointbox">
+      <div class="box">
+        <div class="title">my point</div>
+        <div class="num">10,000P</div>
+      </div>
+      <div class="line"></div>
+      <div class="box">
+        <div class="title">장바구니</div>
+        <div class="num">1</div>
+      </div>
+      <div class="line"></div>
+      <div class="box">
+        <div class="title">관심상품</div>
+        <div class="num">0</div>
+      </div>
+    </div>
+    <!-- Orderbox -->
+    <div class="orderbox">
+      <div class="title">
+        <h4>나의 주문처리 현황(최근 3개월 기준)</h4>
+        <p>주문내역 전체보기 ></p>
+      </div>
+      <div class="content">
+        <div class="item">
+          <div class="num">0</div>
+          <div class="text">입금전</div>
+        </div>
+        <div class="arrow">></div>
+        <div class="item">
+          <div class="num">0</div>
+          <div class="text">배송중</div>
+        </div>
+        <div class="arrow">></div>
+        <div class="item">
+          <div class="num">0</div>
+          <div class="text">배송완료</div>
+        </div>
+        <div class="arrow">></div>
+        <div class="item">
+          <div class="num">0</div>
+          <div class="text">취소</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYSHOP-BOTTOM -->
+  <section class="myshop-bottom">
+    <div class="items">
+      <div class="item">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="text">주문내역 조회</div>
+      </div>
+      <div class="item">
+        <i class="fa-regular fa-user"></i>
+        <div class="text">회원정보 수정</div>
+      </div>
+      <div class="item">
+        <i class="fa-regular fa-heart"></i>
+        <div class="text">관심상품</div>
+      </div>
+      <div class="item">
+        <i class="fa-regular fa-folder-open"></i>
+        <div class="text">게시물 관리</div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+{% endblock content %}
