@@ -1,0 +1,106 @@
+/* POSTING */
+.posting {
+  margin-top: 5rem;
+  cursor: default;
+}
+
+.posting .title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.posting .contents .posting-tab-area input {
+  display: none;
+}
+
+.posting .contents .posting-tab-area label {
+  font-weight: 400;
+  padding: 0.8rem 0;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.posting .contents .posting-tab-area .posting-tab-content {
+  border-top: 1px solid var(--color-border);
+  margin: 1.1rem 0;
+  padding: 2rem 0;
+  width: 100%;
+  display: none;
+}
+
+.posting-tab-area #작성한후기:checked ~ #작성한후기,
+.posting-tab-area #작성한댓글:checked ~ #작성한댓글 {
+  display: block;
+}
+
+.posting-tab-area #작성한후기:checked + label,
+.posting-tab-area #작성한댓글:checked + label {
+  border-bottom: 3px solid var(--color-black);
+}
+
+/* POSTING / posting-tab-content */
+.posting-tab-content .content {
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  padding: 1.5rem 0;
+}
+
+.posting-tab-content .content .top .starbox {
+  display: flex;
+  align-items: center;
+}
+
+.posting-tab-content .content .top .starbox .star {
+  color: var(--color-accent);
+  margin-right: 1rem;
+}
+
+.posting-tab-content .content .top .starbox .date {
+  color: var(--color-gray);
+  font-size: 0.8rem;
+}
+
+.posting-tab-content .content .top .starbox .bar {
+  color: var(--color-gray);
+  padding: 0 1rem;
+}
+
+.posting-tab-content .content .top .starbox .btns button {
+  color: var(--color-gray);
+  padding: 0 0.3rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.posting-tab-content .content .top .starbox .btns button:last-child {
+  color: var(--color-accent);
+}
+
+.posting-tab-content .content .top .product-name {
+  color: var(--color-dark-gray);
+  margin: 1rem 0;
+}
+
+.posting-tab-content .content .bottom {
+  width: 90%;
+}
+
+.posting-tab-content .content .bottom .text {
+  line-height: 1.5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.posting-tab-content .product-img {
+  width: 150px;
+  height: 150px;
+}
+
+.posting-tab-content .product-img img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--color-border);
+}

@@ -22,3 +22,6 @@ def my_shop(request):
 
 def my_likes(request):
     return render(request, 'accounts/my_likes.html')
+
+def my_posting(request):
+    return render(request, 'accounts/my_posting.html')
