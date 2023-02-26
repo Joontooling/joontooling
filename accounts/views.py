@@ -16,3 +16,6 @@ def signup(request):
         "form": form,
     }
     return render(request, "accounts/signup.html", context)
+
+def my_shop(request):
+    return render(request, 'accounts/my_shop.html')

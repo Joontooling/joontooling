@@ -1,0 +1,140 @@
+/* MYSHOP-TOP */
+.myshop-top {
+  margin-top: 3rem;
+  cursor: default;
+}
+
+/* MYSHOP-TOP / pointbox */
+.myshop-top .pointbox {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-main);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3.5rem;
+}
+
+.myshop-top .pointbox .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.myshop-top .pointbox .line {
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-gray);
+}
+
+.myshop-top .pointbox .box .title {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+}
+
+.myshop-top .pointbox .box .num {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+/* MYSHOP-TOP / orderbox */
+.myshop-top .orderbox {
+  margin-top: 2rem;
+  border: 1px solid var(--color-black);
+  padding: 3rem;
+}
+
+.myshop-top .orderbox .title {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.myshop-top .orderbox .title p {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-gray);
+  cursor: pointer;
+}
+
+.myshop-top .orderbox .content {
+  background-color: var(--color-light-gray);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 3rem;
+}
+
+.myshop-top .orderbox .content .arrow {
+  font-size: 3rem;
+  color: var(--color-gray);
+}
+
+.myshop-top .orderbox .content .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myshop-top .orderbox .content .item .num {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.myshop-top .orderbox .content .item .text {
+  font-size: 1.2rem;
+  color: var(--color-dark-gray);
+  margin-top: 1.5rem;
+}
+
+/* MYSHOP-BOTTOM */
+.myshop-bottom {
+  width: 70%;
+  margin: 3rem auto;
+}
+
+.myshop-bottom .items {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 3rem;
+}
+
+.myshop-bottom .items .item {
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.myshop-bottom .items .item:hover i,
+.myshop-bottom .items .item:hover .text {
+  transform: scale(1.2);
+  color: var(--color-main);
+}
+
+.myshop-bottom .items .item i {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  transition: 500ms;
+}
+
+.myshop-bottom .items .item .text {
+  font-size: 1.2rem;
+  transition: 500ms;
+}
