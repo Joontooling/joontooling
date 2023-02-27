@@ -1,0 +1,11 @@
+.product-list-sideBar {
+  border: 1px solid gray; 
+  height: 500px;
+  text-align: center;
+}
+
+.product-list-Items {
+  border: 1px solid gray; 
+  height: 700px;
+  text-align: center;
+}

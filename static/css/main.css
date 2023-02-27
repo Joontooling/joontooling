@@ -10,6 +10,7 @@
 @import 'index.css';
 @import 'products/order.css';
 @import 'products/order_done.css';
+@import 'products/product_list.css';
 
 /* VARIAVLE */
 :root {
@@ -47,7 +48,7 @@ a {
   color: #000;
 }
 
-.container {
+.wrapper {
   position: relative;
   max-width: 1180px;
   min-width: 1180px;
@@ -227,7 +228,7 @@ button {
 }
 
 .inner__menu__item::before {
-  content: '·';
+  content: '.';
 }
 
 .inner__menu__item:first-child:before {
