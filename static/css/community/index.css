@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   display: flex;
+  cursor: default;
 }
 
 /* COMMUNITY / SERVICE-ASIDE */
@@ -10,7 +11,7 @@
   position: sticky;
   top: 89px;
   left: 0;
-  width: 25%;
+  width: 20%;
   height: 100vh;
   padding-top: 3rem;
 }
@@ -31,6 +32,11 @@
   font-size: 1rem;
   font-weight: 400;
   padding-bottom: 0.8rem;
+  transition: 300ms;
+}
+
+.community .aside__item__inner:hover {
+  opacity: 0.3;
 }
 
 .community .aside__item__inner:last-child {
@@ -50,21 +56,24 @@
   line-height: 1.8rem;
 }
 
-/* question */
-.question {
+/* Question */
+.question,
+.call {
   margin-top: 2rem;
 }
 
-.question__title {
+.question__title,
+.call__title {
   font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .question__search {
   background-color: var(--color-light-gray);
   border-radius: 1rem;
   padding: 2rem 5rem;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .question__search form {
@@ -93,7 +102,7 @@
 }
 
 .question__choices {
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   border-radius: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -111,4 +120,69 @@
 
 .question__choices__item a:hover {
   opacity: 0.3;
+}
+
+/* Call */
+.call__wrap {
+  display: flex;
+}
+
+.call__left__wrap {
+  display: flex;
+  align-items: center;
+  background-color: #82c3ec70;
+  border-radius: 1rem;
+}
+
+.call__left {
+  padding: 3rem;
+  cursor: pointer;
+}
+
+.call__line {
+  width: 2px;
+  height: 60%;
+  background-color: var(--color-white);
+}
+
+.call__icon {
+  background-color: var(--color-white);
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.call__text {
+  margin-top: 1rem;
+}
+
+.call__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+.call__right p {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.call__right p:nth-child(2) {
+  font-size: 1.5rem;
+  color: var(--color-main);
+}
+
+.call__right p:nth-child(3) {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-gray);
 }
