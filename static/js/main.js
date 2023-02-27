@@ -6,7 +6,7 @@ const headerHeight = header.offsetHeight;
 const main = document.querySelector('main');
 
 // Navigation
-const navi = document.querySelector('.nav');
+const navi = document.querySelector('.navi');
 const naviWrapper = navi.querySelector('.nav-wrapper');
 const innerMenu = navi.querySelector('.inner__menu');
 const navHeight =
