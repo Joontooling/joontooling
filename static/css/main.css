@@ -1,6 +1,8 @@
 /* ACCOUNTS */
 @import 'accounts/accounts.css';
 @import 'accounts/my_shop.css';
+@import 'accounts/my_likes.css';
+@import 'accounts/my_posting.css';
 
 /* PRODUCTS */
 @import 'products/detail.css';

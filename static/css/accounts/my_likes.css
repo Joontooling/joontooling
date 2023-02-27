@@ -1,0 +1,94 @@
+/* MYLIKES */
+.mylikes {
+  margin-bottom: 5rem;
+}
+
+/* MYLIKES / titles */
+.mylikes .titles .mlInfo {
+  width: 50%;
+}
+
+.mylikes .titles .mlPrice {
+  width: 25%;
+}
+
+.mylikes .titles .mlChoice {
+  width: 20%;
+}
+
+/* MYLIKES / buttons */
+.mylikes-btns {
+  text-align: end;
+  margin: 1rem 0;
+}
+
+.mylikes-btns button {
+  width: 180px;
+  height: 50px;
+  border: 1px solid var(--color-black);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-left: 8px;
+}
+
+.mylikes-btns button:last-child {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.mylikes-btns button:last-child:hover {
+  opacity: 0.9;
+}
+
+/* MYLIKES / contents */
+.mylikes .contents {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mylikes .contents:last-child {
+  border: none;
+}
+
+.mylikes .contents .mlInfo {
+  width: 50%;
+  position: relative;
+}
+
+.mylikes .contents .mlInfo .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  cursor: pointer;
+}
+
+.mylikes .contents .mlPrice {
+  width: 25%;
+}
+
+.mylikes .contents .mlChoice {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.mylikes .contents .mlChoice button {
+  width: 65%;
+  height: 40px;
+  border: 1px solid var(--color-black);
+  border-radius: 8px;
+  margin: 0.3rem 0;
+  cursor: pointer;
+}
+
+.mylikes .contents .mlChoice button:first-child {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transition: all 300ms;
+}
+
+.mylikes .contents .mlChoice button:first-child:hover {
+  opacity: 0.9;
+}

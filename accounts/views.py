@@ -19,3 +19,9 @@ def signup(request):
 
 def my_shop(request):
     return render(request, 'accounts/my_shop.html')
+
+def my_likes(request):
+    return render(request, 'accounts/my_likes.html')
+
+def my_posting(request):
+    return render(request, 'accounts/my_posting.html')

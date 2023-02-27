@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+
+  <!-- TITLE -->
+  <div class="basket-title order-done-title">
+    <h1 class="title">
+      관심상품
+    </h1>
+    <h2 class="step">
+      <span>홈 ></span>
+      <span> 마이페이지 ></span>
+      <span> 관심상품</span>
+    </h2>
+  </div>
+
+  <!-- MYLIKES-BUTTONS -->
+  <div class="mylikes-btns">
+    <button>전체상품주문</button>
+    <button>관심상품 비우기</button>
+  </div>
+
+  <!-- MYLIKES -->
+  <section class="basket-info mylikes">
+    <div class="titles">
+      <div class="check">
+        <input type="checkbox" id="checkboxTop">
+        <label for="checkboxTop"></label>
+      </div>
+      <div class="title biInfo mlInfo">상품정보</div>
+      <div class="title biPrice mlPrice">판매가</div>
+      <div class="title mlChoice">선택</div>
+    </div>
+    <div class="contents">
+      <div class="content check">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+      </div>
+      <div class="content biInfo mlInfo">
+        <img src="https://juntooling.com/web/product/small/202111/7a5a2d420395bfd413db8b9b6220898b.jpg"
+          alt="product-image">
+        <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용</p>
+        <div class="delete-btn">
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </div>
+      <div class="content biPrice mlPrice">3,045,000원</div>
+      <div class="content mlChoice">
+        <button>상품주문하기</button>
+        <button>장바구니담기</button>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="content check">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+      </div>
+      <div class="content biInfo mlInfo">
+        <img src="https://juntooling.com/web/product/small/202111/7a5a2d420395bfd413db8b9b6220898b.jpg"
+          alt="product-image">
+        <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용</p>
+        <div class="delete-btn">
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </div>
+      <div class="content biPrice mlPrice">3,045,000원</div>
+      <div class="content mlChoice">
+        <button>상품주문하기</button>
+        <button>장바구니담기</button>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="content check">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox"></label>
+      </div>
+      <div class="content biInfo mlInfo">
+        <img src="https://juntooling.com/web/product/small/202111/7a5a2d420395bfd413db8b9b6220898b.jpg"
+          alt="product-image">
+        <p>준엔지니어링 고급형 슈나이더 원형톱날 10인치 100T 목재용</p>
+        <div class="delete-btn">
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </div>
+      <div class="content biPrice mlPrice">3,045,000원</div>
+      <div class="content mlChoice">
+        <button>상품주문하기</button>
+        <button>장바구니담기</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock content %}
