@@ -47,7 +47,6 @@
 .community .service {
   flex-grow: 1;
   padding-top: 3rem;
-  height: 2000px;
 }
 
 .community .service .title {
@@ -57,30 +56,32 @@
 }
 
 /* Question */
-.question,
-.call {
+.service .question,
+.service .call,
+.service .notice {
   margin-top: 2rem;
 }
 
-.question__title,
-.call__title {
+.service .question__title,
+.service .call__title,
+.service .notice__title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.question__search {
+.service .question__search {
   background-color: var(--color-light-gray);
   border-radius: 1rem;
   padding: 2rem 5rem;
   margin-bottom: 1rem;
 }
 
-.question__search form {
+.service .question__search form {
   text-align: center;
 }
 
-.question__search form input {
+.service .question__search form input {
   width: 80%;
   padding: 1rem;
   background-color: var(--color-white);
@@ -88,7 +89,7 @@
   border-radius: 8px;
 }
 
-.question__search form button {
+.service .question__search form button {
   padding: 1.2rem 2rem;
   background-color: var(--color-main);
   border-radius: 8px;
@@ -97,11 +98,11 @@
   transition: 300ms;
 }
 
-.question__search form button:hover {
+.service .question__search form button:hover {
   opacity: 0.95;
 }
 
-.question__choices {
+.service .question__choices {
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   display: grid;
@@ -110,42 +111,42 @@
   padding: 2rem;
 }
 
-.question__choices__item {
+.service .question__choices__item {
   padding: 1rem;
 }
 
-.question__choices__item a {
+.service .question__choices__item a {
   transition: 300ms;
 }
 
-.question__choices__item a:hover {
+.service .question__choices__item a:hover {
   opacity: 0.3;
 }
 
 /* Call */
-.call__wrap {
+.service .call__wrap {
   display: flex;
 }
 
-.call__left__wrap {
+.service .call__left__wrap {
   display: flex;
   align-items: center;
   background-color: #82c3ec70;
   border-radius: 1rem;
 }
 
-.call__left {
+.service .call__left {
   padding: 3rem;
   cursor: pointer;
 }
 
-.call__line {
+.service .call__line {
   width: 2px;
   height: 60%;
   background-color: var(--color-white);
 }
 
-.call__icon {
+.service .call__icon {
   background-color: var(--color-white);
   border-radius: 100%;
   width: 80px;
@@ -156,11 +157,11 @@
   font-size: 2rem;
 }
 
-.call__text {
+.service .call__text {
   margin-top: 1rem;
 }
 
-.call__right {
+.service .call__right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,18 +172,83 @@
   margin-left: 1rem;
 }
 
-.call__right p {
+.service .call__right p {
   margin: 1rem 0;
   font-weight: bold;
 }
 
-.call__right p:nth-child(2) {
+.service .call__right p:nth-child(2) {
   font-size: 1.5rem;
   color: var(--color-main);
 }
 
-.call__right p:nth-child(3) {
+.service .call__right p:nth-child(3) {
   font-size: 0.85rem;
   font-weight: 300;
   color: var(--color-gray);
+}
+
+/* Notice */
+.service .notice {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+.service .notice__top {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service .notice__more a {
+  font-size: 0.9rem;
+}
+
+.service .notice__bottom {
+  border-top: 2px solid var(--color-black);
+}
+
+.service .notice__no,
+.service .notice__item {
+  padding: 1rem 0;
+  display: flex;
+  text-align: center;
+}
+
+.service .notice__no {
+  font-weight: bold;
+  border-bottom: 1px solid var(--color-black);
+}
+
+.service .notice__item {
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service .notice__item span a:hover {
+  text-decoration: underline;
+}
+
+.service .notice__no span:nth-child(1),
+.service .notice__item span:nth-child(1) {
+  width: 10%;
+}
+
+.service .notice__no span:nth-child(2),
+.service .notice__item span:nth-child(2) {
+  width: 60%;
+}
+
+.service .notice__no span:nth-child(3),
+.service .notice__item span:nth-child(3),
+.service .notice__no span:nth-child(4),
+.service .notice__item span:nth-child(4) {
+  width: 15%;
+}
+
+.service .notice__item span:nth-child(1),
+.service .notice__item span:nth-child(3),
+.service .notice__item span:nth-child(4) {
+  color: var(--color-dark-gray);
 }
