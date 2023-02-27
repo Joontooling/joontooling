@@ -42,3 +42,5 @@ def product_create(request):
 
     return render(request, "products/product_create.html", context)
 
+def product_list(request):
+    return render(request, "products/product_list.html")
