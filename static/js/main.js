@@ -3,7 +3,7 @@
 // Header
 const header = document.querySelector('.header');
 const headerHeight = header.offsetHeight;
-const main = document.querySelector('main');
+const main = document.querySelector('#main');
 
 // Navigation
 const navi = document.querySelector('.navi');
