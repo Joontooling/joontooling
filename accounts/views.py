@@ -17,6 +17,9 @@ def signup(request):
     }
     return render(request, "accounts/signup.html", context)
 
+def login(request):
+    return render(request, 'accounts/login.html')
+
 def my_shop(request):
     return render(request, 'accounts/my_shop.html')
 
