@@ -1,5 +1,125 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>고객센터</h1>
+<div class="wrapper">
+
+  <!-- COMMUNITY -->
+  <div class="community">
+
+    <!-- COMMUNITY / ASIDE -->
+    <aside class="aside">
+      <h1 class="aside__title">고객센터</h1>
+
+      <ul class="aside__list">
+        <li class="aside__item"><a href="#">메인</a></li>
+        <li class="aside__item"><a href="#">자주 묻는 질문</a></li>
+        <ul class="aside__item">
+          <li class="aside__item__inner"><a href="#">BEST 10</a></li>
+          <li class="aside__item__inner"><a href="#">회원</a></li>
+          <li class="aside__item__inner"><a href="#">반품/교환/환불</a></li>
+          <li class="aside__item__inner"><a href="#">주문/결제</a></li>
+          <li class="aside__item__inner"><a href="#">배송/수령일 안내</a></li>
+          <li class="aside__item__inner"><a href="#">기타</a></li>
+        </ul>
+        </li>
+        <li class="aside__item"><a href="#">1:1 문의</a></li>
+        <li class="aside__item"><a href="#">공지사항</a></li>
+        <li class="aside__item"><a href="#">자유게시판</a></li>
+      </ul>
+
+    </aside>
+
+    <!-- COMMUNITY / SERVICE -->
+    <main class="service">
+      <h2 class="title">
+        무엇을 도와드릴까요?<br />
+        <span class="bold">준툴링 고객센터</span>입니다.
+      </h2>
+
+      <!-- Question -->
+      <section class="question">
+        <h5 class="question__title">자주 묻는 질문</h5>
+        <div class="question__search">
+          <form>
+            <input type="text" placeholder="검색어를 입력해 보세요.">
+            <button>검색</button>
+          </form>
+        </div>
+        <div class="question__choices">
+          <div class="question__choices__item"><a href="#">BEST 10</a></div>
+          <div class="question__choices__item"><a href="#">회원</a></div>
+          <div class="question__choices__item"><a href="#">반품/교환/환불</a></div>
+          <div class="question__choices__item"><a href="#">주문/결제</a></div>
+          <div class="question__choices__item"><a href="#">배송/수령일 안내</a></div>
+          <div class="question__choices__item"><a href="#">기타</a></div>
+        </div>
+      </section>
+
+      <!-- Call -->
+      <section class="call">
+        <h5 class="call__title">1:1 문의</h5>
+        <div class="call__wrap">
+          <!-- Call-left -->
+          <div class="call__left__wrap">
+            <div class="call__left">
+              <div class="call__icon">💬</div>
+              <div class="call__text">1:1 문의 접수</div>
+            </div>
+            <div class="call__line"></div>
+            <div class="call__left">
+              <div class="call__icon">📜</div>
+              <div class="call__text">1:1 문의 내역</div>
+            </div>
+          </div>
+          <!-- Call-right -->
+          <div class="call__right">
+            <p>전화 상담</p>
+            <p>1544-1004</p>
+            <p>평일 09:00 ~18:00 (주말 및 공휴일 휴무)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notice -->
+      <seciton class="notice">
+        <!-- notice-top -->
+        <div class="notice__top">
+          <h5 class="notice__title">공지사항</h5>
+          <p class="notice__more"><a href="#">더보기 ></a></p>
+        </div>
+        <!-- notice-bottom -->
+        <div class="notice__bottom">
+          <div class="notice__no">
+            <span>NO</span>
+            <span>공지제목</span>
+            <span>유형</span>
+            <span>날짜</span>
+          </div>
+          <!-- notice-item -->
+          <div class="notice__item">
+            <span>1</span>
+            <span><a href="#">공지제목</a></span>
+            <span>고객센터</span>
+            <span>2023.02.27</span>
+          </div>
+          <div class="notice__item">
+            <span>2</span>
+            <span><a href="#">공지제목</a></span>
+            <span>고객센터</span>
+            <span>2023.02.27</span>
+          </div>
+          <div class="notice__item">
+            <span>3</span>
+            <span><a href="#">공지제목</a></span>
+            <span>고객센터</span>
+            <span>2023.02.27</span>
+          </div>
+        </div>
+      </seciton>
+
+    </main>
+
+  </div>
+
+</div>
 {% endblock content %}

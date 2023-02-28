@@ -1,0 +1,254 @@
+/* COMMUNITY */
+.community {
+  position: relative;
+  width: 100%;
+  display: flex;
+  cursor: default;
+}
+
+/* COMMUNITY / SERVICE-ASIDE */
+.community .aside {
+  position: sticky;
+  top: 89px;
+  left: 0;
+  width: 20%;
+  height: 100vh;
+  padding-top: 3rem;
+}
+
+.community .aside__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.community .aside__item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.community .aside__item__inner {
+  font-size: 1rem;
+  font-weight: 400;
+  padding-bottom: 0.8rem;
+  transition: 300ms;
+}
+
+.community .aside__item__inner:hover {
+  opacity: 0.3;
+}
+
+.community .aside__item__inner:last-child {
+  padding-bottom: 0;
+}
+
+/* COMMUNITY / SERVICE */
+.community .service {
+  flex-grow: 1;
+  padding-top: 3rem;
+}
+
+.community .service .title {
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  line-height: 1.8rem;
+}
+
+/* Question */
+.service .question,
+.service .call,
+.service .notice {
+  margin-top: 2rem;
+}
+
+.service .question__title,
+.service .call__title,
+.service .notice__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.service .question__search {
+  background-color: var(--color-light-gray);
+  border-radius: 1rem;
+  padding: 2rem 5rem;
+  margin-bottom: 1rem;
+}
+
+.service .question__search form {
+  text-align: center;
+}
+
+.service .question__search form input {
+  width: 80%;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.service .question__search form button {
+  padding: 1.2rem 2rem;
+  background-color: var(--color-main);
+  border-radius: 8px;
+  color: var(--color-white);
+  margin-left: 3px;
+  transition: 300ms;
+}
+
+.service .question__search form button:hover {
+  opacity: 0.95;
+}
+
+.service .question__choices {
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  padding: 2rem;
+}
+
+.service .question__choices__item {
+  padding: 1rem;
+}
+
+.service .question__choices__item a {
+  transition: 300ms;
+}
+
+.service .question__choices__item a:hover {
+  opacity: 0.3;
+}
+
+/* Call */
+.service .call__wrap {
+  display: flex;
+}
+
+.service .call__left__wrap {
+  display: flex;
+  align-items: center;
+  background-color: #82c3ec70;
+  border-radius: 1rem;
+}
+
+.service .call__left {
+  padding: 3rem;
+  cursor: pointer;
+}
+
+.service .call__line {
+  width: 2px;
+  height: 60%;
+  background-color: var(--color-white);
+}
+
+.service .call__icon {
+  background-color: var(--color-white);
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.service .call__text {
+  margin-top: 1rem;
+}
+
+.service .call__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+.service .call__right p {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.service .call__right p:nth-child(2) {
+  font-size: 1.5rem;
+  color: var(--color-main);
+}
+
+.service .call__right p:nth-child(3) {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-gray);
+}
+
+/* Notice */
+.service .notice {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+.service .notice__top {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service .notice__more a {
+  font-size: 0.9rem;
+}
+
+.service .notice__bottom {
+  border-top: 2px solid var(--color-black);
+}
+
+.service .notice__no,
+.service .notice__item {
+  padding: 1rem 0;
+  display: flex;
+  text-align: center;
+}
+
+.service .notice__no {
+  font-weight: bold;
+  border-bottom: 1px solid var(--color-black);
+}
+
+.service .notice__item {
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service .notice__item span a:hover {
+  text-decoration: underline;
+}
+
+.service .notice__no span:nth-child(1),
+.service .notice__item span:nth-child(1) {
+  width: 10%;
+}
+
+.service .notice__no span:nth-child(2),
+.service .notice__item span:nth-child(2) {
+  width: 60%;
+}
+
+.service .notice__no span:nth-child(3),
+.service .notice__item span:nth-child(3),
+.service .notice__no span:nth-child(4),
+.service .notice__item span:nth-child(4) {
+  width: 15%;
+}
+
+.service .notice__item span:nth-child(1),
+.service .notice__item span:nth-child(3),
+.service .notice__item span:nth-child(4) {
+  color: var(--color-dark-gray);
+}

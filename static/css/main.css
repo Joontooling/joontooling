@@ -4,6 +4,9 @@
 @import 'accounts/my_likes.css';
 @import 'accounts/my_posting.css';
 
+/* COMMUNITY */
+@import 'community/index.css';
+
 /* PRODUCTS */
 @import 'products/detail.css';
 @import 'products/basket.css';
@@ -58,6 +61,10 @@ a {
 button {
   background: none;
   border: none;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /* HEADER */
