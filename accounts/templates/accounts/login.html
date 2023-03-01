@@ -15,27 +15,27 @@
 </head>
 
 <body>
-  <div class="signup">
-    <header class="header_signup">
-      <div class="title_signup">
-        <a href="{% url 'products:index' %}" class="a_signup">JUNTOOLING</a>
+  <div class="login">
+    <header>
+      <div class="title_login">
+        <a href="{% url 'products:index' %}" class="a_login">JUNTOOLING</a>
       </div>
     </header>
     
-    <main class="contents_signup">
+    <main class="contents_login">
       <form action="">
         <div>
-          <input type="email" class="input_signup" placeholder="아이디">
+          <input type="email" class="input_login" placeholder="아이디">
         </div>
         <div>
-          <input type="password" class="input2_signup" placeholder="비밀번호">
+          <input type="password" class="input2_login" placeholder="비밀번호">
         </div>
         <!-- 로그인 버튼 -->
         <button class="btn_login">로그인</button>
       </form>
 
       <section>
-        <div class="sns_title">SNS계정으로 간편 로그인/회원가입</div>
+        <div class="sns_title_login">SNS계정으로 간편 로그인/회원가입</div>
         <div class="btn_wrap">
           <!-- 네이버 -->
           <button class="btn_naver"></button>
@@ -48,7 +48,7 @@
 
       <section>
         <!-- 회원가입 이동 버튼 -->
-        <button class="btn_login2" onclick=location.href="{% url 'accounts:signup' %}">회원가입</button>
+        <button class="btn2_login" onclick=location.href="{% url 'accounts:signup' %}">회원가입</button>
       </section>
     </main>
   </div>
@@ -56,8 +56,8 @@
 
 <!-- 로그인 버튼 활성화 -->
 <script>
-  const idForm = document.querySelector('.input_signup');
-  const pwForm = document.querySelector('.input2_signup');
+  const idForm = document.querySelector('.input_login');
+  const pwForm = document.querySelector('.input2_login');
   const loginButton = document.querySelector('.btn_login');
   loginButton.disabled = true;
 

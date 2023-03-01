@@ -1,6 +1,24 @@
 /* 로그인 (login.html) */
 
-.contents_signup {
+.login {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.title_login {
+  text-align: center;
+}
+
+.a_login {
+  width: 400px;
+  color: #243763;
+  font-size: 40px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contents_login {
   width: 340px;
   padding: 50px 0 100px;
   margin: 0 auto;
@@ -17,7 +35,7 @@
   font-weight: 700;
 }
 
-.input_signup {
+.input_login {
   width: 100%;
   height: 50px;
   padding: 14px;
@@ -26,7 +44,7 @@
   font-size: 15px;
 }
 
-.input2_signup {
+.input2_login {
   width: 100%;
   height: 50px;
   padding: 14px;
@@ -36,13 +54,14 @@
   font-size: 15px;
 }
 
-.sns_title {
+.sns_title_login {
   margin-top: 30px;
   color: #757575;
   font-size: 12px;
   text-align: center;
 }
 
+/* SNS버튼 login & signup 적용  */
 .btn_wrap {
   display: flex;
   justify-content: center;
@@ -71,7 +90,7 @@
 }
 
 /* 회원가입 이동 버튼 */
-.btn_login2 {
+.btn2_login {
   width: 100%;
   height: 50px;
   margin-top: 30px;
@@ -83,6 +102,6 @@
   font-weight: 700;
 }
 
-.btn_login2:hover {
+.btn2_login:hover {
   background-color: #efeff8;
 }
