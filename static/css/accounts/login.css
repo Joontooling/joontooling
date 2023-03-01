@@ -1,0 +1,58 @@
+/* 로그인 (login.html) */
+
+.contents_signup {
+  margin: 0 auto;
+  padding: 50px 0 100px;
+  width: 300px;
+}
+
+.input_signup {
+  width: 100%;
+  height: 50px;
+  padding: 14px;
+  font-size: 15px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px 4px 0 0;
+}
+
+.input2_signup {
+  width: 100%;
+  height: 50px;
+  padding: 14px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border: 1px solid #dbdbdb;
+  border-radius: 0 0 4px 4px;
+}
+
+.a_wrap_login {
+  text-align: center;
+  margin: 20px 0 30px;
+}
+
+.a_login {
+  color: #424242;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sns_title {
+  color: #757575;
+  text-align: center;
+  font-size: 12px;
+}
+
+.btn_naver_wrap {
+  text-align: center;
+}
+
+.btn_naver {
+  width: 45px;
+  height: 45px;
+  margin-top: 15px;
+  border: 0;
+  background: none;
+  background-size: 45px;
+  background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_naver@2x.png);
+}
