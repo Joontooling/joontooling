@@ -1,18 +1,29 @@
 /* 로그인 (login.html) */
 
 .contents_signup {
-  margin: 0 auto;
+  width: 340px;
   padding: 50px 0 100px;
-  width: 300px;
+  margin: 0 auto;
+}
+
+.btn_login {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: #767676;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .input_signup {
   width: 100%;
   height: 50px;
   padding: 14px;
-  font-size: 15px;
   border: 1px solid #dbdbdb;
   border-radius: 4px 4px 0 0;
+  font-size: 15px;
 }
 
 .input2_signup {
@@ -20,39 +31,58 @@
   height: 50px;
   padding: 14px;
   margin-bottom: 20px;
-  font-size: 15px;
   border: 1px solid #dbdbdb;
   border-radius: 0 0 4px 4px;
-}
-
-.a_wrap_login {
-  text-align: center;
-  margin: 20px 0 30px;
-}
-
-.a_login {
-  color: #424242;
-  text-decoration: none;
   font-size: 15px;
-  font-weight: 700;
 }
 
 .sns_title {
+  margin-top: 30px;
   color: #757575;
-  text-align: center;
   font-size: 12px;
-}
-
-.btn_naver_wrap {
   text-align: center;
 }
 
-.btn_naver {
+.btn_wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn_naver, .btn_kakao, .btn_google {
   width: 45px;
   height: 45px;
-  margin-top: 15px;
   border: 0;
   background: none;
   background-size: 45px;
+}
+
+.btn_naver {
   background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_naver@2x.png);
+}
+
+.btn_kakao {
+  margin: 0 20px;
+  background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_kakao@2x.png);
+}
+
+.btn_google {
+  background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_google@2x.png);
+}
+
+/* 회원가입 이동 버튼 */
+.btn_login2 {
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  border: 1px solid #5055b1;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #474c98;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn_login2:hover {
+  background-color: #efeff8;
 }
