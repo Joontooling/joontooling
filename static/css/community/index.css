@@ -45,7 +45,7 @@
 
 /* COMMUNITY / SERVICE */
 .community .service {
-  flex-grow: 1;
+  width: 80%;
   padding-top: 3rem;
 }
 
