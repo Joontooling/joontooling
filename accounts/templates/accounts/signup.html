@@ -10,96 +10,164 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="{% static 'css/accounts/accounts.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/accounts/signup.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/accounts/login.css' %}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- Fontawesome -->
+  <script defer src="https://kit.fontawesome.com/3ef4088aa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="signup">
-    <header class="header_signup">
+    <header>
       <div class="title_signup">
         <a href="{% url 'products:index' %}" class="a_signup">JUNTOOLING</a>
       </div>
     </header>
 
-    <main class="container_signup">
-      <section class="contents_signup">
+    <main class="contents_signup">
+      <section>
         <div class="title2_wrap_signup">
           <div class="title2_signup">회원가입</div>
         </div>
+      </section>
 
-        <div class="title3_wrap_signup">
-          <div class="title3_signup">회원정보 입력</div>
-        </div>
-
-        <!-- 회원정보 입력 -->
-        <div>
-          <div class="card">
-            <div class="card-body">
-              <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-
-                <label for="username">아이디</label>
-                <div class="signup-field">
-                  {% render_field form.username class="input_effect" placeholder="아이디를 입력해 주세요" type="text" id="username" %}
-                </div>
-
-                <label for="password">비밀번호</label>
-                <div class="signup-field">
-                  {% render_field form.password1 class="input_effect" placeholder="비밀번호를 입력해 주세요" type="password" id="password1" %}
-                </div>
-
-                <label for="password">비밀번호</label>
-                <div class="signup-field">
-                  {% render_field form.password2 class="input_effect" placeholder="비밀번호를 한 번 더 입력해 주세요" type="password" id="password2" %}
-                </div>
-
-                <label for="name">이름</label>
-                <div class="signup-field">
-                  {% render_field form.first_name class="input_effect" placeholder="이름을 입력해 주세요" type="text" id="first_name" %}
-                </div>
-
-                <label for="address">주소</label>
-                <div class="signup-field">
-                  {% render_field form.address class="input_effect" placeholder="주소" id="address" %}
-                  <button onclick="searchAddress()">도로명 주소 찾기</button>
-                </div>
-
-                <p>상세 주소를 추가해 주세요</p>
-
-                <label for="phone_number">휴대폰번호</label>
-                <div class="signup-field">
-                  {% render_field form.phone_number class="input_effect" placeholder="숫자만 입력해 주세요" id="phone_number" %}
-                </div>
-
-                <label for="email">이메일</label>
-                <div class="signup-field">
-                  {% render_field form.email class="input_effect" placeholder="이메일을 입력해 주세요" type="email" id="email" %}
-                </div>
-
-                <label for="birth">생년월일</label>
-                <div class="signup-field">
-                  {% render_field form.birth class="input_effect" type="date" id='birth' %}
-                </div>
-
-                <label for="user_type">회원</label>
-                <div class="signup-field">
-                  {% render_field form.user_type class="input_effect" id='user_type' %}
-                </div>
-
-                <!-- 회원가입 버튼 -->
-                <div class="btn_wrap_signup">
-                  <button class="btn_signup">
-                    <span>회원가입</span>
-                  </button>
-                </div>
-
-              </form>
-            </div>
-          </div>
+      <section class="section2_signup">
+        <div class="sns_title_signup">SNS계정으로 간편하게 회원가입</div>
+        <div class="btn_wrap">
+          <!-- 네이버 -->
+          <button class="btn_naver"></button>
+          <!-- 카카오 -->
+          <button class="btn_kakao"></button>
+          <!-- 구글 -->
+          <button class="btn_google"></button>
         </div>
       </section>
+
+      <section class="section3_signup">
+        <div class="title3_signup">회원정보 입력</div>
+        <div>
+          <span class="asterisk">*</span><span class="title4_signup">필수 입력</span> 
+        </div>
+      </section>
+
+      <!-- 회원정보 입력 -->
+      <main>
+        <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <!-- 아이디 -->
+          <label class="label_signup" for="username">아이디</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.username class="input_effect" placeholder="아이디를 입력해 주세요" type="text" id="username" %}
+          </div>
+
+          <!-- 비밀번호 -->
+          <label class="label_signup" for="password">비밀번호</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.password1 class="input_effect" placeholder="비밀번호를 입력해 주세요" type="password" id="password1" %}
+          </div>
+          <!-- 비밀번호 안내 -->
+          <div class="info_password">
+            <div class="check_wrap">
+              <i class="fa-solid fa-check"></i><span>영문, 숫자, 특수문자 3가지 조합 8자리 이상 또는<br>&nbsp;&nbsp;&nbsp;&nbsp;2가지 조합 10자리 이상</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-check"></i><span>공백 및 3자 이상의 연속 또는 중복 문자는 사용 불가</span>
+            </div>
+          </div>
+
+          <!-- 비밀번호 확인 -->
+          <label class="label_signup" for="password">비밀번호 확인</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.password2 class="input_effect" placeholder="비밀번호를 한 번 더 입력해 주세요" type="password" id="password2" %}
+          </div>
+
+          <!-- 회원 -->
+          <label class="label_signup" for="user_type">회원</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.user_type class="input_effect" id='user_type' %}
+          </div>
+
+          <!-- 이름 -->
+          <label class="label_signup" for="name">이름</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.first_name class="input_effect" placeholder="이름을 입력해 주세요" type="text" id="first_name" %}
+          </div>
+
+          <!-- 주소 -->
+          <label class="label_signup" for="address">주소</label><span class="asterisk">*</span><br>
+          <button class="btn_address" onclick="searchAddress()">주소검색</button>
+          <div class="signup_field">
+            {% render_field form.address class="input_effect" placeholder="주소" id="address" %}
+          </div>
+          <!-- 나머지 주소 -->
+          <input class="detail_address" type="text" placeholder="나머지 주소">
+
+          <!-- 휴대전화 -->
+          <label class="label_signup" for="phone_number">휴대전화</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.phone_number class="input_effect" placeholder="숫자만 입력해 주세요" id="phone_number" %}
+          </div>
+
+          <!-- 이메일 -->
+          <label class="label_signup" for="email">이메일</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.email class="input_effect" placeholder="이메일을 입력해 주세요" type="email" id="email" %}
+          </div>
+
+          <!-- 생년월일 -->
+          <label class="label_signup" for="birth">생년월일</label><span class="asterisk">*</span>
+          <div class="signup_field">
+            {% render_field form.birth class="input_effect" type="date" id='birth' %}
+          </div>
+
+          <!-- 서비스 이용약관 -->
+          <div class="service_wrap">
+            <div class="title5_signup">서비스 이용약관 동의</div>
+            <hr>
+
+            <!-- 체크박스 동의 1 -->
+            <div class="chk_box_wrap">
+              <label for="agree" class="chk_box">
+                <input type="checkbox" id="agree"/>
+                <span class="on"></span>
+                이용약관 동의
+                <span class="agree_signup">(필수)</span>
+              </label>
+
+              <div class="see_signup">내용보기 ></div>
+            </div>
+
+            <!-- 체크박스 동의 2 -->
+            <div class="chk_box_wrap">
+              <label for="agree2" class="chk_box2">
+                <input type="checkbox" id="agree2"/>
+                <span class="on2"></span>
+                개인정보 처리방침 동의
+                <span class="agree_signup">(필수)</span>
+              </label>
+
+              <div class="see_signup">내용보기 ></div>
+            </div>
+
+            <!-- 체크박스 동의 3 -->
+            <div class="chk_box_wrap">
+              <label for="agree3" class="chk_box3">
+                <input type="checkbox" id="agree3"/>
+                <span class="on3"></span>
+                쇼핑정보 수신 동의
+                <span class="agree2_signup">(선택)</span>
+              </label>
+
+              <div class="see_signup">내용보기 ></div>
+            </div>
+          </div>
+          
+          <!-- 회원가입 버튼 -->
+          <button class="btn_signup">회원가입</button>
+        </form>
     </main>
 
   </div>
