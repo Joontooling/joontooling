@@ -6,6 +6,8 @@
 
 /* COMMUNITY */
 @import 'community/index.css';
+@import 'community/notice.css';
+@import 'community/question.css';
 
 /* PRODUCTS */
 @import 'products/detail.css';

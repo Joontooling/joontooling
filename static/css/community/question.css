@@ -1,0 +1,15 @@
+.community .question-page > .title {
+  font-size: 1.6rem;
+}
+
+.community .question-page .contents {
+  margin-top: 5rem;
+}
+
+.community .question-page .question__choices {
+  padding: 0;
+  gap: ;
+}
+.community .question-page .question__choices .question__choices__item {
+  padding: 1.5rem;
+}
