@@ -5,7 +5,7 @@ class ProductsForm(forms.ModelForm):
 
     class Meta:
         model = Products
-        fields = ["name", "category", "price", "quantity", "point", "serial", "delivery",]
+        fields = ["name", "category", "price", "quantity", "point", "serial", "delivery","image_main"]
         labels = {
             "name" : "상품명", 
             "category" : "상품 분류",
@@ -14,6 +14,7 @@ class ProductsForm(forms.ModelForm):
             "point" : "적립금",
             "serial" : "고유번호",
             "delivery" : "배송비",
+            "image_main" : "메인 사진",
         }
 
 class ProductsInfoForm(forms.ModelForm):
@@ -23,7 +24,7 @@ class ProductsInfoForm(forms.ModelForm):
     )
     class Meta:
         model = ProductsInfo
-        fields = ['image_main',]
+        fields = ['image_sub',]
         labels = {
-            'image_main' : "상품 메인 사진",
+            'image_sub' : "상품 상제 사진",
         }

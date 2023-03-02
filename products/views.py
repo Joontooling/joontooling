@@ -7,8 +7,14 @@ def index(request):
     return render(request, "products/index.html")
 
 
-def detail(request):
-    return render(request, 'products/detail.html')
+def detail(request, product_pk):
+    product = Products.objects.get(pk=product_pk)
+
+    context = {
+        "product" : product,
+    }
+
+    return render(request, 'products/detail.html', context)
 
 
 def basket(request):
