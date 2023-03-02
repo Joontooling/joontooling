@@ -1,6 +1,7 @@
 /* ORDER-TOP */
 .order-info {
   border-bottom: 1.5px solid var(--color-border);
+  margin-top: 3rem;
 }
 
 .order-price {
