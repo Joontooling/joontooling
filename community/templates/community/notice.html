@@ -47,7 +47,7 @@
       <seciton class="notice">
         <!-- notice-top -->
         <div class="notice__top">
-          <h5 class="notice__title"><span>23</span> 건</h5>
+          <h5 class="notice__title"><span>{{ notices|length }}</span> 건</h5>
           <p class="notice__more">
             <select name="">
               <option value="">전체</option>
@@ -66,25 +66,27 @@
             <span>날짜</span>
           </div>
           <!-- notice-item -->
+          {% for notice in page_obj %}
           <div class="notice__item">
-            <span>1</span>
-            <span><a href="#">공지제목</a></span>
-            <span>고객센터</span>
-            <span>2023.02.27</span>
+            <span>{{ notice.no }}</span>
+            <span><a href="#">{{ notice.title }}</a></span>
+            <span>{{ notice.type }}</span>
+            <span>{{ notice.date|date:'Y.m.d' }}</span>
           </div>
-          <div class="notice__item">
-            <span>2</span>
-            <span><a href="#">공지제목</a></span>
-            <span>고객센터</span>
-            <span>2023.02.27</span>
-          </div>
-          <div class="notice__item">
-            <span>3</span>
-            <span><a href="#">공지제목</a></span>
-            <span>고객센터</span>
-            <span>2023.02.27</span>
-          </div>
+          {% endfor %}
         </div>
+        <ul class="page-controller">
+          <li class="prev">
+            < </li>
+              {% for page in paginator.page_range %}
+              {% if page == page_obj.number %}
+          <li><a class="active" href="?page={{ page }}">{{ page }}</a></li>
+          {% else %}
+          <li><a href="?page={{ page }}">{{ page }}</a></li>
+          {% endif %}
+          {% endfor %}
+          <li class="next"> ></li>
+        </ul>
       </seciton>
 
     </main>
