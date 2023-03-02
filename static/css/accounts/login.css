@@ -1,58 +1,107 @@
 /* 로그인 (login.html) */
 
-.contents_signup {
-  margin: 0 auto;
-  padding: 50px 0 100px;
-  width: 300px;
+.login {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
 }
 
-.input_signup {
+.title_login {
+  text-align: center;
+}
+
+.a_login {
+  width: 400px;
+  color: #243763;
+  font-size: 40px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contents_login {
+  width: 340px;
+  padding: 50px 0 100px;
+  margin: 0 auto;
+}
+
+.btn_login {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: #767676;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.input_login {
   width: 100%;
   height: 50px;
   padding: 14px;
-  font-size: 15px;
   border: 1px solid #dbdbdb;
   border-radius: 4px 4px 0 0;
+  font-size: 15px;
 }
 
-.input2_signup {
+.input2_login {
   width: 100%;
   height: 50px;
   padding: 14px;
   margin-bottom: 20px;
-  font-size: 15px;
   border: 1px solid #dbdbdb;
   border-radius: 0 0 4px 4px;
-}
-
-.a_wrap_login {
-  text-align: center;
-  margin: 20px 0 30px;
-}
-
-.a_login {
-  color: #424242;
-  text-decoration: none;
   font-size: 15px;
-  font-weight: 700;
 }
 
-.sns_title {
+.sns_title_login {
+  margin-top: 30px;
   color: #757575;
-  text-align: center;
   font-size: 12px;
-}
-
-.btn_naver_wrap {
   text-align: center;
 }
 
-.btn_naver {
+/* SNS버튼 login & signup 적용  */
+.btn_wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn_naver, .btn_kakao, .btn_google {
   width: 45px;
   height: 45px;
-  margin-top: 15px;
   border: 0;
   background: none;
   background-size: 45px;
+}
+
+.btn_naver {
   background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_naver@2x.png);
+}
+
+.btn_kakao {
+  margin: 0 20px;
+  background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_kakao@2x.png);
+}
+
+.btn_google {
+  background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_sns_google@2x.png);
+}
+
+/* 회원가입 이동 버튼 */
+.btn2_login {
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  border: 1px solid #5055b1;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #474c98;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn2_login:hover {
+  background-color: #efeff8;
 }
