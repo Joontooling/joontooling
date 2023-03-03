@@ -67,22 +67,30 @@
   <!-- MYSHOP-BOTTOM -->
   <section class="myshop-bottom">
     <div class="items">
-      <div class="item">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <div class="text">주문내역 조회</div>
-      </div>
-      <div class="item">
-        <i class="fa-regular fa-user"></i>
-        <div class="text">회원정보 수정</div>
-      </div>
-      <div class="item">
-        <i class="fa-regular fa-heart"></i>
-        <div class="text">관심상품</div>
-      </div>
-      <div class="item">
-        <i class="fa-regular fa-folder-open"></i>
-        <div class="text">게시물 관리</div>
-      </div>
+      <a href="#">
+        <div class="item">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="text">주문내역 조회</div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="item">
+          <i class="fa-regular fa-user"></i>
+          <div class="text">회원정보 수정</div>
+        </div>
+      </a>
+      <a href="{% url 'accounts:mylikes' %}">
+        <div class="item">
+          <i class="fa-regular fa-heart"></i>
+          <div class="text">관심상품</div>
+        </div>
+      </a>
+      <a href="{% url 'accounts:myposting' %}">
+        <div class="item">
+          <i class="fa-regular fa-folder-open"></i>
+          <div class="text">게시물 관리</div>
+        </div>
+      </a>
     </div>
   </section>
 

@@ -9,18 +9,16 @@ def index(request):
 def notice(request):
     notices = Notice.objects.all().order_by('-pk')
     # Paginator
-    page = request.GET.get('page')
+    page = request.GET.get('page', 1)
     paginator = Paginator(notices, 10)
     page_obj = paginator.page(page)
 
     try:
         page_obj = paginator.page(page)
     except PageNotAnInteger:
-        page = 1
-        page_obj = paginator.page(page)
+        page_obj = paginator.page(1)
     except EmptyPage:
-        page = paginator.num_pages
-        page_obj = paginator.page(page)
+        page_obj = paginator.page(1)
     
     return render(request, 'community/notice.html',
     {
