@@ -202,6 +202,26 @@
     </div>
   </section>
 
+  <hr>
+{% comment %} 테스트 확인 위치 {% endcomment %}
+<h1>TEST 출력 확인 용</h1>
+<br>
+<div class="d-flex flex-column" style="width: 20rem;">
+  상품명 :  {{ product.name }}
+  <!-- 상품 메인 이미지(없을 시 디폴트 사진 출력)-->
+  메인사진 : <img src="{{ product.image_main.url }}" alt="준비중">
+  상품가격 : {{ product.price }}
+  <hr>
+  <!-- 상품 상세사진 확인-->
+  <p>상품상세설명</p>
+  {% for img in imgproducts %}
+  <dir style="width: 10rem;">
+    <img src="{{ img.image_sub.url }}" alt="상세사진">
+  </dir>
+  {% endfor %}
+
+</div>
+
 {% endblock content %}
 
 <!-- JS -->

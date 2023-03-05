@@ -6,12 +6,14 @@ from .models import Products, ProductsInfo
 def index(request):
     return render(request, "products/index.html")
 
-
+# 디테일 데이터 넘겨주는 값 수정
 def detail(request, product_pk):
     product = Products.objects.get(pk=product_pk)
+    imgproducts = ProductsInfo.objects.filter(product=product_pk)
 
     context = {
         "product" : product,
+        "imgproducts" : imgproducts,
     }
 
     return render(request, 'products/detail.html', context)
