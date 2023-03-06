@@ -44,10 +44,10 @@
       <!-- Nav-wrapper -->
       <div class="nav-wrapper">
         <ul class="nav__items wrapper">
-          <li class="nav__item"><a href="#">회원가입</a></li>
-          <li class="nav__item"><a href="#">로그인</a></li>
-          <li class="nav__item"><a href="#">마이쇼핑</a></li>
-          <li class="nav__item"><a href="#">커뮤니티</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:signup' %}">회원가입</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:login' %}">로그인</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:myshop' %}">마이쇼핑</a></li>
+          <li class="nav__item"><a href="{% url 'community:index' %}">커뮤니티</a></li>
         </ul>
       </div>
 
@@ -163,7 +163,7 @@
                 </div>
               </div>
             </div>
-            <h1 class="inner__logo"><a href="#">준툴링</a></h1>
+            <h1 class="inner__logo"><a href="{% url 'products:index' %}">준툴링</a></h1>
             <div class="inner__search">
               <input type="text" placeholder="검색어를 입력하세요.">
               <button class="inner__search__icon">
@@ -172,12 +172,16 @@
             </div>
           </div>
           <div class="inner__btns">
-            <button class="inner__btn">
-              <i class="fa-solid fa-basket-shopping"></i>
-            </button>
-            <button class="inner__btn accent">
-              <i class="fa-regular fa-user"></i>
-            </button>
+            <a href="{% url 'accounts:mylikes' %}">
+              <button class="inner__btn">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </button>
+            </a>
+            <a href="{% url 'accounts:myshop' %}">
+              <button class="inner__btn accent">
+                <i class="fa-regular fa-user"></i>
+              </button>
+            </a>
           </div>
         </div>
         <!-- inner-menu -->

@@ -1,0 +1,57 @@
+.community .notice-page {
+  padding-top: 1rem;
+}
+
+.notice-page .notice__title {
+  font-size: 1.6rem;
+}
+
+.notice-page .notice .notice__title {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.notice-page .notice .notice__title span {
+  color: var(--color-accent);
+}
+
+.notice-page .notice .notice__more select {
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.page-controller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-controller li {
+  margin: 2rem 0.2rem;
+}
+
+.page-controller li a {
+  color: var(--color-gray);
+  padding: 0.3rem 0.6rem;
+  border-radius: 100%;
+}
+
+.page-controller li a.active {
+  color: var(--color-white);
+  background-color: var(--color-dark-gray);
+}
+
+.page-controller li.prev,
+.page-controller li.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 100%;
+  color: var(--color-dark-gray);
+  cursor: pointer;
+  margin: 0 1rem;
+}

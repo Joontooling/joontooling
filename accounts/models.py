@@ -31,7 +31,7 @@ class User(AbstractUser):
     user_type = models.CharField(max_length=20, choices=type_choice)
 
     # user 타입에 따라 밑에 있는 필드들을 넣어야 한
-    company = models.CharField(max_length=50)
+    company = models.CharField(max_length=50, null=True)
     per_company_number = models.CharField(max_length=30, null=True)
     company_number = models.IntegerField(null=True)
     point = models.IntegerField(null=True)

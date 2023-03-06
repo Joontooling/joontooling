@@ -16,3 +16,12 @@ class QnA(models.Model):
     date = models.DateTimeField()
     p_image = models.ImageField(upload_to="images/", null=True)
     lock_flag = models.CharField(choices=LOCK_CHOICES, max_length=80)
+
+
+# 공지사항 테스트용
+class Notice(models.Model):
+    no = models.IntegerField()
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    type = models.CharField(max_length=100)
+    date = models.DateField()
