@@ -18,9 +18,12 @@ def detail(request, product_pk):
     product = Products.objects.get(pk=product_pk)
     imgproducts = ProductsInfo.objects.filter(product=product_pk)
 
+    point_ = (product.price // product.point) // 100
+
     context = {
         "product" : product,
         "imgproducts" : imgproducts,
+        "point_": point_,
     }
 
     return render(request, 'products/detail.html', context)
