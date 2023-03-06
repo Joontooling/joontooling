@@ -1,4 +1,5 @@
 {% load static %}
+{% load django_bootstrap5 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,15 +24,17 @@
     </header>
     
     <main class="contents_login">
-      <form action="">
-        <div>
-          <input type="email" class="input_login" placeholder="아이디">
+      <form action="{% url 'accounts:login' %}" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% comment %} <div>
+          <input class="input_login" placeholder="아이디">
         </div>
         <div>
           <input type="password" class="input2_login" placeholder="비밀번호">
-        </div>
+        </div> {% endcomment %}
         <!-- 로그인 버튼 -->
-        <button class="btn_login">로그인</button>
+        <input class="btn_login" type="submit" value="로그인">
       </form>
 
       <section>
@@ -55,7 +58,7 @@
 </body>
 
 <!-- 로그인 버튼 활성화 -->
-<script>
+{% comment %} <script>
   const idForm = document.querySelector('.input_login');
   const pwForm = document.querySelector('.input2_login');
   const loginButton = document.querySelector('.btn_login');
@@ -76,6 +79,6 @@
         break;
     }
   }
-</script>
+</script> {% endcomment %}
 
 </html>
