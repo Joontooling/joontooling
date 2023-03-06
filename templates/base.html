@@ -287,10 +287,10 @@
     <!-- Footer-top -->
     <div class="footer-top">
       <ul class="footer__items">
-        <li class="footer__item"><a href="#">홈페이지</a></li>
-        <li class="footer__item"><a href="#">이용약관</a></li>
-        <li class="footer__item"><a href="#">개인정보취급방침</a></li>
-        <li class="footer__item"><a href="#">쇼핑몰 이용안내</a></li>
+        <li class="footer__item"><a href="{% url 'products:index' %}">홈페이지</a></li>
+        <li class="footer__item"><a href="{% url 'products:terms' %}">이용약관</a></li>
+        <li class="footer__item"><a href="{% url 'products:personal_info' %}">개인정보취급방침</a></li>
+        <li class="footer__item"><a href="{% url 'products:use_info' %}">쇼핑몰 이용안내</a></li>
       </ul>
     </div>
     <!-- Footer-body -->

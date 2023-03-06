@@ -10,9 +10,10 @@
 @import 'community/question.css';
 
 /* PRODUCTS */
+@import 'index.css';
+@import 'products/footer_top.css';
 @import 'products/detail.css';
 @import 'products/basket.css';
-@import 'index.css';
 @import 'products/order.css';
 @import 'products/order_done.css';
 @import 'products/product_list.css';

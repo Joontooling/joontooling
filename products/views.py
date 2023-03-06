@@ -62,3 +62,13 @@ def product_create(request):
 
 def product_list(request):
     return render(request, "products/product_list.html")
+
+
+def terms(request):
+    return render(request, "products/terms.html")
+
+def personal_info(request):
+    return render(request, "products/personal_info.html")
+
+def use_info(request):
+    return render(request, "products/use_info.html")
