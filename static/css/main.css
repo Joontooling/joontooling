@@ -10,9 +10,10 @@
 @import 'community/question.css';
 
 /* PRODUCTS */
+@import 'index.css';
+@import 'products/footer_top.css';
 @import 'products/detail.css';
 @import 'products/basket.css';
-@import 'index.css';
 @import 'products/order.css';
 @import 'products/order_done.css';
 @import 'products/product_list.css';
@@ -253,7 +254,7 @@ button {
   z-index: 3;
   display: none;
   position: absolute;
-  top: 88px;
+  top: 89px;
   left: 0;
   background-color: var(--color-white);
   width: 100%;
@@ -379,7 +380,7 @@ button {
   top: 25px;
   left: 0;
   background-color: var(--color-white);
-  width: 180px;
+  width: 190px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
   font-size: 14px;

@@ -1,0 +1,30 @@
+.terms,
+.personal-info,
+.use-info {
+  margin: 5rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 3rem;
+  color: var(--color-dark-gray);
+  font-size: 0.85rem;
+}
+
+.terms .title,
+.personal-info .title,
+.use-info .title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.terms p span,
+.personal-info p span,
+.use-info p span {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.use-info p strong,
+.use-info p b {
+  font-weight: bold;
+}
