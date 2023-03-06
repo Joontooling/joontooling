@@ -4,7 +4,14 @@ from .models import Products, ProductsInfo
 
 
 def index(request):
-    return render(request, "products/index.html")
+    products = Products.objects.all().order_by("-pk")
+
+    context = {
+        "products" : products
+    }
+
+
+    return render(request, "products/index.html", context)
 
 # 디테일 데이터 넘겨주는 값 수정
 def detail(request, product_pk):
