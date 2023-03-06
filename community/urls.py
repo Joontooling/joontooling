@@ -5,4 +5,6 @@ app_name = "community"
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("notice/", views.notice, name="notice"),
+    path("question/", views.question, name="question"),
 ]

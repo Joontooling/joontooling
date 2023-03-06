@@ -6,6 +6,8 @@
 
 /* COMMUNITY */
 @import 'community/index.css';
+@import 'community/notice.css';
+@import 'community/question.css';
 
 /* PRODUCTS */
 @import 'products/detail.css';
@@ -41,7 +43,7 @@
 body {
   font-family: 'Roboto', 'Noto Sans KR', sans-serif;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.4;
   color: var(--color-font);
   min-width: 1180px;
 }
@@ -197,6 +199,10 @@ button {
   color: var(--color-white);
   border-radius: 50%;
   box-shadow: 3px 3px 10px rgb(36, 55, 99);
+}
+
+.inner__btn.accent a {
+  color: var(--color-white);
 }
 
 /* header-inner-menu */

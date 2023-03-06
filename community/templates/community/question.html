@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+
+  <!-- COMMUNITY -->
+  <div class="community">
+
+    <!-- COMMUNITY / ASIDE -->
+    <aside class="aside">
+      <h1 class="aside__title">고객센터</h1>
+
+      <ul class="aside__list">
+        <li class="aside__item"><a href="{% url 'community:index' %}">메인</a></li>
+        <li class="aside__item"><a href="{% url 'community:question' %}">자주 묻는 질문</a></li>
+        <ul class="aside__item">
+          <li class="aside__item__inner"><a href="#">BEST 10</a></li>
+          <li class="aside__item__inner"><a href="#">회원</a></li>
+          <li class="aside__item__inner"><a href="#">반품/교환/환불</a></li>
+          <li class="aside__item__inner"><a href="#">주문/결제</a></li>
+          <li class="aside__item__inner"><a href="#">배송/수령일 안내</a></li>
+          <li class="aside__item__inner"><a href="#">기타</a></li>
+        </ul>
+        </li>
+        <li class="aside__item"><a href="#">1:1 문의</a></li>
+        <li class="aside__item"><a href="{% url 'community:notice' %}">공지사항</a></li>
+      </ul>
+
+    </aside>
+
+    <!-- COMMUNITY / QUESTION -->
+    <main class="service question-page">
+      <h2 class="title bold">자주 묻는 질문</h2>
+
+      <!-- Question -->
+      <section class="question">
+        <h5 class="question__title">질문 검색</h5>
+        <div class="question__search">
+          <form>
+            <input type="text" placeholder="질문을 검색해 보세요.">
+            <button>검색</button>
+          </form>
+        </div>
+        <div class="question__choices">
+          <div class="question__choices__item"><button class="tab-button" data-tab-id="question-tab-1">BEST 10</button>
+          </div>
+          <div class="question__choices__item"><button class="tab-button" data-tab-id="question-tab-2">회원</button></div>
+          <div class="question__choices__item"><button class="tab-button" data-tab-id="question-tab-3">반품/교환/환불</button>
+          </div>
+          <div class="question__choices__item"><button class="tab-button" data-tab-id="question-tab-4">주문/결제</button>
+          </div>
+          <div class="question__choices__item"><button class="tab-button" data-tab-id="question-tab-5">배송/수령일
+              안내</button>
+          </div>
+          <div class="question__choices__item"><button class="tab-button" data-tab-id="question-tab-6">기타</button></div>
+        </div>
+      </section>
+
+      <!-- Contents -->
+      <section class="contents">
+        <!-- BEST 10 -->
+        <div id="question-tab-1" class="question-tab">
+          <h5 class="title">BEST 10</h5>
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 1주문을 수정할 수 있나요?</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                고객님께서 주문하신 상품을 실제 받으시는 날은 "예상출고일 + 배송일"입니다.<br /><br />
+                '예상출고일'이란 근무일 기준으로 제품이 준비되는 시간 만을 안내하는 것이며, 배송시간은 예상출고일 외 택배를 통해 고객님께 실제 배달되는 기간을 말합니다.<br /><br />
+                '출고예정일'은 상품에 따라 준비기간이 다르며 배송 시간은 지역에 따라 약간씩 다르나 보통 1~3일정도 소요됩니다. (산간지역은 최대 7일 소요)<br /><br />
+                * 예상출고일은 영업일 기준으로 산정되며, 일요일과 공휴일 및 기타 휴무일에는 배송되지 않습니다. (우체국 배송은 토요일 휴무로 배송 불가함)<br /><br />
+                * 주문한 상품의 당사에 재고가 없을 때는 거래처로 다시 주문 요청한 후 출고되므로 3∼7일내외 정도 더 소요됩니다.<br /><br />
+                * 천재지변 등의 불가항력적 사유로 인한 배송 지연은 그 해당기간 동안의 배송소요 기간에서 제외됩니다.
+              </div>
+            </li>
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> SNS 로그인 연동과 회원가입을 이용할 수 없어요.</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                [SNS 로그인 연동 및 회원가입 불가 대상]<br /><br />
+                - 만 14세 미만 개인회원<br /><br />
+                - 법인 회원<br /><br />
+                ※ 해당 회원은 다른 가입 수단을 이용해 주세요.<br /><br />
+                [SNS 로그인 연동 가능 / 회원가입 불가 대상]<br /><br />
+                - SNS 계정의 이메일을 이미 교보문고 계정에서 사용 중인 개인회원<br /><br />
+                ※ 해당 회원은 아이디 찾기를 통해 기존 계정에 SNS 로그인을 연동하여 이용해 주세요.<br /><br />
+              </div>
+            </li>
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 법인카드 사용시 오류가 발생합니다.</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                일반 신용카드와 동일하게 법인카드를 이용하시어 결제하실 수 있습니다.<br /><br />
+                단, 일시불결제만 가능하며 할부결제와 포인트 사용은 불가능하므로 이용 시 유의하세요.<br /><br />
+                또한 법인카드 결제 시에도 국내개인카드 결제와 동일하게 각카드사에 따라 ISP나 안심클릭을 통해 결제가 이루어집니다.<br /><br />
+                ISP나 안심클릭 등록 후 결제 이용하세요.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 회원 -->
+        <div id="question-tab-2" class="question-tab" hidden>
+          <h5 class="title">회원</h5>
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> SNS 로그인 연동과 회원가입을 이용할 수 없어요.</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                [SNS 로그인 연동 및 회원가입 불가 대상]<br /><br />
+                - 만 14세 미만 개인회원<br /><br />
+                - 법인 회원<br /><br />
+                ※ 해당 회원은 다른 가입 수단을 이용해 주세요.<br /><br />
+                [SNS 로그인 연동 가능 / 회원가입 불가 대상]<br /><br />
+                - SNS 계정의 이메일을 이미 교보문고 계정에서 사용 중인 개인회원<br /><br />
+                ※ 해당 회원은 아이디 찾기를 통해 기존 계정에 SNS 로그인을 연동하여 이용해 주세요.<br /><br />
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 반품/교환/환불 -->
+        <div id="question-tab-3" class="question-tab" hidden>
+          <h5 class="title">반품/교환/환불</h5>
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 주문을 수정할 수 있나요?</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                ※주문취소 안내<br><br>
+                - 일반배송 상품은 상품준비중 단계까지 주문취소 가능합니다.<br><br>
+                - 주문취소할 수 없는 진행단계에 있는 상품의 경우에는 배송완료 후 반품신청을 하시기 바랍니다.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 주문/결제 -->
+        <div id="question-tab-4" class="question-tab" hidden>
+          <h5 class="title">주문/결제</h5>
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 주문을 수정(취소/변경)할 수 있나요?</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                회원님께서 주문하신 상품은 아래의 단계별로 처리됩니다.<br><br>
+                주문수정(취소/변경)는 주문/배송조회에서 회원 로그인 후 하실 수 있습니다.<br><br>
+                비회원 주문의 경우는 주문하실 때 입력했던 이메일 주소와 비밀번호로 로그인하실 수 있습니다.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 배송/수령일 -->
+        <div id="question-tab-5" class="question-tab" hidden>
+          <h5 class="title">배송/수령일</h5>
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 주문한 상품이 아직 안 왔어요.</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                주문하신 도서를 아직 못받아 보셨다면 다음 사항을 확인해 주십시오.<br /><br />
+                1. 주문·배송 확인 시 상품의 처리상태가 포장완료로 되어 있는 경우 이 상품은 당사에서는 출고처리를 한 것입니다. 당사에서 출고처리가 되었으나 2~3일 이내에 받아보시지 못한 경우는
+                다음을 확인하시기 바랍니다.<br /><br />
+                * 배송조회를 확인하셔서 주문하신 상품이 받아보실 주소의 근처 취급소에 있다고 조회되면, 택배사 직원이 방문했음에도 불구하고 부재중이셔서 배송받지 못하신 경우가
+                많습니다.<br /><br />
+                이 경우 고객센터의 Q&A 상담이나 전화(국번없이)1544-1900을 이용하시면 신속히 처리해 드립니다.<br /><br />
+                * 당일 배송지역의 경우, 배송조회가 되지 않습니다. 주문하신 당일 신속한 배송처리가 되기 때문에 배송조회가 무의미하기 때문입니다.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 기타 -->
+        <div id="question-tab-6" class="question-tab" hidden>
+          <h5 class="title">기타</h5>
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 법인카드 사용시 오류가 발생합니다.</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="item-dropdown">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                일반 신용카드와 동일하게 법인카드를 이용하시어 결제하실 수 있습니다.<br /><br />
+                단, 일시불결제만 가능하며 할부결제와 포인트 사용은 불가능하므로 이용 시 유의하세요.<br /><br />
+                또한 법인카드 결제 시에도 국내개인카드 결제와 동일하게 각카드사에 따라 ISP나 안심클릭을 통해 결제가 이루어집니다.<br /><br />
+                ISP나 안심클릭 등록 후 결제 이용하세요.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'js/question.js' %}"></script>
+{% endblock js %}

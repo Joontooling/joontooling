@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrapper">
+
+  <!-- COMMUNITY -->
+  <div class="community">
+
+    <!-- COMMUNITY / ASIDE -->
+    <aside class="aside">
+      <h1 class="aside__title">고객센터</h1>
+
+      <ul class="aside__list">
+        <li class="aside__item"><a href="{% url 'community:index' %}">메인</a></li>
+        <li class="aside__item"><a href="{% url 'community:question' %}">자주 묻는 질문</a></li>
+        <ul class="aside__item">
+          <li class="aside__item__inner"><a href="#">BEST 10</a></li>
+          <li class="aside__item__inner"><a href="#">회원</a></li>
+          <li class="aside__item__inner"><a href="#">반품/교환/환불</a></li>
+          <li class="aside__item__inner"><a href="#">주문/결제</a></li>
+          <li class="aside__item__inner"><a href="#">배송/수령일 안내</a></li>
+          <li class="aside__item__inner"><a href="#">기타</a></li>
+        </ul>
+        </li>
+        <li class="aside__item"><a href="#">1:1 문의</a></li>
+        <li class="aside__item"><a href="{% url 'community:notice' %}">공지사항</a></li>
+      </ul>
+
+    </aside>
+
+    <!-- COMMUNITY / NOTICE -->
+    <main class="service notice-page">
+
+      <!-- Question -->
+      <section class="question">
+        <h5 class="question__title notice__title">공지사항</h5>
+        <div class="question__search">
+          <form>
+            <input type="text" placeholder="검색어를 입력해 보세요.">
+            <button>검색</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Notice * going to use django pagination -->
+      <seciton class="notice">
+        <!-- notice-top -->
+        <div class="notice__top">
+          <h5 class="notice__title"><span>{{ notices|length }}</span> 건</h5>
+          <p class="notice__more">
+            <select name="">
+              <option value="">전체</option>
+              <option value="">유형별 나누기</option>
+              <option value="">유형별 나누기</option>
+              <option value="">유형별 나누기</option>
+            </select>
+          </p>
+        </div>
+        <!-- notice-bottom -->
+        <div class="notice__bottom">
+          <div class="notice__no">
+            <span>NO</span>
+            <span>공지제목</span>
+            <span>유형</span>
+            <span>날짜</span>
+          </div>
+          <!-- notice-item -->
+          {% for notice in page_obj %}
+          <div class="notice__item">
+            <span>{{ notice.no }}</span>
+            <span><a href="#">{{ notice.title }}</a></span>
+            <span>{{ notice.type }}</span>
+            <span>{{ notice.date|date:'Y.m.d' }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <ul class="page-controller">
+          <li class="prev">
+            < </li>
+              {% for page in paginator.page_range %}
+              {% if page == page_obj.number %}
+          <li><a class="active" href="?page={{ page }}">{{ page }}</a></li>
+          {% else %}
+          <li><a href="?page={{ page }}">{{ page }}</a></li>
+          {% endif %}
+          {% endfor %}
+          <li class="next"> ></li>
+        </ul>
+      </seciton>
+
+    </main>
+
+  </div>
+
+</div>
+{% endblock content %}
