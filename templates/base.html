@@ -44,13 +44,11 @@
       <!-- Nav-wrapper -->
       <div class="nav-wrapper">
         <ul class="nav__items wrapper">
-          <li class="nav__item"><a href="{% url 'accounts:signup' %}">회원가입</a></li>
-
-          
           {% if request.user.is_authenticated %}
             <li class="nav__item"><a href="{% url 'accounts:logout' %}">로그아웃</a></li>
             <li class="nav__item"><a href="{% url 'accounts:myshop' request.user.pk %}">마이쇼핑</a></li>
           {% else %}
+            <li class="nav__item"><a href="{% url 'accounts:signup' %}">회원가입</a></li>
             <li class="nav__item"><a href="{% url 'accounts:login' %}">로그인</a></li>
           {% endif %}
           <li class="nav__item"><a href="{% url 'community:index' %}">커뮤니티</a></li>

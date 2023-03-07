@@ -9,39 +9,47 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def signup(request):
-    if request.method == "POST":
+    if not request.user.is_authenticated:
+        if request.method == "POST":
 
-        form = UserForm(request.POST, request.FILES)
+            form = UserForm(request.POST, request.FILES)
 
-        if form.is_valid():
-            user_sign_up = form.save()
-            auth_login(request, user = user_sign_up)
-            return redirect("products:index")
-    else:
-        form = UserForm()
+            if form.is_valid():
+                user_sign_up = form.save()
+                auth_login(request, user = user_sign_up)
+                return redirect("products:index")
+        else:
+            form = UserForm()
+        
+        context = {
+            "form": form,
+        }
+        return render(request, "accounts/signup.html", context)
     
-    context = {
-        "form": form,
-    }
-    return render(request, "accounts/signup.html", context)
+    else:
+        return redirect("products:index")
 
 def login(request):
 
-    if request.method == "POST":
-        form = AuthenticationForm(request, data = request.POST)
+    if not request.user.is_authenticated:
+        if request.method == "POST":
+            form = AuthenticationForm(request, data = request.POST)
 
-        if form.is_valid():
-            auth_login(request, form.get_user())
-            return redirect(request.GET.get('next') or 'products:index')
-    
+            if form.is_valid():
+                auth_login(request, form.get_user())
+                return redirect(request.GET.get('next') or 'products:index')
+        
+        else:
+            form = AuthenticationForm()
+        
+        context = {
+            'form' : form,
+        }
+
+        return render(request, 'accounts/login.html', context)
+
     else:
-        form = AuthenticationForm()
-    
-    context = {
-        'form' : form,
-    }
-
-    return render(request, 'accounts/login.html', context)
+        return redirect("products:index")
 
 def logout(request):
     auth_logout(request)
