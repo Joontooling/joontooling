@@ -51,15 +51,19 @@
         <div class="call__wrap">
           <!-- Call-left -->
           <div class="call__left__wrap">
-            <div class="call__left">
-              <div class="call__icon">💬</div>
-              <div class="call__text">1:1 문의 접수</div>
-            </div>
+            <a href="{% url 'community:qna' %}">
+              <div class="call__left">
+                <div class="call__icon">💬</div>
+                <div class="call__text">1:1 문의 접수</div>
+              </div>
+            </a>
             <div class="call__line"></div>
-            <div class="call__left">
-              <div class="call__icon">📜</div>
-              <div class="call__text">1:1 문의 내역</div>
-            </div>
+            <a href="{% url 'community:qna_list' %}">
+              <div class="call__left">
+                <div class="call__icon">📜</div>
+                <div class="call__text">1:1 문의 내역</div>
+              </div>
+            </a>
           </div>
           <!-- Call-right -->
           <div class="call__right">

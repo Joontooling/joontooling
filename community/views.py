@@ -32,3 +32,6 @@ def question(request):
 
 def qna(request):
     return render(request, 'community/qna.html')
+
+def qna_list(request):
+    return render(request, 'community/qna_list.html')
