@@ -46,7 +46,7 @@
         <ul class="nav__items wrapper">
           <li class="nav__item"><a href="{% url 'accounts:signup' %}">회원가입</a></li>
           <li class="nav__item"><a href="{% url 'accounts:login' %}">로그인</a></li>
-          <li class="nav__item"><a href="{% url 'accounts:myshop' %}">마이쇼핑</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:myshop' pk %}">마이쇼핑</a></li>
           <li class="nav__item"><a href="{% url 'community:index' %}">커뮤니티</a></li>
         </ul>
       </div>
@@ -177,7 +177,7 @@
                 <i class="fa-solid fa-basket-shopping"></i>
               </button>
             </a>
-            <a href="{% url 'accounts:myshop' %}">
+            <a href="{% url 'accounts:myshop' pk %}">
               <button class="inner__btn accent">
                 <i class="fa-regular fa-user"></i>
               </button>
