@@ -148,6 +148,10 @@ input:focus {
   padding-bottom: 15px;
 }
 
+.chk_box_wrap a {
+  text-decoration: none;
+}
+
 /* 각 체크박스 전체 */
 .chk_box, .chk_box2, .chk_box3 { 
   display: block; 
@@ -206,6 +210,9 @@ input:focus {
 
 /* 내용보기 */
 .see_signup {
+  padding: 0;
+  border: 0;
+  background-color: #fff;
   color: rgb(130, 140, 148);
   font-size: 14px;
 }
@@ -223,4 +230,24 @@ input:focus {
 }
 .btn_signup:hover {
   background-color: #5055b1;
+}
+
+/* 이용약관 상세내용 */
+.agreement_title {
+  height: 40px;
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #243763;
+}
+.agreement_wrap {
+  padding: 14px;
+}
+.agreement_content {
+  padding: 7px;
+  border: 1px solid #ccc;
+  color: #353535;
+  font-size: 12px;
 }

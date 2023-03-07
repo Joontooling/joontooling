@@ -149,37 +149,43 @@
             <!-- 체크박스 동의 1 -->
             <div class="chk_box_wrap">
               <label for="agree" class="chk_box">
-                <input type="checkbox" id="agree" required>
+                <input type="checkbox" id="agree">
                 <span class="on"></span>
                 이용약관 동의
                 <span class="agree_signup">(필수)</span>
               </label>
 
-              <div class="see_signup">내용보기</div>
+              <a href="{% url 'accounts:agreement1' %}" target="_blank">
+                <div class="see_signup">내용보기</div>
+              </a>
             </div>
 
             <!-- 체크박스 동의 2 -->
             <div class="chk_box_wrap">
               <label for="agree2" class="chk_box2">
-                <input type="checkbox" id="agree2"/>
+                <input type="checkbox" id="agree2">
                 <span class="on2"></span>
                 개인정보 처리방침 동의
                 <span class="agree_signup">(필수)</span>
               </label>
 
-              <div class="see_signup">내용보기 </div>
+              <a href="{% url 'accounts:agreement2' %}" target="_blank">
+                <div class="see_signup">내용보기</div>
+              </a>
             </div>
 
             <!-- 체크박스 동의 3 -->
             <div class="chk_box_wrap">
               <label for="agree3" class="chk_box3">
-                <input type="checkbox" id="agree3"/>
+                <input type="checkbox" id="agree3">
                 <span class="on3"></span>
                 쇼핑정보 수신 동의
                 <span class="agree2_signup">(선택)</span>
               </label>
 
-              <div class="see_signup">내용보기 </div>
+              <a href="{% url 'accounts:agreement3' %}" target="_blank">
+                <div class="see_signup">내용보기</div>
+              </a>
             </div>
           </div>
           

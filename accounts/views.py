@@ -108,3 +108,12 @@ def my_likes(request):
 
 def my_posting(request):
     return render(request, 'accounts/my_posting.html')
+
+def agreement1(request):
+    return render(request, 'accounts/agreement1.html')
+
+def agreement2(request):
+    return render(request, 'accounts/agreement2.html')
+
+def agreement3(request):
+    return render(request, 'accounts/agreement3.html')
