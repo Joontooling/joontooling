@@ -21,6 +21,8 @@ class User(AbstractUser):
         ("법인사업자", "법인사업자"),
     )
 
+    first_name = models.CharField(max_length=30)
+    email = models.CharField(max_length=30)
     address = models.CharField(max_length=100)
 
     # 전화번호 지정
@@ -31,13 +33,13 @@ class User(AbstractUser):
     user_type = models.CharField(max_length=20, choices=type_choice)
 
     # user 타입에 따라 밑에 있는 필드들을 넣어야 한다
-    # 상호명
+    # 상호명 / 법인명
     company = models.CharField(max_length=50, null=True)
 
-    # 개인사업자 / 법인사업자
-    per_company_number = models.CharField(max_length=30, null=True)
+    # 사업자번호 (개인사업자)
+    per_company_number = models.IntegerField(null=True)
 
-    # 법인사업자
+    # 법인번호 (법인사업자)
     company_number = models.IntegerField(null=True)
     
     point = models.IntegerField(null=True)

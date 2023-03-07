@@ -54,19 +54,19 @@
 
       <!-- 회원정보 입력 -->
       <main>
-        <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data" class="was-validated">
           {% csrf_token %}
 
           <!-- 아이디 -->
           <label class="label_signup" for="username">아이디</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.username class="input_effect" placeholder="아이디를 입력해 주세요" type="text" id="username" %}
+            {% render_field form.username class="input_effect form-control" placeholder="아이디를 입력해 주세요" type="text" id="username" %}
           </div>
 
           <!-- 비밀번호 -->
           <label class="label_signup" for="password">비밀번호</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.password1 class="input_effect" placeholder="비밀번호를 입력해 주세요" type="password" id="password1" %}
+            {% render_field form.password1 class="input_effect form-control" placeholder="비밀번호를 입력해 주세요" type="password" id="password1" %}
           </div>
           <!-- 비밀번호 안내 -->
           <div class="info_password">
@@ -81,26 +81,44 @@
           <!-- 비밀번호 확인 -->
           <label class="label_signup" for="password">비밀번호 확인</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.password2 class="input_effect" placeholder="비밀번호를 한 번 더 입력해 주세요" type="password" id="password2" %}
+            {% render_field form.password2 class="input_effect form-control" placeholder="비밀번호를 한 번 더 입력해 주세요" type="password" id="password2" %}
           </div>
 
           <!-- 회원 -->
           <label class="label_signup" for="user_type">회원</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.user_type class="input_effect" id='user_type' %}
+            {% render_field form.user_type class="input_effect form-control" id="user_type" %}
           </div>
 
+          <!-- 상호명 / 법인명 -->
+          <div class="company signup_field" style="display: none;">
+            <label class="label_signup" for="name">상호명 / 법인명</label><span class="asterisk">*</span>
+            {% render_field form.company class="input_effect form-control" placeholder="상호명 / 법인명을 입력해주세요" %}
+          </div>
+
+          <!-- 사업자번호 (개인사업자) -->
+          <div class="per_company_number signup_field" style="display: none;">
+            <label class="label_signup" for="name">사업자번호</label><span class="asterisk">*</span>
+            {% render_field form.per_company_number class="input_effect form-control" placeholder="숫자만 입력해 주세요" %}
+          </div>
+
+          <!-- 법인번호 (법인사업자) -->
+          <div class="company_number signup_field" style="display: none;">
+            <label class="label_signup" for="name">법인번호</label><span class="asterisk">*</span>
+            {% render_field form.company_number class="input_effect form-control" placeholder="숫자만 입력해 주세요" %}
+          </div>
+      
           <!-- 이름 -->
           <label class="label_signup" for="name">이름</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.first_name class="input_effect" placeholder="이름을 입력해 주세요" type="text" id="first_name" %}
+            {% render_field form.first_name class="input_effect form-control" placeholder="이름을 입력해 주세요" type="text" id="first_name" %}
           </div>
 
           <!-- 주소 -->
           <label class="label_signup" for="address">주소</label><span class="asterisk">*</span><br>
           <button class="btn_address" onclick="searchAddress()">주소검색</button>
           <div class="signup_field">
-            {% render_field form.address class="input_effect" placeholder="주소" id="address" %}
+            {% render_field form.address class="input_effect form-control" placeholder="주소" id="address" %}
           </div>
           <!-- 나머지 주소 -->
           <input class="detail_address" type="text" placeholder="나머지 주소">
@@ -108,19 +126,19 @@
           <!-- 휴대전화 -->
           <label class="label_signup" for="phone_number">휴대전화</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.phone_number class="input_effect" placeholder="숫자만 입력해 주세요" id="phone_number" %}
+            {% render_field form.phone_number class="input_effect form-control" placeholder="숫자만 입력해 주세요" type="number" id="phone_number" %}
           </div>
 
           <!-- 이메일 -->
           <label class="label_signup" for="email">이메일</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.email class="input_effect" placeholder="이메일을 입력해 주세요" type="email" id="email" %}
+            {% render_field form.email class="input_effect form-control" placeholder="이메일을 입력해 주세요" type="email" id="email" %}
           </div>
 
           <!-- 생년월일 -->
           <label class="label_signup" for="birth">생년월일</label><span class="asterisk">*</span>
           <div class="signup_field">
-            {% render_field form.birth class="input_effect" type="date" id='birth' %}
+            {% render_field form.birth class="input_effect form-control" type="date" id='birth' %}
           </div>
 
           <!-- 서비스 이용약관 -->
@@ -131,7 +149,7 @@
             <!-- 체크박스 동의 1 -->
             <div class="chk_box_wrap">
               <label for="agree" class="chk_box">
-                <input type="checkbox" id="agree"/>
+                <input type="checkbox" id="agree" required>
                 <span class="on"></span>
                 이용약관 동의
                 <span class="agree_signup">(필수)</span>
@@ -187,6 +205,35 @@
       }
     }).open();
   }
+
+</script>
+
+<script>
+
+var user_type = document.querySelector("#user_type");
+// 상호명 / 법인명
+var company = document.querySelector(".company");
+// 사업자번호
+var per_company_number = document.querySelector(".per_company_number");
+// 법인번호
+var company_number = document.querySelector(".company_number");
+
+user_type.addEventListener("click", function() {
+  if (user_type.value==="개인사업자") {
+    company_number.style.display = 'none';
+    company.style.display = 'block';
+    per_company_number.style.display = 'block';
+  } else if (user_type.value==="법인사업자") {
+    per_company_number.style.display = 'none';
+    company.style.display = 'block';
+    company_number.style.display = 'block';
+  } else {
+    company.style.display = 'none';
+    per_company_number.style.display = 'none';
+    company_number.style.display = 'none';
+  }
+})
+
 </script>
 
 </html>
