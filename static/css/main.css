@@ -8,6 +8,7 @@
 @import 'community/index.css';
 @import 'community/notice.css';
 @import 'community/question.css';
+@import 'community/qna.css';
 
 /* PRODUCTS */
 @import 'index.css';
