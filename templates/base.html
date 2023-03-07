@@ -44,9 +44,13 @@
       <!-- Nav-wrapper -->
       <div class="nav-wrapper">
         <ul class="nav__items wrapper">
-          <li class="nav__item"><a href="{% url 'accounts:signup' %}">회원가입</a></li>
-          <li class="nav__item"><a href="{% url 'accounts:login' %}">로그인</a></li>
-          <li class="nav__item"><a href="{% url 'accounts:myshop' %}">마이쇼핑</a></li>
+          {% if request.user.is_authenticated %}
+            <li class="nav__item"><a href="{% url 'accounts:logout' %}">로그아웃</a></li>
+            <li class="nav__item"><a href="{% url 'accounts:myshop' request.user.pk %}">마이쇼핑</a></li>
+          {% else %}
+            <li class="nav__item"><a href="{% url 'accounts:signup' %}">회원가입</a></li>
+            <li class="nav__item"><a href="{% url 'accounts:login' %}">로그인</a></li>
+          {% endif %}
           <li class="nav__item"><a href="{% url 'community:index' %}">커뮤니티</a></li>
         </ul>
       </div>
@@ -172,16 +176,18 @@
             </div>
           </div>
           <div class="inner__btns">
-            <a href="{% url 'accounts:mylikes' %}">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'accounts:mylikes' request.user.pk %}">
               <button class="inner__btn">
                 <i class="fa-solid fa-basket-shopping"></i>
               </button>
             </a>
-            <a href="{% url 'accounts:myshop' %}">
+            <a href="{% url 'accounts:myshop' request.user.pk %}">
               <button class="inner__btn accent">
                 <i class="fa-regular fa-user"></i>
               </button>
             </a>
+            {% endif %}
           </div>
         </div>
         <!-- inner-menu -->

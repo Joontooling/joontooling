@@ -10,7 +10,7 @@
       마이 쇼핑
     </h1>
     <h2 class="step">
-      <span>홈 ></span>
+      <span>홈</span>
       <span> 마이페이지</span>
     </h2>
   </div>
@@ -79,13 +79,13 @@
           <div class="text">회원정보 수정</div>
         </div>
       </a>
-      <a href="{% url 'accounts:mylikes' %}">
+      <a href="{% url 'accounts:mylikes' user_pk %}">
         <div class="item">
           <i class="fa-regular fa-heart"></i>
           <div class="text">관심상품</div>
         </div>
       </a>
-      <a href="{% url 'accounts:myposting' %}">
+      <a href="{% url 'accounts:myposting' user_pk %}">
         <div class="item">
           <i class="fa-regular fa-folder-open"></i>
           <div class="text">게시물 관리</div>
