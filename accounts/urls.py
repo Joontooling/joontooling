@@ -11,6 +11,6 @@ urlpatterns = [
     path('delete/<int:pk>/', views.delete, name='delete'),
     path('password_update/', views.password_update, name='password_update'),
     path("my_shop/<int:pk>/", views.my_shop, name="myshop"),
-    path("my_likes/", views.my_likes, name="mylikes"),
-    path("my_posting/", views.my_posting, name="myposting"),
+    path("my_likes/<int:pk>/", views.my_likes, name="mylikes"),
+    path("my_posting/<int:pk>/", views.my_posting, name="myposting"),
 ]

@@ -99,12 +99,13 @@ def my_shop(request, pk):
     if request.user.pk == pk:
 
         context = {
-            'pk' : pk,
+            'user_pk' : pk,
         }
+
     return render(request, 'accounts/my_shop.html', context)
 
-def my_likes(request):
+def my_likes(request, pk):
     return render(request, 'accounts/my_likes.html')
 
-def my_posting(request):
+def my_posting(request, pk):
     return render(request, 'accounts/my_posting.html')
