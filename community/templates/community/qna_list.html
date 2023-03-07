@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+
+  <!-- COMMUNITY -->
+  <div class="community">
+
+    <!-- COMMUNITY / ASIDE -->
+    <aside class="aside">
+      <h1 class="aside__title">고객센터</h1>
+
+      <ul class="aside__list">
+        <li class="aside__item"><a href="{% url 'community:index' %}">메인</a></li>
+        <li class="aside__item"><a href="{% url 'community:question' %}">자주 묻는 질문</a></li>
+        <li class="aside__item"><a href="{% url 'community:qna' %}">1:1 문의</a></li>
+        <li class="aside__item"><a href="{% url 'community:notice' %}">공지사항</a></li>
+      </ul>
+
+    </aside>
+
+    <!-- COMMUNITY / QUESTION -->
+    <main class="service question-page qna-list">
+      <!-- Contents -->
+      <section class="contents">
+        <!-- 문의하기 -->
+        <div id="question-tab-1" class="question-tab">
+          <h5 class="title">
+            1:1 문의
+            <button><a href="{% url 'community:qna' %}">1:1 문의하기</a></button>
+          </h5>
+          <!-- 문의목록 -->
+          <ul class="items">
+            <li class="item">
+              <button class="item-btn">
+                <p class="item-title"><span>Q</span> 문의를 수정할 수 있나요?</p>
+                <div class="item-left-container">
+                  <span>2023.03.07</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </button>
+              <!-- TextBox -->
+              <div class="item-dropdown">
+                문의내용
+                <div class="qna__item__btns">
+                  <button class="qna__item__btn"><a href="#">수정</a></button> /
+                  <button class="qna__item__btn"><a href="#">삭제</a></button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'js/qna-list.js' %}"></script>
+{% endblock js %}

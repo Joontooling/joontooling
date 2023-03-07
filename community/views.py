@@ -29,3 +29,9 @@ def notice(request):
 
 def question(request):
     return render(request, 'community/question.html')
+
+def qna(request):
+    return render(request, 'community/qna.html')
+
+def qna_list(request):
+    return render(request, 'community/qna_list.html')

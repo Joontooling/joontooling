@@ -1,0 +1,40 @@
+.community .qna-list .contents {
+  margin-top: 0;
+}
+.community .qna-list .contents .title {
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.community .qna-list .contents .title button a {
+  font-size: 0.85rem;
+  background-color: var(--color-main);
+  color: var(--color-white);
+  padding: 0.85rem;
+  border-radius: 8px;
+  transition: 300ms;
+}
+.community .qna-list .contents .title button a:hover {
+  opacity: 0.95;
+}
+.community .qna-list .contents .items .item .item-dropdown {
+  padding: 2rem 1.8rem;
+}
+.item-left-container span {
+  margin-right: 1rem;
+}
+.qna__item__btns {
+  border-top: 1px solid var(--color-border);
+  padding: 8px 0;
+  margin-top: 2rem;
+  text-align: end;
+  color: var(--color-gray);
+}
+.qna__item__btn a {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  transition: 300ms;
+}
+.qna__item__btn a:hover {
+  color: var(--color-dark-gray);
+}
