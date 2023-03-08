@@ -13,16 +13,7 @@
       <ul class="aside__list">
         <li class="aside__item"><a href="{% url 'community:index' %}">메인</a></li>
         <li class="aside__item"><a href="{% url 'community:question' %}">자주 묻는 질문</a></li>
-        <ul class="aside__item">
-          <li class="aside__item__inner"><a href="#">BEST 10</a></li>
-          <li class="aside__item__inner"><a href="#">회원</a></li>
-          <li class="aside__item__inner"><a href="#">반품/교환/환불</a></li>
-          <li class="aside__item__inner"><a href="#">주문/결제</a></li>
-          <li class="aside__item__inner"><a href="#">배송/수령일 안내</a></li>
-          <li class="aside__item__inner"><a href="#">기타</a></li>
-        </ul>
-        </li>
-        <li class="aside__item"><a href="#">1:1 문의</a></li>
+        <li class="aside__item"><a href="{% url 'community:qna' %}">1:1 문의</a></li>
         <li class="aside__item"><a href="{% url 'community:notice' %}">공지사항</a></li>
       </ul>
 

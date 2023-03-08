@@ -1,0 +1,153 @@
+/* FORM */
+.qna-form {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-black);
+}
+
+/* FORM / TOP */
+.qna-top {
+  border-bottom: 1px solid var(--color-border);
+}
+.qna-top table,
+.qna-bottom table {
+  width: 100%;
+}
+.qna-top table tr,
+.qna-bottom table tr {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.qna-top table tr td span,
+.qna-bottom table tr td span {
+  color: var(--color-accent);
+}
+.qna-top table tr td:first-child,
+.qna-bottom table tr td:first-child {
+  width: 150px;
+}
+.qna-top table tr td:last-child,
+.qna-bottom table tr td:last-child {
+  flex-grow: 1;
+}
+.qna-top table input::placeholder,
+.qna-top table textarea::placeholder {
+  color: var(--color-gray);
+}
+/* FORM / TOP / 문의유형 */
+.qna-top table tr td select {
+  width: 100%;
+  padding: 12px;
+  color: var(--color-dark-gray);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+.qna-top table tr td select:focus,
+.qna-top table tr td input:focus,
+.qna-top table tr td textarea:focus,
+.qna-bottom table tr td input:focus {
+  outline: none;
+}
+/* FORM / TOP / 제목 */
+.qna-top table tr td input,
+.qna-bottom table tr td input {
+  width: 100%;
+  padding: 12px;
+  color: var(--color-dark-gray);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+/* FORM / TOP / 내용 */
+.qna-top table tr:nth-child(3) td:first-child,
+.qna-top table tr:nth-child(4) td:first-child {
+  align-self: start;
+  padding-top: 6px;
+}
+.qna-top table tr td textarea {
+  width: 100%;
+  padding: 12px;
+  color: var(--color-dark-gray);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+/* FORM / TOP / 사진 */
+.qna-top table tr td #imageFiles {
+  visibility: hidden;
+  display: none;
+}
+.qna-top table tr td label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 3rem;
+  color: var(--color-border);
+  cursor: pointer;
+}
+.qna-top table tr:nth-child(4) td p {
+  color: var(--color-gray);
+  font-size: 0.8rem;
+  margin: 3px 0;
+}
+.qna-top table tr td img.preview {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin: 8px 0;
+  margin-right: 8px;
+}
+
+/* FORM / BOTTOM */
+.qna-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+.community .service .qna-bottom .title {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: normal;
+  margin-top: 1rem;
+}
+.qna-bottom table tr td input[type='checkbox'] {
+  width: auto;
+  margin-right: 3px;
+}
+.qna-bottom table tr:nth-child(2) td label span {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+}
+
+/* FORM / BUTTONS */
+.qna-btns {
+  margin: 3rem 0 5rem;
+  text-align: center;
+}
+.qna-btn a {
+  display: block;
+  width: 210px;
+  padding: 1.2rem 0;
+  margin: 0 8px;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.qna-btn.cancel a {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+  opacity: 0.6;
+  transition: 300ms;
+}
+.qna-btn.cancel a:hover {
+  opacity: 0.55;
+}
+.qna-btn.submit a {
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
+.qna-btn.submit a:hover {
+  opacity: 0.95;
+}
