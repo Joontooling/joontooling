@@ -32,6 +32,7 @@ const thumbnailSwiperLis = document.querySelectorAll(
 const prevBtn = document.querySelector('.prevBtn');
 const nextBtn = document.querySelector('.nextBtn');
 
+// 마우스 올렸을 때 나타나는 버튼들
 productSwiper.addEventListener('mouseover', () => {
   let buttons = productSwiper.querySelectorAll('button');
   productSwiperBtnsHover(buttons, 1);
@@ -46,7 +47,10 @@ function productSwiperBtnsHover(btns, opacity) {
   });
 }
 
+// 버튼 클릭시 슬라이드 회전하기
 let counter = 0;
+let bigSlideSize = 494;
+let smallSlideSize = 111;
 
 nextBtn.addEventListener('click', () => {
   counter++;
@@ -64,7 +68,44 @@ function carousel() {
   if (counter < 0) {
     counter = thumbnailSwiperLis.length - 1;
   }
-  thumbnailSwiperLis.forEach((slide) => {
-    slide.style.transform = `translateX(-${counter * 111}px)`;
+
+  thumbnailSwiperLis.forEach((slide, idx) => {
+    slide.classList.remove('swiper-slide-active');
+    let slideActiveIdx = document
+      .querySelector('.swiper-slide-active')
+      .getAttribute('data-swiper-slide-index');
+
+    if (Number(slideActiveIdx) === idx) {
+      thumbnailSwiperLis[idx].classList.add('swiper-slide-active');
+    }
+    slide.style.transform = `translateX(-${counter * smallSlideSize}px)`;
+  });
+}
+
+// 썸네일 클릭시 슬라이드 회전하기
+thumbnailSwiperLis.forEach((li, idx) => {
+  li.addEventListener('click', () => {
+    bigSlideStyleChange(idx);
+    liStyleChange(li);
+    moveSlide(idx);
+  });
+});
+
+function bigSlideStyleChange(idx) {
+  productSwiperUl.style.transform = `translate3d(${
+    -bigSlideSize * idx
+  }px, 0px, 0px)`;
+}
+
+function liStyleChange(li) {
+  thumbnailSwiperLis.forEach((item) => {
+    item.classList.remove('swiper-slide-active');
+  });
+  li.classList.add('swiper-slide-active');
+}
+
+function moveSlide(idx) {
+  thumbnailSwiperLis.forEach((li) => {
+    li.style.transform = `translateX(-${idx * smallSlideSize}px)`;
   });
 }
