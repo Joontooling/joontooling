@@ -13,4 +13,7 @@ urlpatterns = [
     path("my_shop/<int:pk>/", views.my_shop, name="myshop"),
     path("my_likes/<int:pk>/", views.my_likes, name="mylikes"),
     path("my_posting/<int:pk>/", views.my_posting, name="myposting"),
+    path("agreement1/", views.agreement1, name="agreement1"),
+    path("agreement2/", views.agreement2, name="agreement2"),
+    path("agreement3/", views.agreement3, name="agreement3"),
 ]
