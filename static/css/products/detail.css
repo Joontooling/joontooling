@@ -23,10 +23,6 @@
   overflow: hidden;
 }
 
-.productSwiper .swiper-wrapper {
-  transition: all 300ms;
-}
-
 .productSwiper .swiper-slide {
   width: 100%;
   height: 100%;
