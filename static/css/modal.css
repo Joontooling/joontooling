@@ -1,0 +1,19 @@
+.modal-dialog {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.modal-content {
+  max-height: 700px;
+}
+
+.modal-body {
+  overflow-y: scroll;
+}
+
+.modal-body::-webkit-scrollbar {
+  display: none;
+}

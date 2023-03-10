@@ -1,3 +1,6 @@
+/* COMMON */
+@import './modal.css';
+
 /* ACCOUNTS */
 @import 'accounts/accounts.css';
 @import 'accounts/my_shop.css';
@@ -70,6 +73,12 @@ button {
 
 .bold {
   font-weight: bold;
+}
+
+.empty {
+  text-align: center;
+  padding: 5rem 0;
+  color: var(--color-dark-gray);
 }
 
 /* HEADER */
