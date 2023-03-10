@@ -160,7 +160,7 @@
     <!-- 상세정보 -->
     <div class="tab-content" id="content1">
       {% for img in imgproducts %}
-      <img src="{{ img.image_sub.url }}" alt="상세정보사진">
+        <img src="{{ img.image_sub.url }}" alt="상세정보사진">
       {% endfor %}
     </div>
     <!-- 구매안내 -->
@@ -225,6 +225,27 @@
 
   </div>
 </section>
+
+<!--출력 test -->
+<dir>
+  <p>테이블 직접 조회</p>
+  {{ product.name }}
+  <img src="{{ product.image_main1.url }}" alt="">
+  <img src="{{ product.image_main2.url }}" alt="">
+  <img src="{{ product.image_main3.url }}" alt="">
+  <img src="{{ product.image_main4.url }}" alt="">
+  <br>
+  <p>for문 조회</p>
+  {% for i in Images %}
+    <img src="{{ i.url }}" alt="">
+  {% endfor %}
+  <hr>
+  <p> 상세 이미지 출력 </p>
+  {% for img in imgproducts %}
+    <img src="{{ img.image_sub.url }}" alt="">
+  {% endfor %}
+
+</dir>
 
 {% endblock content %}
 
