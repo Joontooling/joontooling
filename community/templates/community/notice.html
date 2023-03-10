@@ -85,20 +85,41 @@
             <span>유형</span>
             <span>날짜</span>
           </div>
-          <!-- notice-item -->
 
+          <!-- notice-item -->
           {% for notice in page_obj %}
           <div class="notice__item">
             <span>{{ notice.no }}</span>
-            <span><a href="#">{{ notice.title }}</a></span>
+            <!-- Button trigger modal -->
+            <span>
+              <button data-bs-toggle="modal" data-bs-target="#noticeDetailModal-{{ notice.pk }}">
+                {{ notice.title }}
+              </button>
+            </span>
             <span>{{ notice.type }}</span>
             <span>{{ notice.date|date:'Y.m.d' }}</span>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="noticeDetailModal-{{ notice.pk }}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{ notice.title }}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  {{ notice.content }}
+                </div>
+              </div>
+            </div>
           </div>
           {% empty %}
           <div class="empty">
             공지가 없어요...
           </div>
           {% endfor %}
+
 
         </div>
 

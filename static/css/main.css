@@ -1,3 +1,6 @@
+/* COMMON */
+@import './modal.css';
+
 /* ACCOUNTS */
 @import 'accounts/accounts.css';
 @import 'accounts/my_shop.css';
