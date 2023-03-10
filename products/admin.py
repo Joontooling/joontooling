@@ -15,7 +15,7 @@ class InfoProductAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('상품 기본 정보' , {'fields' : ['name', 'category', 'price','quantity', 'point', 'serial', 'delivery']}),
-        ("메인 사진", {'fields' : ['image_main']})
+        ("메인 사진", {'fields' : ['image_main1','image_main2','image_main3','image_main4','image_main5']})
     ]
 
     # name 필드 명 수정
@@ -26,7 +26,8 @@ class InfoProductAdmin(admin.ModelAdmin):
     # 메인 이미지 URL 출력 설정
     def image_tag(self, obj):
         if obj.image_main:
-            return mark_safe('<img src={} style = "width: 50px;"/>'.format(obj.image_main.url))
+            for i in obj.image_main[0]:
+                return mark_safe('<img src={} style = "width: 50px;"/>'.format(obj.image_main.url))
         return None
     image_tag.short_description = "메인 사진"
 
@@ -40,7 +41,7 @@ class InfoProductAdmin(admin.ModelAdmin):
         return intcomma(pay.price)
     comma_price.short_description = "가격(원)"
 
-
+    # Product 검색 기능 추가
     search_fields = ['name', 'serial', 'category']
 
 admin.site.register(Products, InfoProductAdmin)
