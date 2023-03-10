@@ -23,5 +23,10 @@ class Notice(models.Model):
     no = models.IntegerField()
     title = models.CharField(max_length=100)
     content = models.TextField()
-    type = models.CharField(max_length=100)
+    NOTICE_TYPE_CHOICES = [
+        ("1", "1"), 
+        ("2", "2"),
+        ("3", "3"),
+        ]
+    type = models.CharField(choices=NOTICE_TYPE_CHOICES, max_length=100)
     date = models.DateField()

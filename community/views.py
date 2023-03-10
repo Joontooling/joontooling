@@ -8,6 +8,23 @@ def index(request):
 
 def notice(request):
     notices = Notice.objects.all().order_by('-pk')
+    getSelectType = request.GET.get('select')
+
+    # Select Type
+    typeName = ''
+    if getSelectType == 'all':
+        notices = Notice.objects.all().order_by('-pk')
+        typeName = 'all'
+    elif getSelectType == '1':
+        notices = Notice.objects.filter(type__contains='1')
+        typeName = '1'
+    elif getSelectType == '2':
+        notices = Notice.objects.filter(type__contains='2')
+        typeName = '2'
+    elif getSelectType == '3':
+        notices = Notice.objects.filter(type__contains='3')
+        typeName = '3'
+
     # Paginator
     page = request.GET.get('page', 1)
     paginator = Paginator(notices, 3)
@@ -35,7 +52,8 @@ def notice(request):
         "notices": notices,
         "page_obj": page_obj,
         "paginator": paginator,
-        "custom_range": custom_range
+        "custom_range": custom_range,
+        'typeName': typeName,
     })
 
 def question(request):

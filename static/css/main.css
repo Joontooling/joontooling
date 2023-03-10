@@ -72,6 +72,12 @@ button {
   font-weight: bold;
 }
 
+.empty {
+  text-align: center;
+  padding: 5rem 0;
+  color: var(--color-dark-gray);
+}
+
 /* HEADER */
 .header {
   z-index: 9;
