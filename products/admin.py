@@ -25,9 +25,8 @@ class InfoProductAdmin(admin.ModelAdmin):
 
     # 메인 이미지 URL 출력 설정
     def image_tag(self, obj):
-        if obj.image_main:
-            for i in obj.image_main[0]:
-                return mark_safe('<img src={} style = "width: 50px;"/>'.format(obj.image_main.url))
+        if obj.image_main1:
+            return mark_safe('<img src={} style = "width: 50px;"/>'.format(obj.image_main1.url))
         return None
     image_tag.short_description = "메인 사진"
 
