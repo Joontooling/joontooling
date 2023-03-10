@@ -20,10 +20,14 @@ def detail(request, product_pk):
 
     point_ = (product.price // product.point) // 100
 
+    # 메인 사진 리스트 별도
+    Images = [product.image_main1, product.image_main2, product.image_main3, product.image_main4, product.image_main5]
+
     context = {
         "product" : product,
         "imgproducts" : imgproducts,
         "point_": point_,
+        "Images" : Images,
     }
 
     return render(request, 'products/detail.html', context)
