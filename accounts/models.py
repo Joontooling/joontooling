@@ -29,7 +29,7 @@ class User(AbstractUser):
     phone_num_regex = RegexValidator(regex = r'^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$')
     phone_number = models.CharField(max_length=11, validators= [phone_num_regex], null=True)
 
-    birth = models.DateTimeField(null=True)
+    birth = models.DateField(null=True)
     user_type = models.CharField(max_length=20, choices=type_choice)
 
     # user 타입에 따라 밑에 있는 필드들을 넣어야 한다

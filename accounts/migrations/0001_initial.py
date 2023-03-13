@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
                 ('address', models.CharField(max_length=100)),
                 ('phone_number', models.CharField(max_length=11, null=True, validators=[django.core.validators.RegexValidator(regex='^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$')])),
-                ('birth', models.DateTimeField(null=True)),
+                ('birth', models.DateField(null=True)),
                 ('user_type', models.CharField(choices=[('개인회원', '개인회원'), ('개인사업자', '개인사업자'), ('법인사업자', '법인사업자')], max_length=20)),
                 ('company', models.CharField(max_length=50)),
                 ('per_company_number', models.CharField(max_length=30, null=True)),
