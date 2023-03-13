@@ -15,9 +15,9 @@ class UserForm(UserCreationForm):
             'email', 
             'birth',
             'user_type',
-            'company',
-            'per_company_number',
-            'company_number'
+            # 'company',
+            # 'per_company_number',
+            # 'company_number'
         ]
 
 class UserCustomChangeForm(UserChangeForm):
