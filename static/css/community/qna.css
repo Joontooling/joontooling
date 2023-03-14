@@ -126,7 +126,8 @@
   margin: 3rem 0 5rem;
   text-align: center;
 }
-.qna-btn a {
+.qna-btn a,
+.qna-btn.submit {
   display: block;
   width: 210px;
   padding: 1.2rem 0;
@@ -144,7 +145,8 @@
 .qna-btn.cancel a:hover {
   opacity: 0.55;
 }
-.qna-btn.submit a {
+.qna-btn.submit {
+  display: inline-block;
   background-color: var(--color-main);
   color: var(--color-white);
 }

@@ -25,7 +25,8 @@
       <h2 class="title bold">1:1 문의 접수</h2>
 
       <!-- FORM -->
-      <form class="qna-form">
+      <form class="qna-form" method="post" action="{% url 'community:qna' %}">
+        {% csrf_token %}
         <!-- Form-top -->
         <div class="qna-top">
           <table>
@@ -33,11 +34,11 @@
             <tr>
               <td>문의유형 <span>*</span></td>
               <td>
-                <select>
+                <select name="type">
                   <option>문의 유형을 선택해주세요.</option>
-                  <option>문의 유형</option>
-                  <option>문의 유형</option>
-                  <option>문의 유형</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
                 </select>
               </td>
             </tr>
@@ -45,14 +46,14 @@
             <tr>
               <td>제목 <span>*</span></td>
               <td>
-                <input type="text" placeholder="제목을 입력해주세요." />
+                <input type="text" name="title" placeholder="제목을 입력해주세요." />
               </td>
             </tr>
             <!-- 내용 -->
             <tr>
               <td>내용 <span>*</span></td>
               <td>
-                <textarea rows="15" placeholder="빠른 답변을 위해 10자 이상의 문의 내용을 입력해 주세요."></textarea>
+                <textarea name="content" rows="15" placeholder="빠른 답변을 위해 10자 이상의 문의 내용을 입력해 주세요."></textarea>
               </td>
             </tr>
             <!-- 사진 -->
@@ -81,12 +82,17 @@
             <tr>
               <td>연락처</td>
               <td>
-                <input />
+                {% if request.user.phone_number %}
+                <input type="tel" name="phone_number" placeholder="{{ request.user.phone_number }}"
+                  value="{{ request.user.phone_number }}" />
+                {% else %}
+                <input type="tel" name="phone_number" />
+                {% endif %}
               </td>
             </tr>
             <!-- 알림요청 -->
             <tr>
-              <td class="empty"></td>
+              <td class=""></td>
               <td>
                 <input type="checkbox" id="notify" name="notify" />
                 <label for="notify">답변알림 요청 <span>(답변이 등록되면 알림톡으로 알려드립니다.)</span></label>
@@ -96,7 +102,12 @@
             <tr>
               <td>이메일</td>
               <td>
-                <input type="email" />
+                {% if request.user.email %}
+                <input type="email" name="email" value="{{ request.user.email }}"
+                  placeholder="{{ request.user.email }}" />
+                {% else %}
+                <input type="email" name="email" />
+                {% endif %}
               </td>
             </tr>
           </table>
@@ -106,7 +117,7 @@
           <button class="qna-btn cancel">
             <a href="{% url 'community:index' %}">취소</a>
           </button>
-          <button class="qna-btn submit"><a href="#">문의접수</a></button>
+          <button class="qna-btn submit" type="submit">문의접수</button>
         </div>
       </form>
 
