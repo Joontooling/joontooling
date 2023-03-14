@@ -33,19 +33,49 @@
         </div>
       </section>
 
-      <!-- Notice * going to use django pagination -->
+      <!-- Notice -->
       <seciton class="notice">
         <!-- notice-top -->
         <div class="notice__top">
           <h5 class="notice__title"><span>{{ notices|length }}</span> 건</h5>
-          <p class="notice__more">
-            <select name="">
-              <option value="">전체</option>
-              <option value="">유형별 나누기</option>
-              <option value="">유형별 나누기</option>
-              <option value="">유형별 나누기</option>
+          <!-- select-form -->
+          <form class=" notice__more" method="GET" action="{% url 'community:notice' %}">
+            {% csrf_token %}
+            <select name="select" id="select" onchange="this.form.submit()">
+
+              {% if typeName == '' %}
+              <option value="all" selected>전체</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              {% endif %}
+              {% if typeName == 'all' %}
+              <option value="all" selected>전체</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              {% endif %}
+              {% if typeName == '1' %}
+              <option value="all">전체</option>
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              {% endif %}
+              {% if typeName == '2' %}
+              <option value="all">전체</option>
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              {% endif %}
+              {% if typeName == '3' %}
+              <option value="all">전체</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              {% endif %}
+
             </select>
-          </p>
+          </form>
         </div>
         <!-- notice-bottom -->
         <div class="notice__bottom">
@@ -55,28 +85,75 @@
             <span>유형</span>
             <span>날짜</span>
           </div>
+
           <!-- notice-item -->
           {% for notice in page_obj %}
           <div class="notice__item">
             <span>{{ notice.no }}</span>
-            <span><a href="#">{{ notice.title }}</a></span>
+            <!-- Button trigger modal -->
+            <span>
+              <button data-bs-toggle="modal" data-bs-target="#noticeDetailModal-{{ notice.pk }}">
+                {{ notice.title }}
+              </button>
+            </span>
             <span>{{ notice.type }}</span>
             <span>{{ notice.date|date:'Y.m.d' }}</span>
           </div>
+          <!-- Modal -->
+          <div class="modal fade" id="noticeDetailModal-{{ notice.pk }}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{ notice.title }}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  {{ notice.content }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <div class="empty">
+            공지가 없어요...
+          </div>
           {% endfor %}
+
+
         </div>
+
+        <!-- Paginator -->
+        {% if page_obj.has_other_pages %}
         <ul class="page-controller">
+
+          {% if page_obj.has_previous %}
           <li class="prev">
-            < </li>
-              {% for page in paginator.page_range %}
-              {% if page == page_obj.number %}
+            <a href="?page={{ page_obj.previous_page_number }}">
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
+          </li>
+          {% endif %}
+
+          {% for page in custom_range %}
+          {% if page == page_obj.number %}
           <li><a class="active" href="?page={{ page }}">{{ page }}</a></li>
           {% else %}
           <li><a href="?page={{ page }}">{{ page }}</a></li>
           {% endif %}
           {% endfor %}
-          <li class="next"> ></li>
+
+          {% if page_obj.has_next %}
+          <li class="next">
+            <a href="?page={{ page_obj.next_page_number }}">
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+          {% endif %}
+
         </ul>
+        {% endif %}
+
       </seciton>
 
     </main>

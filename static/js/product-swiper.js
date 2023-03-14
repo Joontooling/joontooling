@@ -88,6 +88,7 @@ thumbnailSwiperLis.forEach((li, idx) => {
     bigSlideStyleChange(idx);
     liStyleChange(li);
     moveSlide(idx);
+    productSwiperUl.style.transition = 'all 300ms';
   });
 });
 

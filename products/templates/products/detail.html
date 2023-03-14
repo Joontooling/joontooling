@@ -13,9 +13,14 @@
       <!-- mainSwiper -->
       <div class="swiper productSwiper">
         <ul class="swiper-wrapper">
-          <!-- <li class="swiper-slide">
-            <img src="{{ product.image_main.url }}" alt="slide-image">
-          </li> -->
+
+          {% for image in Images %}
+          <li class="swiper-slide">
+            <img src="{{ image.url }}" alt="slide-image">
+          </li>
+          {% endfor %}
+
+          <!-- 더미 데이터 
           <li class="swiper-slide">
             <img src="https://juntooling.com/web/product/big/202301/3b7399cf257f9ea0f79fe910928d29d4.jpg"
               alt="slide-image">
@@ -43,7 +48,8 @@
           <li class="swiper-slide">
             <img src="https://juntooling.com/web/product/extra/big/202110/7bedbfb46d146bb5d3a75b943df5ce83.jpg"
               alt="slide-image">
-          </li>
+          </li> 
+          -->
         </ul>
         <button class="swiper-button-prev prevBtn"></button>
         <button class="swiper-button-next nextBtn"></button>
@@ -51,9 +57,14 @@
       <!-- subSwiper -->
       <div class="swiper thumbnailSwiper">
         <ul class="swiper-wrapper">
-          <!-- <li class="swiper-slide">
-            <img src="{{ product.image_main.url }}" alt="product-image">
-          </li> -->
+
+          {% for image in Images %}
+          <li class="swiper-slide">
+            <img src="{{ image.url }}" alt="product-image">
+          </li>
+          {% endfor %}
+
+          <!-- 더미 데이터
           <li class="swiper-slide">
             <img src="https://juntooling.com/web/product/big/202301/3b7399cf257f9ea0f79fe910928d29d4.jpg"
               alt="product-image">
@@ -82,6 +93,7 @@
             <img src="https://juntooling.com/web/product/extra/small/202110/7bedbfb46d146bb5d3a75b943df5ce83.jpg"
               alt="product-image">
           </li>
+          -->
         </ul>
       </div>
     </div>
