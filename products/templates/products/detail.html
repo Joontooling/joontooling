@@ -13,9 +13,14 @@
       <!-- mainSwiper -->
       <div class="swiper productSwiper">
         <ul class="swiper-wrapper">
-          <!-- <li class="swiper-slide">
-            <img src="{{ product.image_main.url }}" alt="slide-image">
-          </li> -->
+
+          {% for image in Images %}
+          <li class="swiper-slide">
+            <img src="{{ image.url }}" alt="slide-image">
+          </li>
+          {% endfor %}
+
+          <!-- 더미 데이터 
           <li class="swiper-slide">
             <img src="https://juntooling.com/web/product/big/202301/3b7399cf257f9ea0f79fe910928d29d4.jpg"
               alt="slide-image">
@@ -43,7 +48,8 @@
           <li class="swiper-slide">
             <img src="https://juntooling.com/web/product/extra/big/202110/7bedbfb46d146bb5d3a75b943df5ce83.jpg"
               alt="slide-image">
-          </li>
+          </li> 
+          -->
         </ul>
         <button class="swiper-button-prev prevBtn"></button>
         <button class="swiper-button-next nextBtn"></button>
@@ -51,9 +57,14 @@
       <!-- subSwiper -->
       <div class="swiper thumbnailSwiper">
         <ul class="swiper-wrapper">
-          <!-- <li class="swiper-slide">
-            <img src="{{ product.image_main.url }}" alt="product-image">
-          </li> -->
+
+          {% for image in Images %}
+          <li class="swiper-slide">
+            <img src="{{ image.url }}" alt="product-image">
+          </li>
+          {% endfor %}
+
+          <!-- 더미 데이터
           <li class="swiper-slide">
             <img src="https://juntooling.com/web/product/big/202301/3b7399cf257f9ea0f79fe910928d29d4.jpg"
               alt="product-image">
@@ -82,6 +93,7 @@
             <img src="https://juntooling.com/web/product/extra/small/202110/7bedbfb46d146bb5d3a75b943df5ce83.jpg"
               alt="product-image">
           </li>
+          -->
         </ul>
       </div>
     </div>
@@ -160,7 +172,7 @@
     <!-- 상세정보 -->
     <div class="tab-content" id="content1">
       {% for img in imgproducts %}
-        <img src="{{ img.image_sub.url }}" alt="상세정보사진">
+      <img src="{{ img.image_sub.url }}" alt="상세정보사진">
       {% endfor %}
     </div>
     <!-- 구매안내 -->
@@ -225,27 +237,6 @@
 
   </div>
 </section>
-
-<!--출력 test -->
-<dir>
-  <p>테이블 직접 조회</p>
-  {{ product.name }}
-  <img src="{{ product.image_main1.url }}" alt="">
-  <img src="{{ product.image_main2.url }}" alt="">
-  <img src="{{ product.image_main3.url }}" alt="">
-  <img src="{{ product.image_main4.url }}" alt="">
-  <br>
-  <p>for문 조회</p>
-  {% for i in Images %}
-    <img src="{{ i.url }}" alt="">
-  {% endfor %}
-  <hr>
-  <p> 상세 이미지 출력 </p>
-  {% for img in imgproducts %}
-    <img src="{{ img.image_sub.url }}" alt="">
-  {% endfor %}
-
-</dir>
 
 {% endblock content %}
 
