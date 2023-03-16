@@ -21,7 +21,12 @@ def detail(request, product_pk):
     point_ = (product.price // product.point) // 100
 
     # 메인 사진 리스트 별도
-    Images = [product.image_main1, product.image_main2, product.image_main3, product.image_main4, product.image_main5]
+    main_images = [product.image_main1, product.image_main2, product.image_main3, product.image_main4, product.image_main5, product.image_main6, product.image_main7, product.image_main8, product.image_main9, product.image_main10]
+    Images = []
+    # 메인사진 적을 경우 조건문 통해 구분
+    for i in main_images:
+        if i != "":
+            Images.append(i)
 
     context = {
         "product" : product,
