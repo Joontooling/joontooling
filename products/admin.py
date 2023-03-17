@@ -15,7 +15,7 @@ class InfoProductAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('상품 기본 정보' , {'fields' : ['name', 'category', 'price','quantity', 'point', 'serial', 'delivery']}),
-        ("메인 사진", {'fields' : ['image_main1','image_main2','image_main3','image_main4','image_main5']})
+        ("메인 사진", {'fields' : ['image_main1','image_main2','image_main3','image_main4','image_main5','image_main6','image_main7','image_main8','image_main9','image_main10']})
     ]
 
     # name 필드 명 수정
