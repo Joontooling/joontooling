@@ -78,3 +78,16 @@
 .btn_update2:hover {
   background-color: #5055b1;
 }
+
+/* 비밀번호 변경 Modal 확인버튼 */
+.btn_modal {
+  height: 38px;
+  width: 58px;
+  background-color: #243763;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+}
+.btn_modal:hover {
+  background-color: #5055b1;
+}
