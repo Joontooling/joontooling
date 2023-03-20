@@ -34,73 +34,72 @@
       </section>
 
       <!-- 정보 수정 -->
-      <main>
-        <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data">
-          {% csrf_token %}
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-          <!-- 아이디 -->
-          <div class="line_update">
-            <label class="label_update" for="username">아이디</label>
-            <input class="input_update" type="text" value="{{ request.user.username}}" disabled>
+        <!-- 아이디 -->
+        <div class="line_update">
+          <label class="label_update" for="username">아이디</label>
+          <input class="input_update" type="text" value="{{ request.user.username}}" disabled>
+        </div>
+        
+        <!-- 새 비밀번호 -->
+        <div class="line_update">
+          <label class="label_update" for="username">새 비밀번호</label>
+          <a href="">비밀번호 변경하기</a>
+        </div>
+
+        <!-- 이름 -->
+        <div class="line_update">
+          <label class="label_update" for="username">이름</label>
+          <input class="input_update" type="text" value="{{ request.user.first_name}}" disabled>
+        </div>
+
+        <hr>
+
+        <!-- 주소 -->
+        <label class="label_update2" for="address">주소</label><span class="asterisk">*</span><br>
+        <button type="button" class="btn_address" onclick="searchAddress()">주소검색</button>
+        <div class="signup_field">
+          {% render_field change_form.address class="input_effect form-control" id="address" %}
+        </div>
+        <!-- 나머지 주소 -->
+        <input class="detail_address" type="text" placeholder="나머지 주소">
+
+        <hr>
+
+        <!-- 휴대전화 -->
+        <div class="line_update">
+          <div class="label_wrap_update">
+            <label class="label_update2" for="username">휴대전화</label><span class="asterisk">*</span>
           </div>
-          
-          <!-- 새 비밀번호 -->
-          <div class="line_update">
-            <label class="label_update" for="username">새 비밀번호</label>
-            <a href="">비밀번호 변경하기</a>
+          {% render_field change_form.phone_number class="input_update2" %}
+        </div>
+
+        <!-- 이메일 -->
+        <div class="line_update">
+          <div class="label_wrap_update">
+            <label class="label_update2" for="username">이메일</label><span class="asterisk">*</span>
           </div>
+          {% render_field change_form.email class="input_update2" %}
+        </div>
 
-          <!-- 이름 -->
-          <div class="line_update">
-            <label class="label_update" for="username">이름</label>
-            <input class="input_update" type="text" value="{{ request.user.first_name}}" disabled>
-          </div>
+        <!-- 생년월일 -->
+        <div class="line_update">
+          <label class="label_update" for="username">생년월일</label>
+          <input class="input_update" type="text" value="{{ request.user.birth }}">
+        </div>
 
-          <hr>
+        <hr>
+        <div style="height: 1rem;"></div>
 
-          <!-- 주소 -->
-          <label class="label_update2" for="address">주소</label><span class="asterisk">*</span><br>
-          <button type="button" class="btn_address" onclick="searchAddress()">주소검색</button>
-          <div class="signup_field">
-            {% render_field change_form.address class="input_effect form-control" id="address" %}
-          </div>
-          <!-- 나머지 주소 -->
-          <input class="detail_address" type="text" placeholder="나머지 주소">
+        <!-- 취소 / 확인 버튼 -->
+        <div class="d-flex justify-content-center">
+          <button class="btn_update" onclick=location.href="{% url 'products:index' %}">취소</button>
+          <input class="btn_update2" type="submit" value="확인">
+        </div>
 
-          <hr>
-
-          <!-- 휴대전화 -->
-          <div class="line_update">
-            <div class="label_wrap_update">
-              <label class="label_update2" for="username">휴대전화</label><span class="asterisk">*</span>
-            </div>
-            {% render_field change_form.phone_number class="input_update2" %}
-          </div>
-
-          <!-- 이메일 -->
-          <div class="line_update">
-            <div class="label_wrap_update">
-              <label class="label_update2" for="username">이메일</label><span class="asterisk">*</span>
-            </div>
-            {% render_field change_form.email class="input_update2" %}
-          </div>
-
-          <!-- 생년월일 -->
-          <div class="line_update">
-            <label class="label_update" for="username">생년월일</label>
-            <input class="input_update" type="text" value="{{ request.user.birth }}">
-          </div>
-
-          <hr>
-          <div style="height: 1rem;"></div>
-
-          <!-- 취소 / 확인 버튼 -->
-          <div class="d-flex justify-content-center">
-            <button class="btn_update" onclick=location.href="{% url 'products:index' %}">취소</button>
-            <input class="btn_update2" type="submit" value="확인">
-          </div>
-
-        </form>
+      </form>
     </main>
 
   </div>
