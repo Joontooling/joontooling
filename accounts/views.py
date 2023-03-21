@@ -68,13 +68,16 @@ def update(request, pk):
                 return redirect('accounts:my_shop', request.user.pk)
         else:
             change_form = UserCustomChangeForm(instance=request.user)
+            
+        password_form = CustomPasswordChangeForm(request.user)
     
         context = {
-        'change_form': change_form,
+            'change_form': change_form,
+            'password_form': password_form,
         }
 
         return render(request, 'accounts/update.html', context)
-  
+
     else:
         return redirect('products:index')
 
