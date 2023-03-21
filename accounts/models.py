@@ -34,13 +34,13 @@ class User(AbstractUser):
 
     # user 타입에 따라 밑에 있는 필드들을 넣어야 한다
     # 상호명 / 법인명
-    company = models.CharField(max_length=50, null=True)
+    company = models.CharField(max_length=50, null=True, blank=True)
 
     # 사업자번호 (개인사업자)
-    per_company_number = models.IntegerField(null=True)
+    per_company_number = models.IntegerField(null=True, blank=True)
 
     # 법인번호 (법인사업자)
-    company_number = models.IntegerField(null=True)
+    company_number = models.IntegerField(null=True, blank=True)
     
     point = models.IntegerField(null=True)
 
