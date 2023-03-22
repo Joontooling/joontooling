@@ -92,6 +92,9 @@
   .product-index-title .best__title,
   .product-index-title .new__title {
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
   }
 }
 
@@ -105,7 +108,23 @@
 @media (max-width: 768px) {
   .product-index-title .best__title p,
   .product-index-title .new__title p {
-    font-size: 20px;
+    font-size: 17px;
+    text-shadow: 0px 0px 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-index-title .best__title .best__title__all,
+  .product-index-title .new__title .new__title__all {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-index-title .best__title .best__title__all,
+  .product-index-title .new__title .new__title__all {
+    font-size: 10px;
+    padding: 5px 0px 0px 0px;
   }
 }
 
