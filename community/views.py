@@ -60,6 +60,7 @@ def question(request):
     return render(request, 'community/question.html')
 
 def qna(request):
+    print(request.POST)
     return render(request, 'community/qna.html')
 
 def qna_list(request):
