@@ -66,6 +66,17 @@ a {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  body {
+    min-width: 100%;
+    font-size: 14px;
+  }
+  .wrapper {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
 button {
   background: none;
   border: none;
