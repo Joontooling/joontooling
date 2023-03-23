@@ -15,4 +15,5 @@ urlpatterns = [
     path('terms/', views.terms, name="terms"),
     path('personal_info/', views.personal_info, name="personal_info"),
     path('use_info/', views.use_info, name="use_info"),
+    path('products/detail/<int:product_pk>/like/', views.like, name="like"),
 ]
