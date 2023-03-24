@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-
+{% load django_bootstrap5 %}
+{% load static %}
+{% load humanize %}
 
 {% block content %}
 <div class="wrapper">
@@ -91,6 +93,39 @@
       </div>
     </div>
   </section>
+<!-- test 출력-->
+  <section>
+    {% if users.like_products.all %}
+      <!-- 버튼 -->
+      <!-- 로그인 사용자와 프로필 사용자가 같을경우 버튼 표시 -->
+      {% if request.user.pk == users.pk %}
+        <button class="btn btn-dark">
+          삭제하기
+        </button>
+      </div>
+      {% endif %}
+      <!-- 찜 목록 -->
+      <form action="" method="POST" name='delete_form' id="like_form">
+        <div class="">
+          {% if users.like_products.all %}
+            {% for product in users.like_products.all %}
+              {% csrf_token %}
+              <div class="">
+                <a href="{% url "products:detail" product.pk %}" class="d-flex">
+                  <input class="checkbox" type="checkbox" name="answer[]" id="opt-in" value="{{ product.pk }}"/>
+                  <img class="" src="{{ product.image_main1.url }}" alt="wishlist-img"/>
+                  <p class="">{{ product.name }}</p>
+                  <p class="">{{ product.price|intcomma }}원</p>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </form>
+    {% else %}
+      <h1 class="">위시리스트가 없어요...</h1>
+    {% endif %}
 
+  </section>
 </div>
 {% endblock content %}
