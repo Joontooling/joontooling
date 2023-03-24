@@ -44,3 +44,5 @@ class User(AbstractUser):
     
     point = models.IntegerField(null=True)
 
+    # 관심상품 필드
+    like_products = models.ManyToManyField("products.Products", related_name="like_users")

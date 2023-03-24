@@ -115,8 +115,18 @@ def my_shop(request, pk):
 
     return render(request, 'accounts/my_shop.html', context)
 
+# 관심상품
 def my_likes(request, pk):
-    return render(request, 'accounts/my_likes.html')
+    users = get_user_model().objects.get(pk=pk)
+    like_product = users.like_products.all()
+    if request.method == "POST":
+        selected = request.POST.getlist("answer[]")
+        for product in selected:
+            for i in range(len(like_product)):
+                if int(product) == like_product[i].pk:
+                    like_product[i].delete()
+    context = {"users" : users}
+    return render(request, 'accounts/my_likes.html', context)
 
 def my_posting(request, pk):
     return render(request, 'accounts/my_posting.html')

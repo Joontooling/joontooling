@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .form import ProductsForm, ProductsInfoForm
 from .models import Products, ProductsInfo
+from django.http import JsonResponse
+
 
 
 def index(request):
@@ -81,3 +84,23 @@ def personal_info(request):
 
 def use_info(request):
     return render(request, "products/use_info.html")
+
+@login_required
+def like(request, product_pk):
+    if request.user.is_authenticated:
+        product = Products.objects.get(pk=product_pk)
+        print(product.like_users.filter(pk=request.user.pk))
+        if product.like_users.filter(pk=request.user.pk).exists():
+            product.like_users.remove(request.user)
+            is_liked = False
+        else:
+            product.like_users.add(request.user)
+            is_liked = True
+    else:
+        return redirect("products:detail", product_pk)
+    return JsonResponse(
+        {
+            "is_liked": is_liked,
+            "like_count": product.like_users.count(),
+        }
+    )
