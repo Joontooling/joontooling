@@ -3,6 +3,7 @@
 {% load static %}
 {% load humanize %}
 
+
 {% block content %}
 
 <!-- PRODUCT-TOP -->
@@ -109,16 +110,15 @@
         <form class="like-forms" data-product-id="{{ product.pk }}">
           {% csrf_token %}
           {% if user in product.like_users.all %}
-          <button type="submit" class="btn" id="like-{{ product.pk }}">
-            <i id="star-{{ product.pk }}" class="fa-solid fa-bookmark"></i>
+          <button type="submit" class="" id="like-{{ product.pk }}">
+            <i class="fa-sharp fa-solid fa-bookmark" id="star-{{ product.pk }}"></i>
           </button>
           {% else %}
-          <button type="submit" class="btn" id="like-{{ product.pk }}">
-            <i id="star-{{ product.pk }}" class="fa-regular fa-bookmark"></i>
+          <button type="submit" class="r" id="like-{{ product.pk }}">
+            <i class="fa-sharp fa-regular fa-bookmark" id="star-{{ product.pk }}"></i>
           </button>
           {% endif %}
         </form>
-
       </div>
       <!-- product info table -->
       <table class="product-table">
@@ -255,8 +255,8 @@
 </section>
 
 <!-- 찜하기 script -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script>
   const forms = document.querySelectorAll('.like-forms')
@@ -283,22 +283,14 @@
           const isLiked = response.data.is_liked
           const likeBtn = document.querySelector(`#like-${productId}`)
           const starBtn = document.querySelector(`#star-${productId}`)
-          const likeCountTag = document.querySelector('#star-count')
-          const likeCount = response.data.like_count
-          if (isLiked === true) {
-            starBtn
-              .classList
-              .remove('fa-regular fa-bookmark')
-            starBtn
-              .classList
-              .add('fa-solid fa-bookmark')
+          const mark = starBtn.classList
+          console.log(isLiked, starBtn, mark)
+          if (isLiked === true) {          
+            mark.remove("fa-regular")
+            mark.add("fa-solid")
           } else {
-            starBtn
-              .classList
-              .remove('fa-solid fa-bookmark')
-            starBtn
-              .classList
-              .add('fa-regular fa-bookmark')
+            mark.remove("fa-solid")
+            mark.add("fa-regular")
           }
         })
     })
