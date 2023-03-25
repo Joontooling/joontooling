@@ -138,3 +138,138 @@
   font-size: 1.2rem;
   transition: 500ms;
 }
+
+/* 수정한 부분 (성민) */
+
+/* 마이쇼핑 탭메뉴 4개 */
+.tap_four {
+  width: 100%;
+  margin-top: 50px;
+  border: 1px solid #ededed;
+}
+
+.tap_four ul {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  line-height: 60px;
+}
+
+.tap_check {
+  padding: 0 10px;
+  color: #243763;
+  font-weight: 700;
+}
+
+.tap_li {
+  margin-left: 15px;
+}
+
+.tap_li a {
+  padding: 0 10px;
+}
+
+/* 포인트 / 장바구니 / 관심상품 */
+.box_wrap {
+  display: flex; 
+  box-shadow: 0 1px 3px 0 #dbdbdb; 
+  height: 80px; 
+  padding: 10px; 
+  margin-top: 30px;
+}
+
+.box_three {
+  flex-grow: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.box_three i {
+  margin-right: 15px;
+  font-size: 30px; 
+}
+
+.box_border {
+  border-right-width: 1px; 
+  border-right-style: solid ;
+  border-right-color: rgb(219, 219, 219); 
+}
+
+.box_point_1 {
+  margin-right: 10px;
+}
+
+.box_point_2 {
+  color: #243763;
+  font-weight: 700; 
+}
+
+.box_title {
+  margin-right: 15px;
+}
+
+.box_num {
+  color: #243763;
+  font-weight: 700;
+}
+
+/* 나의 주문처리 현황 (title) */
+.status_title {
+  display: flex; 
+  justify-content: space-between; 
+  margin: 100px 0 30px;
+}
+
+.status_left {
+  font-size: 20px; 
+  font-weight: 700;
+}
+
+.status_right {
+  color: #b7b7b7;
+}
+
+/* 현황 5개 */
+.status_five {
+  display: flex; 
+  box-shadow: 0 1px 3px 0 #dbdbdb; 
+  padding: 40px 20px; 
+  margin-bottom: 200px; 
+  font-size: 20px;
+}
+
+.status_five_a {
+  flex-grow: 1; 
+  position: relative;
+}
+
+.status_five_text {
+  text-align: center;
+}
+
+.status_five_text .title {
+  margin-bottom: 10px;
+}
+
+.status_five_text .num {
+  color: #243763;
+}
+
+.status_five_arrow {
+  position: absolute; 
+  top: 30%; 
+  right: 0; 
+  width: 12px; 
+  height: 12px; 
+  border: solid #bdbdbd; 
+  border-width: 2px 2px 0 0; 
+  transform: rotate(45deg);
+}
+
+.status_five_border {
+  flex-grow: 1; 
+  border-right-width: 1px; 
+  border-right-style: solid ;
+  border-right-color: rgb(219, 219, 219); 
+}

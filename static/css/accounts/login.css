@@ -105,3 +105,10 @@
 .btn2_login:hover {
   background-color: #efeff8;
 }
+
+/* 반응형 Mobile(모바일) */
+@media screen and (max-width: 768px) {
+  .body {
+    width: 100%;
+  }
+}

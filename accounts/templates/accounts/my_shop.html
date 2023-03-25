@@ -2,6 +2,9 @@
 
 
 {% block content %}
+<!-- 부트스트랩 아이콘 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
 <div class="wrapper">
 
   <!-- TITLE -->
@@ -15,9 +18,92 @@
     </h2>
   </div>
 
-  <!-- MYSHOP-TOP -->
+  <!-- 마이쇼핑 탭메뉴 4개 -->
+  <div class="tap_four">
+    <ul>
+      <li>
+        <a class="tap_check">주문내역 조회</a>
+      </li>
+      <li class="tap_li">
+        <a href="{% url 'accounts:update' user_pk %}">회원정보 수정</a>
+      </li>
+      <li class="tap_li">
+        <a href="{% url 'accounts:mylikes' user_pk %}">관심상품</a>
+      </li>
+      <li class="tap_li">
+        <a href="{% url 'accounts:myposting' user_pk %}">게시물 관리</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 포인트 / 장바구니 / 관심상품 -->
+  <section class="box_wrap">
+    <a href="" class="box_three box_border">
+      <i class="bi bi-p-circle"></i>
+      <div class="box_point_1">포인트</div>
+      <div class="box_point_2">10,000P</div>
+    </a>
+
+    <a href="" class="box_three box_border">
+      <i class="bi bi-cart"></i>
+      <div class="box_title">장바구니</div>
+      <div class="box_num">1</div>
+    </a>
+
+    <a href="" class="box_three">
+      <i class="fa-regular fa-heart"></i>
+      <div class="box_title">관심상품</div>
+      <div class="box_num">0</div>
+    </a>
+  </section>
+
+  <!-- 나의 주문처리 현황 (title) -->
+  <div class="status_title">
+    <div class="status_left">나의 주문처리 현황 (최근 3개월 기준)</div>
+    <p class="status_right">주문내역 전체보기 ></p>
+  </div>
+
+  <!-- 현황 5개 -->
+  <section class="status_five">
+    <a href="" class="status_five_a">
+      <div class="status_five_text">
+        <div class="title">입금대기</div>
+        <div class="num">0</div>
+      </div>
+      <div class="status_five_arrow"></div>
+    </a>
+    <a href="" class="status_five_a">
+      <div class="status_five_text">
+        <div class="title">결제완료</div>
+        <div class="num">0</div>
+      </div>
+      <div class="status_five_arrow"></div>
+    </a>
+    <a href="" class="status_five_a">
+      <div class="status_five_text">
+        <div class="title">배송중</div>
+        <div class="num">0</div>
+      </div>
+      <div class="status_five_arrow"></div>
+    </a>
+    <a href="" class="status_five_border">
+      <div class="status_five_text">
+        <div class="title">배송완료</div>
+        <div class="num">0</div>
+      </div>
+    </a>
+    <a href="" class="status_five_a">
+      <div class="status_five_text">
+        <div class="title">취소/교환/반품</div>
+        <div class="num">0</div>
+      </div>
+    </a>
+  </section>
+
+
+  <!-- MYSHOP-TOP
   <section class="myshop-top">
-    <!-- Pointbox -->
+    Pointbox
     <div class="pointbox">
       <div class="box">
         <div class="title">my point</div>
@@ -34,7 +120,7 @@
         <div class="num">0</div>
       </div>
     </div>
-    <!-- Orderbox -->
+    Orderbox
     <div class="orderbox">
       <div class="title">
         <h4>나의 주문처리 현황(최근 3개월 기준)</h4>
@@ -64,7 +150,7 @@
     </div>
   </section>
 
-  <!-- MYSHOP-BOTTOM -->
+  MYSHOP-BOTTOM
   <section class="myshop-bottom">
     <div class="items">
       <a href="#">
@@ -92,7 +178,7 @@
         </div>
       </a>
     </div>
-  </section>
+  </section> -->
 
 
 </div>

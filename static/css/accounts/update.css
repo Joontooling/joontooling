@@ -91,3 +91,14 @@
 .btn_modal:hover {
   background-color: #5055b1;
 }
+
+/* 반응형 Mobile(모바일) */
+@media screen and (max-width: 768px) {
+  .contents_update {
+    width: 100%;
+    padding: 40px 20px;
+  }
+  .label_update {
+    margin-right: 180px;
+  }
+}
