@@ -53,7 +53,7 @@
       </section>
 
       <!-- 회원정보 입력 -->
-      <form action="{% url 'accounts:signup' %}" method="POST" enctype="multipart/form-data" class="was-validated">
+      <form action="{% url 'users:signup' %}" method="POST" enctype="multipart/form-data" class="was-validated">
         {% csrf_token %}
 
         <!-- 아이디 -->
@@ -154,7 +154,7 @@
               <span class="agree_signup">(필수)</span>
             </label>
 
-            <a href="{% url 'accounts:agreement1' %}" target="_blank">
+            <a href="{% url 'users:agreement1' %}" target="_blank">
               <div class="see_signup">내용보기</div>
             </a>
           </div>
@@ -168,7 +168,7 @@
               <span class="agree_signup">(필수)</span>
             </label>
 
-            <a href="{% url 'accounts:agreement2' %}" target="_blank">
+            <a href="{% url 'users:agreement2' %}" target="_blank">
               <div class="see_signup">내용보기</div>
             </a>
           </div>
@@ -182,7 +182,7 @@
               <span class="agree2_signup">(선택)</span>
             </label>
 
-            <a href="{% url 'accounts:agreement3' %}" target="_blank">
+            <a href="{% url 'users:agreement3' %}" target="_blank">
               <div class="see_signup">내용보기</div>
             </a>
           </div>

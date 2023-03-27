@@ -24,7 +24,7 @@ def signup(request):
         context = {
             "form": form,
         }
-        return render(request, "accounts/signup.html", context)
+        return render(request, "users/signup.html", context)
     
     else:
         return redirect("products:index")
@@ -46,7 +46,7 @@ def login(request):
             'form' : form,
         }
 
-        return render(request, 'accounts/login.html', context)
+        return render(request, 'users/login.html', context)
 
     else:
         return redirect("products:index")
@@ -65,7 +65,7 @@ def update(request, pk):
             if change_form.is_valid():
                 change = change_form.save()
                 auth_login(request, user=change)
-                return redirect('accounts:my_shop', request.user.pk)
+                return redirect('users:my_shop', request.user.pk)
         else:
             change_form = UserCustomChangeForm(instance=request.user)
             
@@ -76,7 +76,7 @@ def update(request, pk):
             'password_form': password_form,
         }
 
-        return render(request, 'accounts/update.html', context)
+        return render(request, 'users/update.html', context)
 
     else:
         return redirect('products:index')
@@ -88,7 +88,7 @@ def password_update(request):
         if password_form.is_valid():
             user = password_form.save()
             auth_login(request, user)
-            return redirect('accounts:update', request.user.pk)
+            return redirect('users:update', request.user.pk)
     else:
         password_form = CustomPasswordChangeForm(request.user)
 
@@ -96,7 +96,7 @@ def password_update(request):
         'password_form': password_form,
     }
     
-    return render(request, 'accounts/password.html', context)
+    return render(request, 'users/password.html', context)
 
 @login_required
 def delete(request, pk):
@@ -113,7 +113,7 @@ def my_shop(request, pk):
             'user_pk' : pk,
         }
 
-    return render(request, 'accounts/my_shop.html', context)
+    return render(request, 'users/my_shop.html', context)
 
 # 관심상품
 def my_likes(request, pk):
@@ -126,16 +126,16 @@ def my_likes(request, pk):
                 if int(product) == like_product[i].pk:
                     like_product[i].delete()
     context = {"users" : users}
-    return render(request, 'accounts/my_likes.html', context)
+    return render(request, 'users/my_likes.html', context)
 
 def my_posting(request, pk):
-    return render(request, 'accounts/my_posting.html')
+    return render(request, 'users/my_posting.html')
 
 def agreement1(request):
-    return render(request, 'accounts/agreement1.html')
+    return render(request, 'users/agreement1.html')
 
 def agreement2(request):
-    return render(request, 'accounts/agreement2.html')
+    return render(request, 'users/agreement2.html')
 
 def agreement3(request):
-    return render(request, 'accounts/agreement3.html')
+    return render(request, 'users/agreement3.html')

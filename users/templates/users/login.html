@@ -24,7 +24,7 @@
     </header>
     
     <main class="contents_login">
-      <form action="{% url 'accounts:login' %}" method="POST">
+      <form action="{% url 'users:login' %}" method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% comment %} <div>
@@ -51,7 +51,7 @@
 
       <section>
         <!-- 회원가입 이동 버튼 -->
-        <button class="btn2_login" onclick=location.href="{% url 'accounts:signup' %}">회원가입</button>
+        <button class="btn2_login" onclick=location.href="{% url 'users:signup' %}">회원가입</button>
       </section>
     </main>
   </div>

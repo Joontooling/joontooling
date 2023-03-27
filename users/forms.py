@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+from allauth.account.forms import SignupForm
 
 class UserForm(UserCreationForm):
 

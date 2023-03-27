@@ -59,11 +59,13 @@
               </div>
 
               <div class="modal-body">
-                <form action="{% url 'accounts:password_update' %}" method="POST">
+                <form action="{% url 'users:password_update' %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" class="form-control" name="next" value="{{ request.GET.next }}">
                   <div class="px-3">
                     {% bootstrap_form password_form %}
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="submit" class="btn_modal">확인</button>
                   </div>
                   
                   <div class="modal-footer">

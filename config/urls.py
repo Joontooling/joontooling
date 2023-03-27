@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include("accounts.urls")),
+    path('users/', include("users.urls")),
+    path('accounts/', include('allauth.urls')),
     path('', include("products.urls")),
     path('community/', include("community.urls")),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) # admin에서 상품 이미지 등록 시 출력 되는 부분 으로 수정
