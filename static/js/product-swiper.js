@@ -49,7 +49,7 @@ function productSwiperBtnsHover(btns, opacity) {
 
 // 버튼 클릭시 슬라이드 회전하기
 let counter = 0;
-let bigSlideSize = 494;
+let bigSlideSize = productSwiper.offsetWidth + 28;
 let smallSlideSize = 111;
 
 nextBtn.addEventListener('click', () => {

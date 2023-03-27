@@ -538,6 +538,7 @@ button {
 .footer {
   text-align: center;
   cursor: default;
+  border-top: 1px solid var(--color-main);
 }
 
 .footer span.accent {
@@ -546,7 +547,6 @@ button {
 
 /* footer-top */
 .footer-top {
-  border-top: 1px solid var(--color-main);
   border-bottom: 1px solid var(--color-main);
 }
 
@@ -621,6 +621,9 @@ button {
 }
 
 @media (max-width: 768px) {
+  .footer-top {
+    display: none;
+  }
   .footer__info__texts {
     display: flex;
     flex-wrap: wrap;
