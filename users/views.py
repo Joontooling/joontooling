@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import UserForm, UserCustomChangeForm, CustomPasswordChangeForm
+from .forms import UserForm, UserCustomChangeForm, CustomPasswordChangeForm, LoginForm
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
@@ -16,7 +15,7 @@ def signup(request):
 
             if form.is_valid():
                 user_sign_up = form.save()
-                auth_login(request, user = user_sign_up)
+                auth_login(request, user = user_sign_up, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect("products:index")
         else:
             form = UserForm()
@@ -24,7 +23,7 @@ def signup(request):
         context = {
             "form": form,
         }
-        return render(request, "users/signup.html", context)
+        return render(request, "account/signup.html", context)
     
     else:
         return redirect("products:index")
@@ -33,20 +32,20 @@ def login(request):
 
     if not request.user.is_authenticated:
         if request.method == "POST":
-            form = AuthenticationForm(request, data = request.POST)
+            form = LoginForm(request, data = request.POST)
 
             if form.is_valid():
-                auth_login(request, form.get_user())
+                auth_login(request, form.get_user(), backend='django.contrib.auth.backends.ModelBackend')
                 return redirect(request.GET.get('next') or 'products:index')
         
         else:
-            form = AuthenticationForm()
+            form = LoginForm()
         
         context = {
             'form' : form,
         }
 
-        return render(request, 'users/login.html', context)
+        return render(request, 'account/login.html', context)
 
     else:
         return redirect("products:index")
@@ -64,7 +63,7 @@ def update(request, pk):
             change_form = UserCustomChangeForm(request.POST, request.FILES, instance=request.user)
             if change_form.is_valid():
                 change = change_form.save()
-                auth_login(request, user=change)
+                auth_login(request, user=change, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('users:my_shop', request.user.pk)
         else:
             change_form = UserCustomChangeForm(instance=request.user)
@@ -76,7 +75,7 @@ def update(request, pk):
             'password_form': password_form,
         }
 
-        return render(request, 'users/update.html', context)
+        return render(request, 'account/update.html', context)
 
     else:
         return redirect('products:index')
@@ -87,7 +86,7 @@ def password_update(request):
         password_form = CustomPasswordChangeForm(request.POST, request.user)
         if password_form.is_valid():
             user = password_form.save()
-            auth_login(request, user)
+            auth_login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect('users:update', request.user.pk)
     else:
         password_form = CustomPasswordChangeForm(request.user)
@@ -96,7 +95,7 @@ def password_update(request):
         'password_form': password_form,
     }
     
-    return render(request, 'users/password.html', context)
+    return render(request, 'account/password.html', context)
 
 @login_required
 def delete(request, pk):
@@ -113,7 +112,7 @@ def my_shop(request, pk):
             'user_pk' : pk,
         }
 
-    return render(request, 'users/my_shop.html', context)
+    return render(request, 'account/my_shop.html', context)
 
 # 관심상품
 def my_likes(request, pk):
@@ -126,16 +125,16 @@ def my_likes(request, pk):
                 if int(product) == like_product[i].pk:
                     like_product[i].delete()
     context = {"users" : users}
-    return render(request, 'users/my_likes.html', context)
+    return render(request, 'account/my_likes.html', context)
 
 def my_posting(request, pk):
-    return render(request, 'users/my_posting.html')
+    return render(request, 'account/my_posting.html')
 
 def agreement1(request):
-    return render(request, 'users/agreement1.html')
+    return render(request, 'account/agreement1.html')
 
 def agreement2(request):
-    return render(request, 'users/agreement2.html')
+    return render(request, 'account/agreement2.html')
 
 def agreement3(request):
-    return render(request, 'users/agreement3.html')
+    return render(request, 'account/agreement3.html')

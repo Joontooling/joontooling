@@ -163,4 +163,11 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
-ACCOUNT_SIGNUP_REDIRECT_URL = '/users/signup/'
+ACCOUNT_FORMS = {
+    'signup': 'users.forms.UserForm',
+    'login' : 'users.forms.LoginForm',
+    } 
+
+
+SET_PASSWORD_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET = True

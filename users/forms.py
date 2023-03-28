@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
-from allauth.account.forms import SignupForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm, AuthenticationForm
+from allauth.account.forms import SetPasswordForm
+from django.shortcuts import render, redirect
 
 class UserForm(UserCreationForm):
 
@@ -20,6 +21,16 @@ class UserForm(UserCreationForm):
             'per_company_number',
             'company_number'
         ]
+
+class LoginForm(AuthenticationForm):
+    class Meta:
+        pass
+
+
+class MyCustomSetPasswordForm(SetPasswordForm):
+    class Meta:
+        pass
+
 
 class UserCustomChangeForm(UserChangeForm):
   

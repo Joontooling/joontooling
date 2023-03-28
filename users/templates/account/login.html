@@ -1,5 +1,6 @@
 {% load static %}
 {% load django_bootstrap5 %}
+{% load socialaccount %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +42,7 @@
         <div class="sns_title_login">SNS계정으로 간편 로그인/회원가입</div>
         <div class="btn_wrap">
           <!-- 네이버 -->
-          <button class="btn_naver"></button>
-          <!-- 카카오 -->
-          <button class="btn_kakao"></button>
-          <!-- 구글 -->
-          <button class="btn_google"></button>
+          <a class="btn_naver" href="{% provider_login_url "naver" %}"></a>
         </div>
       </section>
 

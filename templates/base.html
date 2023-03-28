@@ -45,11 +45,11 @@
       <div class="nav-wrapper">
         <ul class="nav__items wrapper">
           {% if request.user.is_authenticated %}
-            <li class="nav__item"><a href="{% url 'users:logout' %}">로그아웃</a></li>
+            <li class="nav__item"><a href="/accounts/logout/">로그아웃</a></li>
             <li class="nav__item"><a href="{% url 'users:myshop' request.user.pk %}">마이쇼핑</a></li>
           {% else %}
-            <li class="nav__item"><a href="{% url 'users:signup' %}">회원가입</a></li>
-            <li class="nav__item"><a href="{% url 'users:login' %}">로그인</a></li>
+            <li class="nav__item"><a href="/accounts/signup/">회원가입</a></li>
+            <li class="nav__item"><a href="/accounts/login/">로그인</a></li>
           {% endif %}
           <li class="nav__item"><a href="{% url 'community:index' %}">커뮤니티</a></li>
         </ul>
