@@ -8,6 +8,12 @@
 
 <!-- PRODUCT-TOP -->
 <main class="product-top">
+
+  <h1>
+    <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+    상품상세 정보
+  </h1>
+
   <div class="wrapper">
 
     <!-- Product Swiper -->
@@ -22,36 +28,6 @@
           </li>
           {% endfor %}
 
-          <!-- 더미 데이터 
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/big/202301/3b7399cf257f9ea0f79fe910928d29d4.jpg"
-              alt="slide-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/big/202301/7629a9935262ab66b3fc8acde80f48d1.jpg"
-              alt="slide-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/big/202110/3d96f458b9b14f441642c963152e6998.jpg"
-              alt="slide-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/big/202110/f9933a0fab095d96c2d69a79b574bb7a.jpg"
-              alt="slide-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/big/202110/f958b55c77532ddf020b699b6718d8db.jpg"
-              alt="slide-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/big/202110/82fdf2954b9e99b355902970a8ed416e.jpg"
-              alt="slide-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/big/202110/7bedbfb46d146bb5d3a75b943df5ce83.jpg"
-              alt="slide-image">
-          </li> 
-          -->
         </ul>
         <button class="swiper-button-prev prevBtn"></button>
         <button class="swiper-button-next nextBtn"></button>
@@ -66,47 +42,13 @@
           </li>
           {% endfor %}
 
-          <!-- 더미 데이터
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/big/202301/3b7399cf257f9ea0f79fe910928d29d4.jpg"
-              alt="product-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/small/202301/7629a9935262ab66b3fc8acde80f48d1.jpg"
-              alt="product-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/small/202110/3d96f458b9b14f441642c963152e6998.jpg"
-              alt="product-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/small/202110/f9933a0fab095d96c2d69a79b574bb7a.jpg"
-              alt="product-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/small/202110/f958b55c77532ddf020b699b6718d8db.jpg"
-              alt="product-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/small/202110/82fdf2954b9e99b355902970a8ed416e.jpg"
-              alt="product-image">
-          </li>
-          <li class="swiper-slide">
-            <img src="https://juntooling.com/web/product/extra/small/202110/7bedbfb46d146bb5d3a75b943df5ce83.jpg"
-              alt="product-image">
-          </li>
-          -->
         </ul>
       </div>
     </div>
     <!-- Product Infomation -->
     <div class="product-info">
-      <!-- product info title -->
-      <div class="product__title">
-        <h1 class="title">{{ product.name }}</h1>
-        <h1 class="price">{{ product.price|intcomma }}원</h1>
-      </div>
-      <div>
+      <!-- like form -->
+      <div class="like-box">
         <form class="like-forms" data-product-id="{{ product.pk }}">
           {% csrf_token %}
           {% if user in product.like_users.all %}
@@ -119,6 +61,11 @@
           </button>
           {% endif %}
         </form>
+      </div>
+      <!-- product info title -->
+      <div class="product__title">
+        <h1 class="title">{{ product.name }}</h1>
+        <h1 class="price">{{ product.price|intcomma }}원</h1>
       </div>
       <!-- product info table -->
       <table class="product-table">
@@ -150,7 +97,7 @@
       </div>
       <p class="total-price">
         <span>총 상품금액:</span>
-        1,430,000원
+        {{ product.price|intcomma }}원
       </p>
       <!-- product info buttons -->
       <div class="product-btns">
@@ -272,20 +219,20 @@
         .dataset
         .productId
 
-        axios({
-          method: 'post',
-          url : `/products/detail/${productId}/like/`,
-          headers: {
-            'X-CSRFToken' : csrftoken
-          }
-        })
+      axios({
+        method: 'post',
+        url: `/products/detail/${productId}/like/`,
+        headers: {
+          'X-CSRFToken': csrftoken
+        }
+      })
         .then((response) => {
           const isLiked = response.data.is_liked
           const likeBtn = document.querySelector(`#like-${productId}`)
           const starBtn = document.querySelector(`#star-${productId}`)
           const mark = starBtn.classList
           console.log(isLiked, starBtn, mark)
-          if (isLiked === true) {          
+          if (isLiked === true) {
             mark.remove("fa-regular")
             mark.add("fa-solid")
           } else {
